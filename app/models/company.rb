@@ -3,8 +3,8 @@ class Company < ActiveRecord::Base
 	belongs_to							:user
 	belongs_to							:country
 	belongs_to							:state
-	has_many								:experiences
-	has_many								:tools
+	has_many								:experiences, :dependent => :destroy
+	has_many								:tools,       :dependent => :destroy
 	
 	validates_presence_of		:name
 	validates_presence_of		:description
@@ -19,5 +19,10 @@ class Company < ActiveRecord::Base
 	named_scope :find_by_state, lambda { |location| {:joins => :state, :conditions => { :states => {:short2 => location} } } }
 
 	attr_accessible :name, :price, :description, :complex_type_ids, :phone, :country_id, :state_id, :city
+	
+	def phone=(string)
+	  clean_phone =  string
+	  write_attribute(:phone, clean_phone)
+	end
 	
 end

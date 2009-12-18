@@ -11,14 +11,11 @@ class ExperiencesController < ApplicationController
   end
   
   def new
-  	@experience = @company.experiences.find(params[:company_id]).experiences.build
-  	session[:company_id] = params[:company_id]
-#    @experience = Experience.new
+  	@experience = @company.experiences.build
   end
   
   def create
   	@experience = @company.experiences.build(params[:experience])
-#    @experience = Experience.new(params[:experience])
     if @experience.save
       flash[:notice] = "Successfully created experience."
       session[:company_id] = nil

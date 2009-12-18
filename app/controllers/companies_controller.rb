@@ -3,10 +3,10 @@ class CompaniesController < ApplicationController
   def index  	  
   	if params[:location] && params[:location].size == 3
 			@companies = Company.find_by_country(params[:location])
-			@companies.size == 0 ? flash[:error] = "No se encontraron compañías en ese país" : @companies
+			@companies.empty? ? flash[:error] = "No se encontraron compañías en ese país" : @companies
 	  elsif params[:location] && params[:location].size == 2
 			@companies = Company.find_by_state(params[:location])
-			@companies.size == 0 ? flash[:error] = "No se encontraron compañías en ese estado" : @companies
+			@companies.empty? ? flash[:error] = "No se encontraron compañías en ese estado" : @companies
 	  else
 	  	@companies = Company.find(:all)
 	  end

@@ -47291,3 +47291,738 @@ ActiveRecord::RecordNotFound (Couldn't find Company without an ID):
 Rendered rescues/_trace (111.8ms)
 Rendered rescues/_request_and_response (0.4ms)
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ExperiencesController#new (for 127.0.0.1 at 2009-12-18 11:29:05) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Company without an ID):
+  app/controllers/experiences_controller.rb:53:in `find_company'
+  passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (384.7ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ExperiencesController#new (for 127.0.0.1 at 2009-12-18 11:29:05) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Company without an ID):
+  app/controllers/experiences_controller.rb:53:in `find_company'
+  passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (382.9ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ExperiencesController#new (for 127.0.0.1 at 2009-12-18 11:29:28) [GET]
+  Parameters: {"company_id"=>"1"}
+  [4;36;1mCompany Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM `companies` WHERE (`companies`.`id` = 1) [0m
+  [4;36;1mExperience Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `experiences`[0m
+  [4;35;1mExperience Load (0.2ms)[0m   [0mSELECT * FROM `experiences` WHERE (`experiences`.`id` = 1 AND (`experiences`.company_id = 1)) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Experience with ID=1 AND (`experiences`.company_id = 1)):
+  app/controllers/experiences_controller.rb:14:in `new'
+  passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ExperiencesController#new (for 127.0.0.1 at 2009-12-18 11:29:35) [GET]
+  Parameters: {"company_id"=>"1"}
+  [4;36;1mCompany Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM `companies` WHERE (`companies`.`id` = 1) [0m
+  [4;36;1mExperience Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `experiences`[0m
+  [4;35;1mExperience Load (0.2ms)[0m   [0mSELECT * FROM `experiences` WHERE (`experiences`.`id` = 1 AND (`experiences`.company_id = 1)) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Experience with ID=1 AND (`experiences`.company_id = 1)):
+  app/controllers/experiences_controller.rb:14:in `new'
+  passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ExperiencesController#new (for 127.0.0.1 at 2009-12-18 11:30:49) [GET]
+  Parameters: {"company_id"=>"1"}
+  [4;36;1mCompany Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM `companies` WHERE (`companies`.`id` = 1) [0m
+  [4;36;1mExperience Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `experiences`[0m
+Rendering template within layouts/application
+Rendering experiences/new
+Rendered experiences/_form (5.7ms)
+Completed in 43ms (View: 25, DB: 3) | 200 OK [http://condominios.local/experiences/new?company_id=1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ToolsController#new (for 127.0.0.1 at 2009-12-18 11:31:02) [GET]
+  Parameters: {"company_id"=>"1"}
+  [4;35;1mCompany Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM `companies` WHERE (`companies`.`id` = 1) [0m
+  [4;35;1mTool Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `tools`[0m
+Rendering template within layouts/application
+Rendering tools/new
+Rendered tools/_form (3.5ms)
+Completed in 105ms (View: 16, DB: 3) | 200 OK [http://condominios.local/tools/new?company_id=1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ToolsController#index (for 127.0.0.1 at 2009-12-18 11:31:23) [GET]
+  [4;36;1mTool Load (0.3ms)[0m   [0;1mSELECT * FROM `tools` [0m
+Rendering template within layouts/application
+Rendering tools/index
+
+ActionView::TemplateError (undefined local variable or method `new_tools_path' for #<ActionView::Base:0x103677600>) on line #21 of app/views/tools/index.html.erb:
+18:   <% end %>
+19: </table>
+20: 
+21: <p><%= link_to "New Tools", new_tools_path %></p>
+
+    app/views/tools/index.html.erb:21
+    passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (53.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT `companies`.* FROM `companies` INNER JOIN `countries` ON `countries`.id = `companies`.country_id WHERE (`countries`.`short` = 'MEX') [0m
+  [4;35;1mCompany Columns (15.1ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2009-12-18 11:35:54) [GET]
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM `companies` [0m
+Rendering template within layouts/application
+Rendering companies/index
+  [4;36;1mCompany Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
+  [4;35;1mState Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mState Load (0.5ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 3) [0m
+  [4;35;1mCountry Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 15) [0m
+  [4;35;1mcompanies_complex_types Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `companies_complex_types`[0m
+  [4;36;1mComplexType Load (0.7ms)[0m   [0;1mSELECT * FROM `complex_types` INNER JOIN `companies_complex_types` ON `complex_types`.id = `companies_complex_types`.complex_type_id WHERE (`companies_complex_types`.company_id = 1 ) [0m
+  [4;35;1mComplexType Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `complex_types`[0m
+Completed in 127ms (View: 36, DB: 7) | 200 OK [http://condominios.local/companies]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:35:57) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 37ms (View: 32, DB: 3) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2009-12-18 11:36:07) [GET]
+  Parameters: {"location"=>"MEX", "x"=>"80", "y"=>"30"}
+  [4;36;1mCompany Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `companies` INNER JOIN `countries` ON `countries`.id = `companies`.country_id WHERE (`countries`.`short` = 'MEX') [0m
+Rendering template within layouts/application
+Rendering companies/index
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT `companies`.* FROM `companies` INNER JOIN `countries` ON `countries`.id = `companies`.country_id WHERE (`countries`.`short` = 'MEX') [0m
+  [4;35;1mState Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mState Load (0.8ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 3) [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 15) [0m
+  [4;35;1mcompanies_complex_types Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `companies_complex_types`[0m
+  [4;36;1mComplexType Load (0.3ms)[0m   [0;1mSELECT * FROM `complex_types` INNER JOIN `companies_complex_types` ON `complex_types`.id = `companies_complex_types`.complex_type_id WHERE (`companies_complex_types`.company_id = 1 ) [0m
+  [4;35;1mComplexType Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `complex_types`[0m
+Completed in 109ms (View: 90, DB: 8) | 200 OK [http://condominios.local/companies?location=MEX&x=80&y=30]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:37:01) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (5.1ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 34ms (View: 24, DB: 8) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:43:38) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Stale) on line #6 of app/views/sessions/index.html.erb:
+3: <h2>¿En qu&eacute; lugar buscas?</h2>
+4: 	<% form_for Company, :url => companies_path, :html => {:method => :get} do |f| %>
+5: 		<%= select_tag :location, "<option value=0>Buscar</option>"+grouped_options_for_select(
+6: 															{"México" => Stale.all.collect {|s| [s.name, s.short2]}, "Internacional" => options_from_collection_for_select(Country.all, :short, :name)}),
+7: 															:class => "dropdownsearch" %>
+8: 		<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
+9: 	<% end %>
+
+    app/views/sessions/index.html.erb:6
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/sessions/index.html.erb:4
+    passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:43:46) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.5ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 34ms (View: 30, DB: 4) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:46:21) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+
+ActionView::TemplateError (undefined method `inject' for 195:Fixnum) on line #7 of app/views/sessions/index.html.erb:
+4: 	<% form_for Company, :url => companies_path, :html => {:method => :get} do |f| %>
+5: 		<%= select_tag :location, "<option value=0>Buscar</option>"+grouped_options_for_select(
+6: 															["México", State.all.collect {|s| [s.name, s.short2]}, 
+7: 															"Internacional", Country.all.collect {|c| [c.name, c.short]} ]),
+8: 															:class => "dropdownsearch" %>
+9: 		<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
+10: 	<% end %>
+
+    app/views/sessions/index.html.erb:7
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/sessions/index.html.erb:4
+    passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (58.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:47:56) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+
+ActionView::TemplateError (undefined method `inject' for 195:Fixnum) on line #6 of app/views/sessions/index.html.erb:
+3: <h2>¿En qu&eacute; lugar buscas?</h2>
+4: 	<% form_for Company, :url => companies_path, :html => {:method => :get} do |f| %>
+5: 		<%= select_tag :location, "<option value=0>Buscar</option>"+grouped_options_for_select(
+6: 															["México", State.all.collect {|s| [s.name, s.short2]}]),
+7: 															:class => "dropdownsearch" %>
+8: 		<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
+9: 	<% end %>
+
+    app/views/sessions/index.html.erb:6
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/sessions/index.html.erb:4
+    passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (59.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mState Load (0.5ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:49:41) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+
+ActionView::TemplateError (undefined method `inject' for 195:Fixnum) on line #7 of app/views/sessions/index.html.erb:
+4: 	<% form_for Company, :url => companies_path, :html => {:method => :get} do |f| %>
+5: 		<%= select_tag :location, grouped_options_for_select(
+6: 															["México", State.all.collect {|s| [s.name, s.short2]}, 
+7: 															"Internacional", Country.all.collect {|c| [c.name, c.short]} ]),
+8: 															:class => "dropdownsearch" %>
+9: 		<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
+10: 	<% end %>
+
+    app/views/sessions/index.html.erb:7
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/sessions/index.html.erb:4
+    passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (61.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:50:42) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+
+ActionView::TemplateError (undefined method `inject' for 195:Fixnum) on line #7 of app/views/sessions/index.html.erb:
+4: 	<% form_for Company, :url => companies_path, :html => {:method => :get} do |f| %>
+5: 		<%= select_tag :location, grouped_options_for_select(
+6: 															["México", State.all.map {|s| [s.name, s.short2]}, 
+7: 															"Internacional", Country.all.map {|c| [c.name, c.short]} ]),
+8: 															:class => "dropdownsearch" %>
+9: 		<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
+10: 	<% end %>
+
+    app/views/sessions/index.html.erb:7
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/sessions/index.html.erb:4
+    passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (58.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:50:43) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+
+ActionView::TemplateError (undefined method `inject' for 195:Fixnum) on line #7 of app/views/sessions/index.html.erb:
+4: 	<% form_for Company, :url => companies_path, :html => {:method => :get} do |f| %>
+5: 		<%= select_tag :location, grouped_options_for_select(
+6: 															["México", State.all.map {|s| [s.name, s.short2]}, 
+7: 															"Internacional", Country.all.map {|c| [c.name, c.short]} ]),
+8: 															:class => "dropdownsearch" %>
+9: 		<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
+10: 	<% end %>
+
+    app/views/sessions/index.html.erb:7
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.3.9) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/sessions/index.html.erb:4
+    passenger (2.2.7) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.7) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.7) lib/phusion_passenger/railz/application_spawner.rb:209:in `start'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.7) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (62.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:51:06) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 105ms (View: 100, DB: 3) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:52:10) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mState Load (0.3ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+Completed in 34ms (View: 29, DB: 3) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:52:24) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 98ms (View: 93, DB: 3) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:53:33) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 32ms (View: 28, DB: 3) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:53:34) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.5ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 26ms (View: 21, DB: 3) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:53:36) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 29ms (View: 24, DB: 3) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:53:45) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 32ms (View: 27, DB: 3) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 11:54:03) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 100ms (View: 28, DB: 3) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-12-18 12:01:04) [GET]
+Rendering template within layouts/application
+Rendering sessions/index
+  [4;36;1mState Load (0.4ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (43.1ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 698ms (View: 649, DB: 45) | 200 OK [http://condominios.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CompaniesController#search (for 127.0.0.1 at 2009-12-18 12:01:07) [GET]
+  [4;36;1mCompany Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM `companies` [0m
+Rendering template within layouts/application
+Rendering companies/search
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mState Load (0.3ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+Completed in 44ms (View: 31, DB: 4) | 200 OK [http://condominios.local/search]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CompaniesController#search (for 127.0.0.1 at 2009-12-18 12:02:45) [GET]
+  Parameters: {"commit"=>"Buscar", "search"=>{"city_like"=>"", "price_like"=>"", "name_like"=>"", "state_id_equals"=>"", "order"=>"", "country_id_equals"=>""}}
+  [4;36;1mCompany Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM `companies` [0m
+Rendering template within layouts/application
+Rendering companies/search
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM `countries` [0m
+  [4;35;1mCountry Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mState Load (0.3ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `companies` [0m
+  [4;35;1mState Load (0.3ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`id` = 3) [0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 15) [0m
+  [4;35;1mcompanies_complex_types Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `companies_complex_types`[0m
+  [4;36;1mComplexType Load (0.3ms)[0m   [0;1mSELECT * FROM `complex_types` INNER JOIN `companies_complex_types` ON `complex_types`.id = `companies_complex_types`.complex_type_id WHERE (`companies_complex_types`.company_id = 1 ) [0m
+  [4;35;1mComplexType Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `complex_types`[0m
+Completed in 49ms (View: 32, DB: 8) | 200 OK [http://condominios.local/search?search%5Border%5D=&search%5Bname_like%5D=&search%5Bprice_like%5D=&search%5Bcountry_id_equals%5D=&search%5Bstate_id_equals%5D=&search%5Bcity_like%5D=&commit=Buscar]
