@@ -1,0 +1,272 @@
+body {
+  background-color: #FFFFFF;
+  background-image: url("/images/fondocielo.png");
+  background-repeat: repeat-x;
+  font-family: Arial, Helvetica, Verdana;
+  font-size: 14px;
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#main_container {
+  width: 1024px;
+  margin: 0 auto;
+	background-image: url("/images/nubes.png");
+	background-repeat: no-repeat;
+}
+
+#sub_container {
+	width: 811px;
+	position: relative;
+	left: 106px;
+	margin-top: 20px;
+}
+
+#sub_content {
+	width: 86.3%;
+	margin: 0 auto;
+	padding: 30px 40px 30px 40px;
+	background-color: #FFFFFF;
+	-webkit-border-bottom-right-radius: 9px;	/* for Safari */
+	-moz-border-bottom-right-radius: 9px;			/* for Firefox */
+	-webkit-border-bottom-left-radius: 9px;		/* for Safari */
+	-moz-border-bottom-left-radius: 9px;			/* for Firefox */
+	border-color: #E6E6E6;
+	border-style: solid;
+	border-width: 5px 0px 0px;
+}
+
+#signin {
+	text-align: right;
+}
+
+#header {
+ -webkit-border-top-right-radius: 9px;    /* for Safari */
+ -moz-border-top-right-radius: 9px;       /* for Firefox */
+ -webkit-border-top-left-radius: 9px;    /* for Safari */
+ -moz-border-top-left-radius: 9px;       /* for Firefox */
+	background-image: url("/images/fondoheader.png");
+	width: 811px;
+	height: 114px;
+}
+
+#left_header {
+	background-image: url("/images/doblezizq.png") no-repeat;
+	position: relative;
+	float:left;
+}
+
+#right_header {
+	background-image: url("/images/doblezizq.png") no-repeat;
+	position: relative;
+	float:right;
+}
+
+#signup {
+	padding-right: 5px;
+}
+
+#login {
+	padding-right: 30px;
+}
+
+.options {
+	position: relative;
+	bottom: -4px;
+}
+
+.logomarca {
+	position: relative;
+	left: 69px;
+	margin-top: -21px;
+}
+
+#search {
+	position: relative;
+	left: 150px;
+}
+
+.dropdownsearch {
+	background-color: #FFFFFF;
+	font-size: 20px;
+	height: 56px;
+	width: 300px;
+	float:left;
+}
+
+.searchbtn {
+	margin-top: -5.5px;
+	float:clear;	
+}
+
+#footer {
+	margin-left: -106px;
+}
+
+#disclaimer {
+	height: 45px;
+	background-color: #335533;
+	margin-top: -5px;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+
+#disclaimer a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#company h2 {
+	margin-left: 10px;
+	padding-top: 10px;
+}
+
+#company a {
+	text-decoration: none;
+	color: green;
+}
+
+#company span {
+	color: #DDDDDD;
+  font-weight: bold;
+}
+
+.company_info {
+	padding-left: 30px;
+	float:left;
+}
+
+#company_details span {
+	color: #666666;
+  font-weight: bold;
+}
+
+.company_details {
+	clear: both;
+	margin-bottom: 20px;
+	max-width: 350px;
+}
+
+#company_details #company_experience {
+	position: relative;
+	left: 350px;
+	bottom: 350px;
+}
+
+#register_form .text_field {
+	height: 30px;
+	width: 300px;
+	margin-bottom: 10px ;
+	margin-top: 5px ;
+	margin-left: 80px;
+}
+
+.text_area {
+	height: 100px;
+	width: 300px;
+	margin-bottom: 10px ;
+	margin-top: 5px ;
+	margin-left: 80px;
+}
+
+.checkbox {
+	margin-bottom: 10px ;
+	margin-top: 5px ;
+	margin-left: 80px;
+	
+}
+
+#register_form select {
+	margin-bottom: 10px ;
+	margin-top: 5px ;
+	margin-left: 80px;
+	background-color: #FFFFFF;
+	height: 30px;
+}
+
+#casita {
+	background: url("/images/lilhouse.png") no-repeat ;
+	height: 40px;
+	display: block;
+}
+
+#register_form .label {
+	font-size: 18px;
+	padding-left: 60px;
+}
+
+#register_form .next {
+	position: relative;
+	left: 500px;
+}
+
+#register_form h2 {
+	margin-left: 50px;
+	margin-top: -30px ;
+	margin-bottom: 45px;
+}
+
+#flash_notice, #flash_error {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}

@@ -1,0 +1,23 @@
+<% title "Experiences" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Start Year</th>
+    <th>End Year</th>
+  </tr>
+  <% for experience in @experiences %>
+    <tr>
+      <td><%=h experience.name %></td>
+      <td><%=h experience.description %></td>
+      <td><%=h experience.start_year %></td>
+      <td><%=h experience.end_year %></td>
+      <td><%= link_to "Show", experience %></td>
+      <td><%= link_to "Edit", edit_experience_path(experience) %></td>
+      <td><%= link_to "Destroy", experience, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Experience", new_experience_path %></p>

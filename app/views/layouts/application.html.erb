@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div id="main_container">      
+      <div id="sub_container">
+      	<div id="signin">
+					<a href="/signup" id="signup" class="options"><img src="/images/signupbtn.png"></a>
+					<a href="/login" id="login" class="options"><img src="/images/loginbtn.png"></a>
+		 		</div>
+  	    <div id="header">
+   	 			<div id="left_header"><img src="/images/doblezizq.png"/></div>
+					<a href="/"><img class="logomarca" src="/images/logo.png"/></a>
+					<div id="right_header"><img src="/images/doblezder.png"/></div>				
+				</div>
+      	<div id="sub_content">
+      		<%- flash.each do |name, msg| -%>
+        		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		      <%- end -%>      
+		      <%- if show_title? -%>
+		        <h1><%=h yield(:title) %></h1>
+		      <%- end -%>
+		      <%= yield %>
+      	</div>
+      	<div><img id="footer" src="/images/ciudad.png"/></div>
+      </div>
+     	<div id="disclaimer">
+     		<a href="#">¿Quiénes somos? </a>/<a href="#"> Contáctanos </a>/<a href="#"> Privacidad </a>/
+     		<a href="http://www.innku.com">Innku</a>
+     	</div>
+     	<div style="margin-top: -10px;"><img src="/images/footersombra.png"/></div>
+    </div>
+  </body>
+</html>

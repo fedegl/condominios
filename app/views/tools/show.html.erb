@@ -1,0 +1,14 @@
+<% title "Herramientas y Servicios" %>
+
+<p>
+  <strong>Nombre:</strong>
+  <%=h @tool.name %>
+</p>
+<p>
+  <strong>Descripci&oacute;n:</strong>
+  <%=h @tool.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_tool_path(@tool) %>
+</p>

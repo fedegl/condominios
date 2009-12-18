@@ -1,0 +1,49 @@
+<% form_for @company do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name, "Nombre", :class => "label"%><br />
+    <%= f.text_field :name, :class=> "text_field" %>
+  </p>
+  
+  <p>
+    <%= f.label :description, "Descripción", :class => "label"  %><br />
+    <%= f.text_area :description, :class=> "text_area" %>
+  </p>
+  
+  <p>
+    <%= f.label :price, "Precio", :class => "label" %><br />
+    <%= f.text_field :price, :class=> "text_field" %>
+  </p>
+  
+  <p>
+    <%= f.label :phone, "Teléfono", :class => "label" %><br />
+    <%= f.text_field :phone, :class=> "text_field" %>
+  </p>
+  
+  <p>
+		<%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %><br/>
+		<% for complex_type in ComplexType.find(:all) %>
+		<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class=>  "checkbox" %>
+		<%= complex_type.name %><br/>
+		<% end %>
+</p>
+  
+  <p>
+    <%= f.label :country_id, "País", :class => "label" %><br />
+    <%= collection_select :company, :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %>
+  </p>
+  
+  <p>
+    <%= f.label :state_id, "Estado", :class => "label"  %><br />
+    <%= collection_select :company, :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %>
+  </p>
+  
+  <p>
+    <%= f.label :city, "Ciudad", :class => "label" %><br />
+    <%= f.text_field :city, :class=> "text_field" %>
+  </p>
+  
+  <p><%= image_submit_tag "/images/siguiente.png", :class => "next" %></p>
+  
+  
+<% end %>

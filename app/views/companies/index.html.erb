@@ -1,0 +1,39 @@
+<% form_for @searchlogic do |f| %>
+	<p>
+		<%= f.label :name_like, "Nombre" %><br/>
+		<%= f.text_field :name_like %>
+	</p>	
+	<p>
+		<%= f.submit "Buscar" %>
+	</p>
+<% end %>
+
+
+<% for company in @companies do %>
+<div id="company">	
+	<div id="company_name">
+		<img style="float:left;" src="/images/lilhouse.png"/>
+		<h2><%= link_to company.name, company %></h2>
+		<img style="float:right; margin-top:-60px;"src="/images/codegent.png"/>
+	</div>
+	<div id="company_info">
+		<div id="company_price" class="company_info">
+			<span>Precio</span><br/>
+			<%= company.price %>
+		</div>
+		<div id="company_city" class="company_info">
+			<span>Ubicaci&oacute;n</span><br/>
+			<%= company.city %>,
+			<% if company.state %>
+				<%= company.state.short %>,
+			<% end %>			
+			 <%= company.country.name %>
+		</div>
+		<div id="company_complex" class="company_info">
+			<span>Tipo de Condominio</span><br/>
+			<%= company.complex_types.collect{|c| c.name}.join(", ") %>
+		</div>
+		<div id="division"><img src="/images/division.png"/></div>
+	</div>
+</div>
+<% end %>

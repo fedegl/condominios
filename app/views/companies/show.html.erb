@@ -1,0 +1,63 @@
+<div id="company_details">
+	<div id="company_name">
+		<img src="/images/lilhouse.png" style="float:left;"/>
+		<h1><%= @company.name %></h1>
+		<img src="/images/codegent.png" style="float:right; margin-top: -60px;"/>
+	</div>
+	
+	<div id="company_description" class="company_details">
+		<span>Descripci&oacute;n</span><br/>
+		<%= @company.description %>
+	</div>
+	
+	<div id="company_city" class="company_details">
+		<span>Ubicaci&oacute;n</span><br/>
+		<%= @company.city %>, <%= @company.country.name %>
+	</div>
+	
+	<div id="company_complex" class="company_details">
+		<span>Tipo de condominios</span><br/>
+		<%= @company.complex_types.collect{|c| c.name}.join(", ") %>
+	</div>
+	
+	<div id="company_price" class="company_details">
+		<span>Precio</span><br/>
+		<%= @company.price %>
+	</div>
+	
+	<div id="company_tools" class="company_details">
+		<% if @company.tools.size != 0 %>
+			<span>Herramientas y Servicios</span><br/>
+			<ul>
+				<% for tool in @company.tools do %>
+					<li><%= tool.name %>. <%= tool.description %></li>
+			<% end %>
+			</ul>
+		<% end %>
+	</div>
+	
+	<div id="company_contact" class="company_details">
+		<span>Contacto</span><br/>
+		<%= @company.phone %><br/>
+		<%= @company.user.email %>
+	</div>
+
+	<div id="company_experience" class="company_details">	
+		<% if @company.experiences.size != 0 %>
+			<span>Condominios que ha administrado</span><br/>
+			<table cellspacing="5" cellpading="5">
+				<tr><th>Nombre</th><th>Descripci&oacute;n</th><th>Desde</th><th>Hasta</th></tr>
+				<% for experience in @company.experiences do %>
+					<tr><td><%= experience.name %></td><td><%= experience.description %></td><td><%= experience.start_year %></td><td><%= experience.end_year %></td>
+			<% end %>
+			</table>
+		<% end %>
+	</div>
+</div>
+
+
+<p>
+  <%= link_to "Editar", edit_company_path(@company) %> |
+  <%= link_to "Agregar experiencia", :action => "new", :controller => "experiences", :company_id => @company.id %> |
+  <%= link_to "Agregar herramienta o servicio", :action => "new", :controller => "tools", :company_id => @company.id %>
+</p>

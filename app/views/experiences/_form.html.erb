@@ -1,0 +1,20 @@
+<% form_for @experience do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name, "Nombre del condominio" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description, "Descripci&oacute;n" %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :start_year, "Año de inicio" %><br />
+    <%= f.text_field :start_year %>
+  </p>
+  <p>
+    <%= f.label :end_year, "Año de finalizaci&oacute;n" %><br />
+    <%= f.text_field :end_year %>
+  </p>
+  <p><%= f.submit "Agregar" %></p>
+<% end %>

@@ -1,0 +1,24 @@
+<% title "Experience" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @experience.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @experience.description %>
+</p>
+<p>
+  <strong>Start Year:</strong>
+  <%=h @experience.start_year %>
+</p>
+<p>
+  <strong>End Year:</strong>
+  <%=h @experience.end_year %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_experience_path(@experience) %> |
+  <%= link_to "Destroy", @experience, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", experiences_path %>
+</p>

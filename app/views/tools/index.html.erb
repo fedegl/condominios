@@ -1,0 +1,21 @@
+<% title "Tools" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Company</th>
+  </tr>
+  <% for tools in @tools %>
+    <tr>
+      <td><%=h tools.name %></td>
+      <td><%=h tools.description %></td>
+      <td><%=h tools.company_id %></td>
+      <td><%= link_to "Show", tools %></td>
+      <td><%= link_to "Edit", edit_tools_path(tools) %></td>
+      <td><%= link_to "Destroy", tools, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Tools", new_tools_path %></p>
