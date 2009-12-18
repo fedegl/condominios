@@ -14,8 +14,7 @@ class UsersController < ApplicationController
     success = @user && @user.save
     if success && @user.errors.empty?
       flash[:notice] = "Los datos de usuario se guardaron correctamente."
-      session[:user_id] = @user.id
-      redirect_to new_company_path
+      redirect_to new_user_company_path(@user.id)
     else
       flash[:error]  = "Ocurrió un error con el registro de la cuenta, por favor intenta de nuevo"
       render :action => 'new'

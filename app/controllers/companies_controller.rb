@@ -17,16 +17,15 @@ class CompaniesController < ApplicationController
   end
   
   def new
-    @company = User.find(session[:user_id]).companies.build || @Company.new
+    @user = User.find(params[:user_id])
+    @company = Company.new
   end
   
   def create
-  	@user = User.find(session[:user_id])
+  	@user = User.find(params[:user_id])
   	@company = @user.companies.build(params[:company])
-		success = @company && @company.save
-    if success && @company.errors.empty?
+    if @company.save
       flash[:notice] = "Los datos de la compañía se guardaron correctamente"
-      session[:user_id] = nil
       redirect_to @company
     else
       render :action => 'new'

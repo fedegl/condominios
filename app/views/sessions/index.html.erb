@@ -1,7 +1,7 @@
 <h2 style="position:relative; left: 100px;">Encuentra el mejor administrador para tu condominio</h2>
 <div id="search">
 <h2>¿En qu&eacute; lugar buscas?</h2>
-	<% form_for Company, :url => {:controller => "companies", :action => "index"} do |f| %>
+	<% form_for Company, :url => companies_path, :html => {:method => :get} do |f| %>
 		<%= select_tag :location, "<option value=0>Buscar</option>"+grouped_options_for_select(
 															{"México" => options_from_collection_for_select(State.all, :short2, :name), 															"Internacional" => options_from_collection_for_select(Country.all, :short, :name)}),
 															:class => "dropdownsearch" %>

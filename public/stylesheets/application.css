@@ -60,18 +60,23 @@ a {
 	background-image: url("/images/fondoheader.png");
 	width: 811px;
 	height: 114px;
+	position: relative;
 }
 
 #left_header {
 	background-image: url("/images/doblezizq.png") no-repeat;
-	position: relative;
-	float:left;
+	position: absolute;
+	width: 16px;
+	top: 0;
+	left: 0;
 }
 
 #right_header {
 	background-image: url("/images/doblezizq.png") no-repeat;
-	position: relative;
-	float:right;
+	position: absolute;
+	width: 16px;
+	top: 0;
+	right: 0;
 }
 
 #signup {
@@ -166,8 +171,9 @@ a {
 }
 
 #register_form .text_field {
+	font-size: 24px;
 	height: 30px;
-	width: 300px;
+	width: 400px;
 	margin-bottom: 10px ;
 	margin-top: 5px ;
 	margin-left: 80px;

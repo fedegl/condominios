@@ -1,14 +1,3 @@
-<% form_for @searchlogic do |f| %>
-	<p>
-		<%= f.label :name_like, "Nombre" %><br/>
-		<%= f.text_field :name_like %>
-	</p>	
-	<p>
-		<%= f.submit "Buscar" %>
-	</p>
-<% end %>
-
-
 <% for company in @companies do %>
 <div id="company">	
 	<div id="company_name">
