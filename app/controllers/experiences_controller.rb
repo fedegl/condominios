@@ -1,9 +1,10 @@
 class ExperiencesController < ApplicationController
   
-  before_filter :find_company
-  
+  before_filter :find_company, :except => :index
+  before_filter :login_required
+	before_filter :authorized?
   def index
-    @experiences = @company.experiences
+    @experiences = Experience.all
   end
   
   def show
@@ -17,8 +18,7 @@ class ExperiencesController < ApplicationController
   def create
   	@experience = @company.experiences.build(params[:experience])
     if @experience.save
-      flash[:notice] = "Successfully created experience."
-      session[:company_id] = nil
+      flash[:notice] = "Se agregó la experiencia correctamente."
       redirect_to @experience
     else
       render :action => 'new'
@@ -32,7 +32,7 @@ class ExperiencesController < ApplicationController
   def update
     @experience = @company.experiences.find(params[:id])
     if @experience.update_attributes(params[:experience])
-      flash[:notice] = "Successfully updated experience."
+      flash[:notice] = "El elemento se actualizó correctamente."
       redirect_to @experience
     else
       render :action => 'edit'
@@ -40,13 +40,25 @@ class ExperiencesController < ApplicationController
   end
   
   def destroy
-    @experience = @company.experiences.find(params[:id])
+    @experience = Experience.find(params[:id])
     @experience.destroy
     flash[:notice] = "Successfully destroyed experience."
-    redirect_to experiences_url
+    redirect_to company_path
   end
   
   def find_company
     @company = Company.find(params[:company_id])
+  end
+  
+  protected
+  
+  def authorized?
+  	find_company
+		if current_user.id == @company.user_id
+			true
+		else
+			flash[:error] = "Ocurrió un error al intentar realizar esa acción"
+			redirect_to root_path
+		end		
   end
 end

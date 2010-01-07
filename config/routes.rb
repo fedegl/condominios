@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.search '/search', :controller => 'companies', :action => 'search'
   
+  map.resources :companies, :has_many => [:tools, :experiences]
   map.resources :users, :has_many => :companies
 
   map.resource :session

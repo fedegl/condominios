@@ -5,8 +5,11 @@
 	</p>
 	
 	<p>
-		<%= f.label :price_like, "Precio" %><br/>
-		<%= f.text_field :price_like %>
+		<%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %><br/>
+		<% for complex_type in ComplexType.find(:all) %>
+		<%= check_box_tag"company[complex_type_ids][]", complex_type.id, false, :class=>  "checkbox" %>
+		<%= complex_type.name %><br/>
+		<% end %>
 	</p>
 	
 	<p>

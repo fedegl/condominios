@@ -12,10 +12,10 @@
       <td><%=h tools.description %></td>
       <td><%=h tools.company_id %></td>
       <td><%= link_to "Show", tools %></td>
-      <td><%= link_to "Edit", edit_tools_path(tools) %></td>
+      <td><%= link_to "Edit", edit_tool_path(tools) %></td>
       <td><%= link_to "Destroy", tools, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Tools", new_tools_path %></p>
+<p><%= link_to "New Tools", new_tool_path %></p>

@@ -1,11 +1,14 @@
 class CompaniesController < ApplicationController
 
+	before_filter :login_required, :only => [:edit, :update]
+	before_filter :authorized?, :only => [:edit, :update]
+
   def index  	  
   	if params[:location] && params[:location].size == 3
-			@companies = Company.find_by_country(params[:location])
+			@companies = Company.find_by_country_short(params[:location])
 			@companies.empty? ? flash[:error] = "No se encontraron compañías en ese país" : @companies
 	  elsif params[:location] && params[:location].size == 2
-			@companies = Company.find_by_state(params[:location])
+			@companies = Company.find_by_state_short2(params[:location])
 			@companies.empty? ? flash[:error] = "No se encontraron compañías en ese estado" : @companies
 	  else
 	  	@companies = Company.find(:all)
@@ -56,6 +59,18 @@ class CompaniesController < ApplicationController
   def search
   	@searchlogic = Company.searchlogic(params[:search])
   	@companies = @searchlogic.all
+  end
+  
+  protected
+  
+  def authorized?
+  	@company = Company.find(params[:id])
+		if current_user.id == @company.user_id
+			true
+		else
+			flash[:error] = "Ocurrió un error al intentar realizar esa acción"
+			redirect_to root_path
+		end		
   end
   
 end

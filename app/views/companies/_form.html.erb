@@ -23,10 +23,10 @@
   <p>
 		<%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %><br/>
 		<% for complex_type in ComplexType.find(:all) %>
-		<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class=>  "checkbox" %>
+		<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
 		<%= complex_type.name %><br/>
 		<% end %>
-</p>
+	</p>
   
   <p>
     <%= f.label :country_id, "País", :class => "label" %><br />
@@ -43,7 +43,6 @@
     <%= f.text_field :city, :class=> "text_field" %>
   </p>
   
-  <p><%= image_submit_tag "/images/siguiente.png", :class => "next" %></p>
-  
+  <p><%= image_submit_tag "/images/siguiente.png", :class => "next" %></p>  
   
 <% end %>
