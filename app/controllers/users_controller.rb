@@ -7,6 +7,13 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  
+  def show
+  	respond_to do |type|
+      type.html
+      type.json {render :json => @experience}
+    end
+  end
  
   def create
     logout_keeping_session!
@@ -18,6 +25,16 @@ class UsersController < ApplicationController
     else
       flash[:error]  = "Ocurrió un error con el registro de la cuenta, por favor intenta de nuevo"
       render :action => 'new'
+    end
+  end
+
+	def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "La información se actualizó correctamente."
+      redirect_to root_path
+    else
+      render :action => 'edit'
     end
   end
 

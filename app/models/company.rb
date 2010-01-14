@@ -6,6 +6,14 @@ class Company < ActiveRecord::Base
 	has_many								:experiences, :dependent => :destroy
 	has_many								:tools,       :dependent => :destroy
 	
+	has_attached_file :logo, :styles => { :small => "50x160>" },
+										:default_url => "/images/missing.png",
+                  	:url  => "/assets/companies/:id/:style/:basename.:extension",
+                  	:path => ":rails_root/public/assets/companies/:id/:style/:basename.:extension"
+
+	validates_attachment_size :logo, :less_than => 1.megabytes, :message => "^La imagen que seleccionaste es demasiado grande. Debe ser menor a 1 MB."
+	validates_attachment_content_type :logo, :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']
+	
 	validates_presence_of		:name, :message => "^Debes escribir el Nombre de tu compañía"
 	validates_presence_of		:description, :message => "^Debes escribir una Descripción para tu compañía"
 	validates_presence_of		:price, :message => "^Debes escribir un Precio"
@@ -18,7 +26,7 @@ class Company < ActiveRecord::Base
 	named_scope :find_by_country_short, lambda { |location| {:joins => :country, :conditions => { :countries => {:short => location} } } }
 	named_scope :find_by_state_short2, lambda { |location| {:joins => :state, :conditions => { :states => {:short2 => location} } } }
 
-	attr_accessible :name, :price, :description, :complex_type_ids, :phone, :country_id, :state_id, :city
+	attr_accessible :name, :price, :description, :complex_type_ids, :phone, :country_id, :state_id, :city, :logo
 	
 	def phone=(string)
 	  clean_phone =  string

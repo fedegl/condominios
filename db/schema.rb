@@ -9,17 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091218162947) do
+ActiveRecord::Schema.define(:version => 20100113161119) do
 
   create_table "companies", :force => true do |t|
-    t.string  "name"
-    t.string  "description"
-    t.string  "price"
-    t.string  "phone"
-    t.string  "city"
-    t.integer "state_id"
-    t.integer "country_id"
-    t.integer "user_id"
+    t.string   "name"
+    t.string   "description"
+    t.string   "price"
+    t.string   "phone"
+    t.string   "city"
+    t.integer  "state_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "companies_complex_types", :id => false, :force => true do |t|

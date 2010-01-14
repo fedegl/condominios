@@ -10,6 +10,10 @@ class ToolsController < ApplicationController
   
   def show
     @tool = @company.tools.find(params[:id])
+    respond_to do |type|
+      type.html
+      type.json {render :json => @tool}
+    end
   end  
   
   def new
@@ -20,7 +24,7 @@ class ToolsController < ApplicationController
    	@tool = @company.tools.build(params[:tool])
     if @tool.save
       flash[:notice] = "La herramienta o servicio se ha agregado correctamente"
-      redirect_to company_path(@company)
+      redirect_to @company
     else
       render :action => 'new'
     end
@@ -31,10 +35,10 @@ class ToolsController < ApplicationController
   end
   
   def update
-  	@tool = @companies.tools.find(params[:id])
+  	@tool = @company.tools.find(params[:id])
     if @tool.update_attributes(params[:tool])
       flash[:notice] = "El elemento se actualizó correctamente."
-      redirect_to @tool
+      redirect_to root_path
     else
       render :action => 'edit'
     end

@@ -133,29 +133,36 @@ a {
 	text-decoration: none;
 }
 
-#company h2 {
+/* Index Company. */
+.company_list h2 {
 	margin-left: 10px;
 	padding-top: 10px;
 }
 
-#company a {
+.company_list a {
 	text-decoration: none;
 	color: green;
 }
 
-#company span {
+.company_list span {
 	color: #DDDDDD;
   font-weight: bold;
 }
 
-.company_info {
+.company_list #company_location, #company_complex, #company_price {
 	padding-left: 30px;
 	float:left;
 }
 
-#company_details span {
+/* Show Company */
+.company_details span {
 	color: #666666;
   font-weight: bold;
+}
+
+.company_details #company_name h1 {
+	margin-left: 40px;
+	padding-top: 5px;
 }
 
 .company_details {
@@ -164,10 +171,34 @@ a {
 	max-width: 350px;
 }
 
-#company_details #company_experience {
-	position: relative;
-	left: 350px;
-	bottom: 350px;
+.company_details #company_complex, #company_price {
+	margin-left:-30px;
+}
+
+.company_details #company_experience {
+	position: absolute;
+	left: 400px;
+	top: 300px;
+}
+
+.company_details #company_logo {
+	position: absolute;
+	right: 100px;
+	float: right; 
+	margin-top: -60px;
+}
+
+#casita {
+	background: url("/images/lilhouse.png") no-repeat ;
+	height: 40px;
+	display: block;
+}
+
+/* Edit & Register Compay */
+#register_form .label {
+	font-size: 18px;
+	padding-left: 60px;
+	
 }
 
 #register_form .text_field {
@@ -177,9 +208,10 @@ a {
 	margin-bottom: 5px ;
 	margin-top: 5px ;
 	margin-left: 80px;
+	padding-left: 0px;
 }
 
-.text_area {
+#register_form .text_area {
 	height: 100px;
 	width: 300px;
 	margin-bottom: 10px ;
@@ -187,11 +219,10 @@ a {
 	margin-left: 80px;
 }
 
-.checkbox {
+#register_form .checkbox {
 	margin-bottom: 10px ;
 	margin-top: 5px ;
-	margin-left: 80px;
-	
+	margin-left: 80px;	
 }
 
 #register_form select {
@@ -202,26 +233,25 @@ a {
 	height: 30px;
 }
 
-#casita {
-	background: url("/images/lilhouse.png") no-repeat ;
-	height: 40px;
-	display: block;
-}
-
-#register_form .label {
-	font-size: 18px;
-	padding-left: 60px;
-}
-
 #register_form .next {
 	position: relative;
 	left: 500px;
+}
+
+#register_form .cancel {
+	position: relative;
+	left: 500px;
+	bottom: 20px;
 }
 
 #register_form h2 {
 	margin-left: 50px;
 	margin-top: -30px ;
 	margin-bottom: 30px;
+}
+
+.rest_in_place:hover {
+	background: #CCCCFF;	
 }
 
 #flash_notice, #flash_error {

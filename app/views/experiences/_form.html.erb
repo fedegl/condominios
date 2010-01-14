@@ -1,20 +1,20 @@
-<% form_for (@company, @experience) do |f| %>
+<% form_for ([@company, @experience]) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name, "Nombre del condominio" %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name, "Nombre del condominio", :class => "label" %><br />
+    <%= f.text_field :name, :class => "text_field" %>
   </p>
   <p>
-    <%= f.label :description, "Descripci&oacute;n" %><br />
-    <%= f.text_area :description %>
+    <%= f.label :description, "Descripci&oacute;n", :class => "label" %><br />
+    <%= f.text_area :description, :class => "text_area" %>
   </p>
   <p>
-    <%= f.label :start_year, "Año de inicio" %><br />
-    <%= f.text_field :start_year %>
+    <%= f.label :start_year, "Año de inicio", :class => "label" %><br />
+    <%= f.text_field :start_year, :class => "text_field" %>
   </p>
   <p>
-    <%= f.label :end_year, "Año de finalizaci&oacute;n" %><br />
-    <%= f.text_field :end_year %>
+    <%= f.label :end_year, "Año de finalizaci&oacute;n", :class => "label" %><br />
+    <%= f.text_field :end_year, :class => "text_field" %>
   </p>
-  <p><%= f.submit "Agregar" %></p>
+  <p><%= f.submit "Agregar" %> <%= link_to "Cancelar", @company %></p>
 <% end %>

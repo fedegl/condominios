@@ -3,12 +3,17 @@ class ExperiencesController < ApplicationController
   before_filter :find_company, :except => :index
   before_filter :login_required
 	before_filter :authorized?
+	
   def index
     @experiences = Experience.all
   end
   
   def show
     @experience = @company.experiences.find(params[:id])
+    respond_to do |type|
+      type.html
+      type.json {render :json => @experience}
+    end
   end
   
   def new
@@ -33,7 +38,7 @@ class ExperiencesController < ApplicationController
     @experience = @company.experiences.find(params[:id])
     if @experience.update_attributes(params[:experience])
       flash[:notice] = "El elemento se actualizó correctamente."
-      redirect_to @experience
+      redirect_to root_path
     else
       render :action => 'edit'
     end
@@ -42,7 +47,7 @@ class ExperiencesController < ApplicationController
   def destroy
     @experience = Experience.find(params[:id])
     @experience.destroy
-    flash[:notice] = "Successfully destroyed experience."
+    flash[:notice] = "El elemento se eliminó correctamente."
     redirect_to company_path
   end
   

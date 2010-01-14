@@ -1,8 +1,10 @@
-<div id="company_details">
-	<div id="company_name">
+<div class="company_details">
+	<div id="company_name" class="company_details">
 		<img src="/images/lilhouse.png" style="float:left;"/>
 		<h1><%= @company.name %></h1>
-		<img src="/images/codegent.png" style="float:right; margin-top: -60px;"/>
+		<div id="company_logo" class="company_details">
+			<%= image_tag @company.logo.url(:small) %>
+		</div>
 	</div>
 	
 	<div id="company_description" class="company_details">
@@ -10,7 +12,7 @@
 		<%= @company.description %>
 	</div>
 	
-	<div id="company_city" class="company_details">
+	<div id="company_location" class="company_details">
 		<span>Ubicaci&oacute;n</span><br/>
 		<%= @company.city %>, <%= @company.country.name %>
 	</div>
@@ -26,16 +28,15 @@
 	</div>
 	
 	<div id="company_tools" class="company_details">
-		<% if @company.tools.size != 0 %>
+		<% if !@company.tools.empty? %>
 			<span>Herramientas y Servicios</span><br/>
 			<ul>
 				<% for tool in @company.tools do %>
-					<li><%= tool.name %>. <%= tool.description %>
-					<% if session[:user_id] == @company.user_id %>
-					<%= link_to "Editar", edit_company_tool_path(@company.id, tool) %>
-					<%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemeto?', :method => :delete %>
+					<% if logged_in? %>					
+						<li><span class="rest_in_place" url="<%= company_tool_path(@company.id, tool) %>" object="tool" attribute="name"><%= tool.name %></span>. <span class="rest_in_place" url="<%= company_tool_path(@company.id, tool) %>" object="tool" attribute="description"><%= tool.description %></span><%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemeto?', :method => :delete %></li>
+						<% else %>
+							<li><%= tool.name %>. <%= tool.description %></li>
 					<% end %>
-					</li>
 			<% end %>
 			</ul>
 		<% end %>
@@ -51,7 +52,7 @@
 	</div>
 
 	<div id="company_experience" class="company_details">	
-		<% if @company.experiences.size != 0 %>
+		<% if !@company.experiences.empty? %>
 			<span>Condominios que ha administrado</span><br/>
 			<table cellspacing="5" cellpading="5">
 				<tr><th>Nombre</th><th>Descripci&oacute;n</th><th>Desde</th><th>Hasta</th></tr>
@@ -61,7 +62,7 @@
 						<td><%= experience.description %></td>
 						<td><%= experience.start_year %></td>
 						<td><%= experience.end_year %></td>
-					<% if session[:user_id] == @company.user_id %>	
+					<% if session[:user_id] == @company.user_id %>
 						<td>
 							<%= link_to "Editar", edit_company_experience_path(@company.id, experience) %>
 							<%= link_to "Borrar", company_experience_path(@company.id, experience), :confirm => '¿Estás seguro de querer eliminar este elemeto?', :method => :delete %>

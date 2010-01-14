@@ -1,23 +1,29 @@
-<% form_for([@user, @company]) do |f| %>
+<% form_for([@user, @company], :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name, "Nombre", :class => "label"%><br />
-    <%= f.text_field :name, :class=> "text_field" %>
+    <%= f.text_field :name, :class => "text_field" %>
   </p>
   
   <p>
-    <%= f.label :description, "Descripción", :class => "label"  %><br />
-    <%= f.text_area :description, :class=> "text_area" %>
+    <%= f.label :description, "Descripci&oacute;n", :class => "label" %><br />
+    <%= f.text_area :description, :class => "text_area" %>
+  </p>
+  
+  <p>
+  	<%= f.label :logo, "Logo de tu Compañía", :class => "label" %><br/>
+  	<%= f.file_field :logo %>
   </p>
   
   <p>
     <%= f.label :price, "Precio", :class => "label" %><br />
-    <%= f.text_field :price, :class=> "text_field" %>
-  </p>
-  
+    <%= f.text_field :price, :class => "text_field" %>
+  <p/>
+  <br/>
+  <br/>
   <p>
-    <%= f.label :phone, "Teléfono", :class => "label" %><br />
-    <%= f.text_field :phone, :class=> "text_field" %>
+    <%= f.label :phone, "Tel&eacute;fono", :class => "label" %><br />
+    <%= f.text_field :phone, :class => "text_field" %>
   </p>
   
   <p>
@@ -33,7 +39,7 @@
     <%= collection_select :company, :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %>
   </p>
   
-  <p>
+  <p id="company_state">
     <%= f.label :state_id, "Estado", :class => "label"  %><br />
     <%= collection_select :company, :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %>
   </p>
@@ -43,6 +49,6 @@
     <%= f.text_field :city, :class=> "text_field" %>
   </p>
   
-  <p><%= image_submit_tag "/images/siguiente.png", :class => "next" %></p>  
+  <p><%= image_submit_tag "/images/siguiente.png", :class => "next" %> <%= link_to "Cancelar", @company, :class => "cancel" %></p>  
   
 <% end %>

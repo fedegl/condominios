@@ -17,6 +17,10 @@ class CompaniesController < ApplicationController
   
   def show
     @company = Company.find(params[:id])
+    respond_to do |type|
+      type.html
+      type.json {render :json => @company}
+    end
   end
   
   def new
@@ -42,7 +46,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
     if @company.update_attributes(params[:company])
-      flash[:notice] = "Successfully updated company."
+      flash[:notice] = "La información de la compañía se actualizó correctamente."
       redirect_to @company
     else
       render :action => 'edit'
@@ -52,7 +56,7 @@ class CompaniesController < ApplicationController
   def destroy
     @company = Company.find(params[:id])
     @company.destroy
-    flash[:notice] = "Successfully destroyed company."
+    flash[:notice] = "La compañía se eliminó correctamente."
     redirect_to companies_url
   end
   
