@@ -134,54 +134,70 @@ a {
 }
 
 /* Index Company. */
-.company_list h2 {
+#company_list h2 {
 	margin-left: 10px;
 	padding-top: 10px;
 }
 
-.company_list a {
+#company_list a {
 	text-decoration: none;
 	color: green;
 }
 
-.company_list span {
+#company_list span {
 	color: #DDDDDD;
   font-weight: bold;
 }
 
-.company_list #company_location, #company_complex, #company_price {
+#company_list .info {
 	padding-left: 30px;
 	float:left;
 }
 
-/* Show Company */
-.company_details span {
-	color: #666666;
-  font-weight: bold;
+#company_list #company_logo {
+	float: right;
+	margin-top: -60px;
 }
 
-.company_details #company_name h1 {
-	margin-left: 40px;
+/* Show Company */
+#company_details .left {
+	float:left;
+}
+
+#company_details .right {
+	float:right;
+}
+
+#company_details span {
+	color: #666666;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+#company_complex ul li {
+	margin-bottom: -10px;
+}
+
+#company_details #company_name h1 {
+	margin-left: 50px;
 	padding-top: 5px;
 }
 
-.company_details {
-	clear: both;
+#company_details {
 	margin-bottom: 20px;
-	max-width: 350px;
+	width: 350px;
 }
 
-.company_details #company_complex, #company_price {
-	margin-left:-30px;
+#company_details .detail {
+	padding-bottom: 15px;
 }
 
-.company_details #company_experience {
+#company_experience {
 	position: absolute;
-	left: 400px;
-	top: 300px;
+	margin-left: 40px;
 }
 
-.company_details #company_logo {
+#company_details #company_logo {
 	position: absolute;
 	right: 100px;
 	float: right; 
@@ -197,8 +213,7 @@ a {
 /* Edit & Register Compay */
 #register_form .label {
 	font-size: 18px;
-	padding-left: 60px;
-	
+	padding-left: 60px;	
 }
 
 #register_form .text_field {
@@ -242,6 +257,10 @@ a {
 	position: relative;
 	left: 500px;
 	bottom: 20px;
+}
+
+#register_form .logo {
+	padding-left: 80px;
 }
 
 #register_form h2 {

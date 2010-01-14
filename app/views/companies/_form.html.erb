@@ -12,7 +12,7 @@
   
   <p>
   	<%= f.label :logo, "Logo de tu Compañía", :class => "label" %><br/>
-  	<%= f.file_field :logo %>
+  	<%= image_tag @company.logo.url(:small), :class => "logo" %><%= f.file_field :logo %>
   </p>
   
   <p>

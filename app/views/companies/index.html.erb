@@ -1,17 +1,17 @@
 <% for company in @companies do %>
-<div class="company_list">	
-	<div id="company_name" class="company_list">
+<div id="company_list">	
+	<div id="company_name">
 		<img style="float:left;" src="/images/lilhouse.png"/>
 		<h2><%= link_to company.name, company %></h2>
-		<div id="company_logo" class="company_list">
-			<img style="float:right; margin-top:-60px;" src="/images/codegent.png"/>
+		<div id="company_logo">
+			<%= image_tag company.logo.url(:small) %>
 		</div>
 	</div>
-	<div id="company_price" class="company_info">
+	<div id="company_price" class="info">
 		<span>Precio</span><br/>
 			<%= company.price %>
 	</div>
-	<div id="company_location" class="company_list">
+	<div id="company_location" class="info">
 		<span>Ubicaci&oacute;n</span><br/>
 		<%= company.city %>,
 		<% if company.state %>
@@ -19,10 +19,11 @@
 		<% end %>
 		<%= company.country.name %>
 	</div>
-	<div id="company_complex" class="company_list">
+	<div id="company_complex" class="info">
 		<span>Tipo de Condominio</span><br/>
 		<%= company.complex_types.collect{|c| c.name}.join(", ") %>
 	</div>
 	<div id="division"><img src="/images/division.png"/></div>
+	<div class="clear"></div>
 </div>
 <% end %>
