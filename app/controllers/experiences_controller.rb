@@ -24,7 +24,7 @@ class ExperiencesController < ApplicationController
   	@experience = @company.experiences.build(params[:experience])
     if @experience.save
       flash[:notice] = "Se agregó la experiencia correctamente."
-      redirect_to @experience
+      redirect_to @company
     else
       render :action => 'new'
     end
@@ -48,7 +48,7 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
     @experience.destroy
     flash[:notice] = "El elemento se eliminó correctamente."
-    redirect_to company_path
+    redirect_to @company
   end
   
   def find_company

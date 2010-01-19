@@ -57,7 +57,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
     @company.destroy
     flash[:notice] = "La compañía se eliminó correctamente."
-    redirect_to companies_url
+    redirect_to(:back)
   end
   
   def search

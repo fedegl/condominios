@@ -37,9 +37,10 @@ a {
 
 #sub_container {
 	width: 811px;
-	position: relative;
+	margin: 0 auto;
+/*	position: relative;
 	left: 106px;
-	margin-top: 20px;
+	margin-top: 20px;*/
 }
 
 #sub_content {
@@ -48,9 +49,9 @@ a {
 	padding: 30px 40px 30px 40px;
 	background-color: #FFFFFF;
 	-webkit-border-bottom-right-radius: 9px;	/* for Safari */
-	-moz-border-bottom-right-radius: 9px;			/* for Firefox */
+	-moz-border-radius-bottomright: 9px;			/* for Firefox */
 	-webkit-border-bottom-left-radius: 9px;		/* for Safari */
-	-moz-border-bottom-left-radius: 9px;			/* for Firefox */
+	-moz-border-radius-bottomleft: 9px;			/* for Firefox */
 	border-color: #E6E6E6;
 	border-style: solid;
 	border-width: 5px 0px 0px;
@@ -62,9 +63,9 @@ a {
 
 #header {
  -webkit-border-top-right-radius: 9px;    /* for Safari */
- -moz-border-top-right-radius: 9px;       /* for Firefox */
+ -moz-border-radius-topright: 9px;       /* for Firefox */
  -webkit-border-top-left-radius: 9px;    /* for Safari */
- -moz-border-top-left-radius: 9px;       /* for Firefox */
+ -moz-border-radius-topleft: 9px;       /* for Firefox */
 	background-image: url("/images/fondoheader.png");
 	width: 811px;
 	height: 114px;
@@ -111,21 +112,13 @@ a {
 	left: 150px;
 }
 
-/*.dropdownsearch {
-	background-color: #FFFFFF;
-	font-size: 20px;
-	height: 56px;
-	width: 300px;
-	float:left;
-}*/
-
 .searchbtn {
 	margin-top: -5.5px;
 	float:clear;	
 }
 
-#footer {
-	margin-left: -106px;
+#city {
+	margin-left: -206px;
 }
 
 #disclaimer {
@@ -187,9 +180,14 @@ a {
 	padding-top: 5px;
 }
 
-#company_details {
-	margin-bottom: 20px;
-	width: 350px;
+#company_details_left {
+	width:350px;
+}
+
+#company_details_right {
+	width: 300px;
+	position: relative;
+	right: 30px;
 }
 
 #company_details .detail {
@@ -202,9 +200,6 @@ a {
 }
 
 #company_details #company_logo {
-	position: absolute;
-	right: 100px;
-	float: right; 
 	margin-top: -60px;
 }
 
@@ -280,6 +275,36 @@ a {
 
 #search_submit {
 	margin-top: 20px;
+}
+
+/* Show User */
+
+#user_details .property {
+	color: #666666;
+  font-weight: bold;
+}
+
+#user_details #user_companies {
+	max-width: 400px;
+}
+
+#user_details #user_companies #name a {
+  font-size: 1.2em;
+  font-weight: bold;
+	text-decoration: none;
+	color:green;
+}
+
+#user_details #user_companies #delete a {
+	text-decoration: none;
+	font-size: 8pt;
+	padding-left: 15px;
+}
+
+#user_details #user_companies #description {
+  color: black;
+  font-weight: normal;
+	font-style: italic;
 }
 
 .rest_in_place:hover {

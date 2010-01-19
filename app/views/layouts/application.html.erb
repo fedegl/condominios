@@ -19,7 +19,7 @@
       <div id="sub_container">
       	<div id="signin">					
 					<% if logged_in? %>
-						<p>Bienvenido <%= current_user.name %> | <%= link_to "Salir", logout_path %></p>
+						<p>Bienvenido <%= link_to current_user.name, user_path(current_user) %> | <%= link_to "Salir", logout_path %></p>
 					<% else %>
 						<a href="/signup" id="signup" class="options"><img src="/images/signupbtn.png"></a>
 						<a href="/login" id="login" class="options"><img src="/images/loginbtn.png"></a>
@@ -39,7 +39,7 @@
 		      <%- end -%>
 		      <%= yield %>
       	</div>
-      	<div><img id="footer" src="/images/ciudad.png"/></div>
+      	<div><img id="city" src="/images/ciudad.png"/></div>
       </div>
      	<div id="disclaimer">
      		<a href="#">¿Quiénes somos? </a>/<a href="#"> Contáctanos </a>/<a href="#"> Privacidad </a>/
