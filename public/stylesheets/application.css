@@ -20,6 +20,14 @@ a {
   overflow: hidden;
 }
 
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
 #main_container {
   width: 1024px;
   margin: 0 auto;
@@ -103,13 +111,13 @@ a {
 	left: 150px;
 }
 
-.dropdownsearch {
+/*.dropdownsearch {
 	background-color: #FFFFFF;
 	font-size: 20px;
 	height: 56px;
 	width: 300px;
 	float:left;
-}
+}*/
 
 .searchbtn {
 	margin-top: -5.5px;
@@ -134,8 +142,12 @@ a {
 }
 
 /* Index Company. */
+#company_list {
+	margin-top: 20px;
+}
+
 #company_list h2 {
-	margin-left: 10px;
+	margin-left: 25px;
 	padding-top: 10px;
 }
 
@@ -160,14 +172,6 @@ a {
 }
 
 /* Show Company */
-#company_details .left {
-	float:left;
-}
-
-#company_details .right {
-	float:right;
-}
-
 #company_details span {
 	color: #666666;
   font-weight: bold;
@@ -267,6 +271,15 @@ a {
 	margin-left: 50px;
 	margin-top: -30px ;
 	margin-bottom: 30px;
+}
+
+/* Search Company */
+#search_right {
+	margin-right: 100px;
+}
+
+#search_submit {
+	margin-top: 20px;
 }
 
 .rest_in_place:hover {

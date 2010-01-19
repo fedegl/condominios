@@ -4,18 +4,26 @@
   <head>
     <title><%= h(yield(:title) || "Administración de Condominios") %></title>
     <%= stylesheet_link_tag 'application' %>
-    <%= javascript_include_tag 'jquery-1.3.2.js' %>
-    <%= javascript_include_tag 'application.js' %>
-    <%= javascript_include_tag 'jquery.rest_in_place.js' %>
+    <%= stylesheet_link_tag 'ui.selectmenu' %>
+    <%= stylesheet_link_tag 'jquery-ui-1.7.2.custom' %>
+    <%= javascript_include_tag 'jquery-1.3.2' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'jquery.rest_in_place' %>
+    <%= javascript_include_tag 'jquery-ui-1.7.2.custom.min' %>
+    <%= javascript_include_tag 'ui.selectmenu' %>
     <%= yield(:head) %>
    
   </head>
   <body>
     <div id="main_container">      
       <div id="sub_container">
-      	<div id="signin">
-					<a href="/signup" id="signup" class="options"><img src="/images/signupbtn.png"></a>
-					<a href="/login" id="login" class="options"><img src="/images/loginbtn.png"></a>
+      	<div id="signin">					
+					<% if logged_in? %>
+						<p>Bienvenido <%= current_user.name %> | <%= link_to "Salir", logout_path %></p>
+					<% else %>
+						<a href="/signup" id="signup" class="options"><img src="/images/signupbtn.png"></a>
+						<a href="/login" id="login" class="options"><img src="/images/loginbtn.png"></a>
+					<% end %>					
 		 		</div>
   	    <div id="header">
    	 			<div id="left_header"><img src="/images/doblezizq.png"/></div>

@@ -13,6 +13,8 @@ $(document).ready(function() {
 				$("#company_state").hide();
 			}
     });
-  })  
+  })
+  
+  $("select#location").selectmenu({maxHeight: 350, width: 300, style:'dropdown'});
   
 });

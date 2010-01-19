@@ -1,4 +1,5 @@
 <% form_for @searchlogic do |f| %>
+<div id="search_left" class="left">
 	<p>
 		<%= f.label :name_like, "Nombre" %><br/>
 		<%= f.text_field :name_like %>
@@ -11,7 +12,8 @@
 		<%= complex_type.name %><br/>
 		<% end %>
 	</p>
-	
+</div>
+<div id="search_right" class="right">
 	<p>
     <%= f.label :country_id_equals, "País", :class => "label" %><br />
     <%= collection_select :search, :country_id_equals, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %>
@@ -24,28 +26,33 @@
   
   <p>
     <%= f.label :city_like, "Ciudad", :class => "label" %><br />
-    <%= f.text_field :city_like, :class=> "text_field" %>
+    <%= f.text_field :city_like, :class => "text_field" %>
   </p>
-	
-	<p>
+  
+  <p id="search_submit">
 		<%= f.submit "Buscar" %>
 	</p>
+  
+</div>
+
+<div class="clear"></div>	
 <% end %>
 
-<% if params[:search] %>	
+<% if params[:search] %>
 	<% for company in @searchlogic do %>
-	<div id="company">	
+	<div id="company_list">	
 		<div id="company_name">
 			<img style="float:left;" src="/images/lilhouse.png"/>
 			<h2><%= link_to company.name, company %></h2>
-			<img style="float:right; margin-top:-60px;"src="/images/codegent.png"/>
+			<div id="company_logo">			
+				<%= image_tag company.logo.url %>
+			</div>
 		</div>
-		<div id="company_info">
-			<div id="company_price" class="company_info">
+			<div id="company_price" class="info">
 				<span>Precio</span><br/>
 				<%= company.price %>
 			</div>
-			<div id="company_city" class="company_info">
+			<div id="company_city" class="info">
 				<span>Ubicaci&oacute;n</span><br/>
 				<%= company.city %>,
 				<% if company.state %>
@@ -53,12 +60,11 @@
 				<% end %>			
 				 <%= company.country.name %>
 			</div>
-			<div id="company_complex" class="company_info">
+			<div id="company_complex" class="info">
 				<span>Tipo de Condominio</span><br/>
 				<%= company.complex_types.collect{|c| c.name}.join(", ") %>
 			</div>
 			<div id="division"><img src="/images/division.png"/></div>
-		</div>
 	</div>
 	<% end %>
 <% end %>
