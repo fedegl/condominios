@@ -72,7 +72,7 @@
 							<% if session[:user_id] == @company.user_id %>
 								<td>
 									<%= link_to "Editar", edit_company_experience_path(@company.id, experience) %>
-									<%= link_to "Borrar", company_experience_path(@company.id, experience), :confirm => '¿Estás seguro de querer eliminar este elemeto?', :method => :delete %>
+									<%= link_to "Borrar", company_experience_path(@company.id, experience), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete %>
 								</td>
 							<% end %>
 						<% end %>

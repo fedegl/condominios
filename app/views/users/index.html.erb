@@ -1,0 +1,18 @@
+<% if admin? %>
+<table border="0" cellspacing="10" cellpadding="0">
+	<tr><th>Nombre</th><th>Correo electrónico</th><th>Compañía</th></tr>
+		<% for user in @users do %>
+			<tr>
+			<td><%= user.name %></td>
+			<td><%= user.email %></td>
+			<td><%= user.companies.collect{|c| link_to c.name, company_path(c)}.join(", ") %></td>
+			<td><%= link_to "Editar", edit_user_path(user) %>
+				  <%= link_to "Borrar", user_path(user), :confirm => '¿Estás seguro de querer eliminar este usuario?', :method => :delete %>
+			</tr>
+	<% end %>
+</table>
+<% else %>
+	<% flash[:error] = "No se te permite realizar esta acción" %>
+	<% redirect_to root_path %>redirect_to root_path
+<% end %>
+

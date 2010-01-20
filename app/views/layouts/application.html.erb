@@ -18,11 +18,13 @@
     <div id="main_container">      
       <div id="sub_container">
       	<div id="signin">					
-					<% if logged_in? %>
-						<p>Bienvenido <%= link_to current_user.name, user_path(current_user) %> | <%= link_to "Salir", logout_path %></p>
-					<% else %>
-						<a href="/signup" id="signup" class="options"><img src="/images/signupbtn.png"></a>
-						<a href="/login" id="login" class="options"><img src="/images/loginbtn.png"></a>
+					<% if admin? %>
+						<p>Bienvenido <%= link_to current_user.name, user_path(current_user) %> | <%= link_to "Salir", logout_path %> | <%= link_to "Administración", users_path %></p>
+						<% elsif logged_in? %>
+							Bienvenido <%= link_to current_user.name, user_path(current_user) %> | <%= link_to "Salir", logout_path %></p>
+						<% else %>
+							<a href="/signup" id="signup" class="options"><img src="/images/signupbtn.png"></a>
+							<a href="/login" id="login" class="options"><img src="/images/loginbtn.png"></a>
 					<% end %>					
 		 		</div>
   	    <div id="header">
