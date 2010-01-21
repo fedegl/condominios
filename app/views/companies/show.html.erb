@@ -64,13 +64,12 @@
 				<% if !@company.experiences.empty? %>
 					<span>Condominios que ha administrado</span><br/>
 					<table cellspacing="5" cellpading="5">
-						<tr><th>Nombre</th><th>Descripci&oacute;n</th><th>Desde</th><th>Hasta</th></tr>
+						<tr><th>Nombre</th><th>Desde&nbsp;&nbsp;></th><th>Hasta</th></tr>
 						<% for experience in @company.experiences do %>
 							<tr>
-								<td><%= experience.name %></td>
-								<td><%= experience.description %></td>
-								<td><%= experience.start_year %></td>
-								<td><%= experience.end_year %></td>
+								<td id="experience"><%= experience.name %></td>								
+								<td id="start_year"><%= experience.start_year %></td>
+								<td id="end_year"><%= experience.end_year %></td>
 							<% if session[:user_id] == @company.user_id %>
 								<td>
 									<%= link_to "Editar", edit_company_experience_path(@company.id, experience) %>
