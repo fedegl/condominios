@@ -6,7 +6,7 @@ class Company < ActiveRecord::Base
 	has_many								:experiences, :dependent => :destroy
 	has_many								:tools,       :dependent => :destroy
 	
-	has_attached_file :logo, :styles => { :small => "50x160" },
+	has_attached_file :logo, :styles => { :small => "150x100>" },
 										:default_url => "/images/missing.png",
                   	:url  => "/assets/companies/:id/:style/:basename.:extension",
                   	:path => ":rails_root/public/assets/companies/:id/:style/:basename.:extension"

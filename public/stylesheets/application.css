@@ -1,9 +1,14 @@
+html {
+	height: 100%;
+}
+
 body {
   background-color: #FFFFFF;
   background-image: url("/images/fondocielo.png");
   background-repeat: repeat-x;
   font-family: Arial, Helvetica, Verdana;
   font-size: 14px;
+  height: 100%
 }
 
 a img {
@@ -29,8 +34,11 @@ a {
 }
 
 #main_container {
+	min-height: 100%;
+  position: relative;
   width: 1024px;
   margin: 0 auto;
+  margin-bottom: -343px;
 	background-image: url("/images/nubes.png");
 	background-repeat: no-repeat;
 }
@@ -38,11 +46,12 @@ a {
 #sub_container {
 	width: 811px;
 	margin: 0 auto;
+	min-height: 100%;
 }
 
 #sub_content {
 	width: 86.3%;
-	min-height: 165px;
+	min-height: 100%;
 	margin: 0 auto;
 	padding: 30px 40px 30px 40px;
 	background-color: #FFFFFF;
@@ -57,6 +66,8 @@ a {
 
 #signin {
 	text-align: right;
+	margin-bottom: 10px;
+	margin-right: 20px;
 }
 
 #header {
@@ -115,22 +126,24 @@ a {
 	float:clear;	
 }
 
-#city {
-	margin-left: -206px;
+
+#footer {
+	width: 1244px;
+	height: 343px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#footer #city {
 	margin-top: 20px;
 }
 
-#footer {
-	height: 45px;
-	width: 1263px;
-	background-color: #335533;
-	margin-top: -3px;
-	margin-left: 100px;
-}
-
 #footer #info {
-	padding-top: 15px;
+	background-color: #335533;
 	padding-left: 250px;
+	margin-top: -3px;
+	padding-top: 20px;
+	height: 25px;
 }
 
 #footer a{
@@ -138,9 +151,14 @@ a {
 	text-decoration: none;
 }
 
+.clearfooter {
+   height: 343px;
+   clear: both;
+}
+
 /* Index Company. */
 #company_list {
-	margin-top: 20px;
+	margin-top: 45px;
 }
 
 #company_list h2 {
@@ -169,48 +187,65 @@ a {
 }
 
 /* Show Company */
-#company_details span {
+#company_details {
 	color: #666666;
+	font-size: 15px;
+}
+
+#company_details span {
+	color: #333333;
   font-weight: bold;
-  padding-bottom: 10px;
+  font-size: 16px;
 }
 
 #company_complex ul li {
 	margin-bottom: -10px;
 }
 
+#company_details #company_name {
+	border-bottom: 1px solid #CCCCCC;
+	height: 100px;
+	margin-top: 40px;
+}
+
+#company_details #company_name img {
+	padding-top: 45px;
+}
+
 #company_details #company_name h1 {
+	color: #333333;
 	margin-left: 50px;
-	padding-top: 5px;
+	padding-top: 45px;
+}
+
+#company_details #company_logo {
+	margin-top: -160px;
+}
+
+#company_details #company_tools ul li span {
+	color: #666666;
+	font-weight:normal;
+	font-size: 15px;
 }
 
 #company_details_left {
-	width:350px;
+	width: 320px;
+	margin-top: 20px;
+	border-right: 1px solid #CCCCCC;
 }
 
 #company_details_right {
 	width: 300px;
 	position: relative;
 	right: 30px;
+	margin-top: 20px;
 }
 
 #company_details .detail {
 	padding-bottom: 15px;
 }
 
-#company_experience {
-	position: absolute;
-	margin-left: 40px;
-}
-
-#company_details #company_logo {
-	margin-top: -60px;
-}
-
-#casita {
-	background: url("/images/lilhouse.png") no-repeat ;
-	height: 40px;
-	display: block;
+#company_experience {	
 }
 
 /* Edit & Register Compay */
@@ -273,6 +308,12 @@ a {
 }
 
 /* Search Company */
+.search_admin {
+	float: right;
+	position: relative;
+	bottom: 20px;
+}
+
 #search_right {
 	margin-right: 100px;
 }
@@ -366,4 +407,66 @@ a {
 #errorExplanation ul li {
   font-size: 12px;
   list-style: disc;
+}
+
+
+/* Login Dropdown */
+#signin_menu {
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    display:none;
+    background-color:#FFFF99;
+    position:absolute;
+    width:233px;
+    height: 135px;
+    z-index:100;
+    border:1px transparent;
+    text-align:left;
+    padding:12px;
+    top: 22px; 
+    right: 0px; 
+    margin-top:5px;
+    margin-right: 0px;
+    *margin-right: -1px;
+    color:#666666;
+    font-size:11px;
+}
+
+#signin_menu input[type=text], #signin_menu input[type=password] {
+    display:block;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border:1px solid #ACE;
+    font-size:13px;
+    margin:0 0 5px;
+    width:203px;
+    height: 22px;
+}
+	
+#signin_menu label {
+	font-weight:normal;
+	font-size: 11px;
+	color: #333333;
+}
+
+#signin_menu p {
+	margin-top: -1px;
+}
+
+#signin_menu #loginbtn {
+	text-align: right;	
+}
+
+#signin_menu #loginbtn span {
+	position: relative;
+	margin-right: 20px;
+	bottom: 10px;
+}
+
+#signin_menu #loginbtn a {
+	color: #333333;
 }

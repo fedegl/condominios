@@ -1,6 +1,6 @@
 <div id="company_details">
 	<div id="company_name">
-		<img src="/images/lilhouse.png" style="float:left;"/>
+ 		<img src="/images/lilhouse.png" style="float:left;"/>
 		<h1><%= @company.name %></h1>
 		<div id="company_logo" class="right">
 			<%= image_tag @company.logo.url(:small) %>
@@ -8,29 +8,20 @@
 	</div>
 	
 	<div class="left">
-		<div id="company_details_left">	
-			<div id="company_description" class="detail">
-				<span>Descripci&oacute;n</span><br/>
-				<%= @company.description %>
-			</div>
-	
+		<div id="company_details_left">
+		
 			<div id="company_location" class="detail">
 				<span>Ubicaci&oacute;n</span><br/>
 				<%= @company.city %>, <%= @company.country.name %>
 			</div>
-	
+			
 			<div id="company_complex" class="detail">
 				<span>Tipo de condominios</span><br/>
 				<% for complex in @company.complex_types do %>
 				<ul><li><%= complex.name %></li></ul>
 				<% end %>
-			</div>	
-	
-			<div id="company_price" class="detail">
-				<span>Precio</span><br/>
-				<%= @company.price %>
 			</div>
-	
+			
 			<div id="company_tools" class="detail">
 				<% if !@company.tools.empty? %>
 					<span>Herramientas y Servicios</span><br/>
@@ -47,7 +38,12 @@
 				<% if session[:user_id] == @company.user_id %>
 					<%= link_to "Agregar nueva herramienta", new_company_tool_path(@company.id) %>			
 				<% end %>
-			</div>
+			</div>			
+	
+			<div id="company_price" class="detail">
+				<span>Precio</span><br/>
+				<%= @company.price %>
+			</div>			
 	
 			<div id="company_contact" class="detail">
 				<span>Contacto</span><br/>
@@ -56,8 +52,14 @@
 			</div>
 		</div>
 	</div>	
+	
 	<div class="right">
-		<div id="company_details_right">	
+		<div id="company_details_right">
+			<div id="company_description" class="detail">
+				<span>Descripci&oacute;n</span><br/>
+				<%= @company.description %>
+			</div>			
+		
 			<div id="company_experience" class="detail">
 				<% if !@company.experiences.empty? %>
 					<span>Condominios que ha administrado</span><br/>
@@ -81,7 +83,7 @@
 				<% if session[:user_id] == @company.user_id %>
 					<%= link_to "Agregar nueva experiencia", new_company_experience_path(@company.id) %>
 				<% end %>
-			</div>
+			</div>			
 		</div>
 	</div>
 	

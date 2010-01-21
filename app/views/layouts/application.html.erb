@@ -23,10 +23,27 @@
 						<% elsif logged_in? %>
 							Bienvenido <%= link_to current_user.name, user_path(current_user) %> | <%= link_to "Salir", logout_path %></p>
 						<% else %>
-							<a href="/signup" id="signup" class="options"><img src="/images/signupbtn.png"></a>
-							<a href="/login" id="login" class="options"><img src="/images/loginbtn.png"></a>
+							<%= link_to image_tag("/images/signupbtn.png"), signup_path, :class => "options" %>
+							<%= link_to image_tag("/images/loginbtn.png"), "#", :class => "signin options" %>
 					<% end %>					
 		 		</div>
+		 		
+		 		<fieldset id="signin_menu">
+		 			<% form_tag session_path do -%>
+						<p><%= label_tag 'E-mail' %><br />
+						<%= text_field_tag 'email', @email %></p>
+
+						<p><%= label_tag 'password' %><br/>
+						<%= password_field_tag 'password', nil %></p>
+
+						<!-- Uncomment this if you want this functionality
+						<p><%= label_tag 'remember_me', 'Remember me' %>
+						<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+						-->						
+						<p id="loginbtn"><span><%= link_to "¿Olvidaste tu contraseña?", "#" %></span><%= image_submit_tag "/images/login_small.png" %></p>
+					<% end -%>
+		  	</fieldset> 
+  
   	    <div id="header">
    	 			<div id="left_header"><img src="/images/doblezizq.png"/></div>
 					<a href="/"><img class="logomarca" src="/images/logo.png"/></a>
@@ -39,16 +56,24 @@
 		      <%- if show_title? -%>
 		        <h1><%=h yield(:title) %></h1>
 		      <%- end -%>
+		      
+		      <% unless current_page?(:controller => 'sessions') or current_page?(:controller => 'companies', :action => 'search') %>
+		      	<%= link_to image_tag("/images/busca_admin.png"), search_path, :class => "search_admin" %>
+		      <% end %>
+		      
 		      <%= yield %>
-      	</div>
-      	<div id="city"><img src="/images/ciudad.png"/></div>
+      	</div>      	
       </div>
+      <div class="clearfooter"></div>
     </div>
-    <div id="footer">
-    	<div id="info">
-	    	<a href="#">¿Quiénes somos? </a>/<a href="#"> Contáctanos </a>/<a href="#"> Privacidad </a>/
-	    	<a href="http://www.innku.com">Innku</a>    		
-    	</div>
-    </div>
+    	<div id="footer">
+    		<div id="city">
+    			<img src="/images/ciudad.png"/>
+    		</div>
+    		<div id="info">
+    			<a href="#">¿Quiénes somos? </a>/<a href="#"> Contáctanos </a>/<a href="#"> Privacidad </a>/
+	    		<a href="http://www.innku.com">Innku</a>
+    		</div>
+    	</div>    	
   </body>
 </html>
