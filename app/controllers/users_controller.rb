@@ -3,7 +3,12 @@ class UsersController < ApplicationController
   include AuthenticatedSystem
   
   def index
-  	@users = User.find(:all)
+  	if admin?
+  		 @users = User.find(:all)  		
+  	else
+  		flash[:error] = "No se te permite realizar esta acción"
+  		redirect_to root_path
+  	end
   end
 
   # render new.rhtml

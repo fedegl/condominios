@@ -45,7 +45,7 @@
 			<img style="float:left;" src="/images/lilhouse.png"/>
 			<h2><%= link_to company.name, company %></h2>
 			<div id="company_logo">			
-				<%= image_tag company.logo.url %>
+				<%= image_tag company.logo.url(:small) %>
 			</div>
 		</div>
 			<div id="company_price" class="info">

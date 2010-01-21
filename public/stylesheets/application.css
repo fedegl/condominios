@@ -38,13 +38,11 @@ a {
 #sub_container {
 	width: 811px;
 	margin: 0 auto;
-/*	position: relative;
-	left: 106px;
-	margin-top: 20px;*/
 }
 
 #sub_content {
 	width: 86.3%;
+	min-height: 165px;
 	margin: 0 auto;
 	padding: 30px 40px 30px 40px;
 	background-color: #FFFFFF;
@@ -119,17 +117,23 @@ a {
 
 #city {
 	margin-left: -206px;
+	margin-top: 20px;
 }
 
-#disclaimer {
+#footer {
 	height: 45px;
+	width: 1263px;
 	background-color: #335533;
-	margin-top: -5px;
-	padding-top: 20px;
-	padding-left: 10px;
+	margin-top: -3px;
+	margin-left: 100px;
 }
 
-#disclaimer a{
+#footer #info {
+	padding-top: 15px;
+	padding-left: 250px;
+}
+
+#footer a{
 	color: #FFFFFF;
 	text-decoration: none;
 }

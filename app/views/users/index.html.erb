@@ -1,4 +1,3 @@
-<% if admin? %>
 <table border="0" cellspacing="10" cellpadding="0">
 	<tr><th>Nombre</th><th>Correo electrónico</th><th>Compañía</th></tr>
 		<% for user in @users do %>
@@ -11,8 +10,5 @@
 			</tr>
 	<% end %>
 </table>
-<% else %>
-	<% flash[:error] = "No se te permite realizar esta acción" %>
-	<% redirect_to root_path %>redirect_to root_path
-<% end %>
+
 
