@@ -167,7 +167,10 @@ a {
 
 /* Index Company. */
 #company_list {
-	margin-top: 30px;
+	margin-top: 50px;
+	border: 2px solid #C8FFFF;
+	border-bottom: none;
+	padding: 5px;
 }
 
 #company_list h2 {
@@ -177,12 +180,17 @@ a {
 }
 
 #company_list a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: #333333;
 }
 
+#company_list a:hover {
+	text-decoration: underline;
+	color: #3DB8B8;
+}
+
 #company_list span {
-	color: #DDDDDD;
+	color: #999999;
   font-weight: bold;
   font-size: 13px;
 }
@@ -200,7 +208,8 @@ a {
 }
 
 #company_list #division {
-	margin-bottom: -10px;
+	margin-bottom: -20px;
+	margin-left: -36px;
 }
 
 /* Show Company */
@@ -221,22 +230,28 @@ a {
 
 #company_details #company_name {
 	border-bottom: 1px solid #CCCCCC;
-	height: 100px;
+	height: 100%;
 	margin-top: 40px;
-}
-
-#company_details #company_name img {
-	padding-top: 25px;
 }
 
 #company_details #company_name h1 {
 	color: #333333;
 	margin-left: 50px;
-	padding-top: 25px;
+	padding-top: 25px
+}
+
+#company_details #company_description {
+	margin-top: -10px;
+	max-width: 450px;
+}
+
+#company_details #company_name img {
+	float:left;
+	padding-top: 25px
 }
 
 #company_details #company_logo {
-	margin-top: -120px;
+	margin-top: -100px;
 }
 
 #company_details #company_tools ul li span {
@@ -267,11 +282,31 @@ a {
 	margin-top: 10px;
 }
 
+#company_details #company_experience table th {
+	background: #E1F4F4;
+	padding: 5px;
+	text-align:left;
+}
+
+#company_details #company_experience table td {
+	padding: 5px;
+}
+
+#company_details #company_experience table tr:nth-child(even) {
+	background: #DFDFDF;		
+}
+#company_details #company_experience table tr:nth-child(odd) {
+	background: #FFF;
+}
+
 #company_details .detail {
 	padding-bottom: 15px;
 }
 
-#company_experience {	
+#company_details .options {
+	bottom: 0;
+	font-size: 10px;
+	font-style: italic;
 }
 
 /* Edit & Register Compay */
