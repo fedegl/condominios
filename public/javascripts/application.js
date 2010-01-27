@@ -4,13 +4,14 @@ $(document).ready(function() {
 
 	$("#company_state").hide();
 
-	$("#company_country_id").change(function () {
-		$("#company_country_id option:selected").each(function () {
-			if($(this).text() == "México"){
+	$("#user_company_attributes_country_id").change(function () {
+		$("#user_company_attributes_country_id option:selected").each(function () {
+			if($(this).text() == "México"){				
 				$("#company_state").show();
 			}
-			else{
-				$("#company_state").hide();
+			else{				
+				$("#user_company_attributes_state_id").val("");
+				$("#company_state").hide();		
 			}
     });
   })

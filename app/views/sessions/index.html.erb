@@ -2,9 +2,9 @@
 <div id="search">
 <h2>¿En qu&eacute; lugar buscas?</h2>
 	<% form_for Company, :url => companies_path, :html => {:method => :get} do |f| %>
-		<%= select_tag :location, grouped_options_for_select(
-															{"México" => State.all.map {|s| [s.name, s.short2]}, 
-															"Internacional" => Country.all.map {|c| [c.name, c.short]}}, nil, "Seleccionar"),
+		<%= select_tag :location, grouped_options_for_select([
+															["México", State.all.map {|s| [s.name, s.short2]}], 
+															["Internacional", Country.all.map {|c| [c.name, c.short]}]], nil, "Seleccionar"),
 															:class => "dropdownsearch" %>
 		<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
 	<% end %>

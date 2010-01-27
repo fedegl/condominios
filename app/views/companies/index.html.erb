@@ -15,7 +15,7 @@
 		<span>Ubicaci&oacute;n</span><br/>
 		<%= company.city %>,
 		<% if company.state %>
-			<%= company.state.short %>,
+			<%= company.state.name %>,
 		<% end %>
 		<%= company.country.name %>
 	</div>
@@ -27,3 +27,4 @@
 	<div class="clear"></div>
 </div>
 <% end %>
+<%= will_paginate @companies %>

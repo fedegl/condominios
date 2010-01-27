@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #DAF7FF;
   background-image: url("/images/fondocielo.png");
   background-repeat: repeat-x;
   font-family: Arial, Helvetica, Verdana;
@@ -218,10 +218,17 @@ a {
 	font-size: 15px;
 }
 
-#company_details span {
+#company_details .detail_name {
 	color: #333333;
+	padding: 5px;
   font-weight: bold;
   font-size: 16px;
+  background: #DDDDDD;
+  width: 250px;
+  height: 18px;
+  margin-bottom: 5px;
+  -webkit-border-radius: 5px;    /* for Safari */
+	-moz-border-radius: 5px;       /* for Firefox */
 }
 
 #company_complex ul li {
@@ -236,8 +243,13 @@ a {
 
 #company_details #company_name h1 {
 	color: #333333;
-	margin-left: 50px;
-	padding-top: 25px
+	padding-top: 8px
+}
+
+#company_details #company_name #edit {
+	position: relative;
+	top: 38px;
+	left: 10px;
 }
 
 #company_details #company_description {
@@ -251,7 +263,7 @@ a {
 }
 
 #company_details #company_logo {
-	margin-top: -100px;
+	margin-top: -110px;
 }
 
 #company_details #company_tools ul li span {
@@ -261,7 +273,7 @@ a {
 }
 
 #company_details_left {
-	width: 320px;
+	width: 280px;
 	margin-top: 20px;
 	border-right: 1px solid #CCCCCC;
 }
@@ -269,7 +281,7 @@ a {
 #company_details_right {
 	width: 300px;
 	position: relative;
-	right: 30px;
+	right: 80px;
 	margin-top: 20px;
 }
 
@@ -278,14 +290,36 @@ a {
 }
 
 #company_details #company_experience table {
-	border-top: 1px solid #CCCCCC;
-	margin-top: 10px;
+	width: 300px;
 }
 
 #company_details #company_experience table th {
-	background: #E1F4F4;
+	background: #FFE7E0;
 	padding: 5px;
 	text-align:left;
+}
+
+#company_details #company_experience #title {
+	background: #D65756;
+	padding: 5px;
+	text-align:center;
+	color: white;
+}
+
+#company_details #company_experience #titlel {
+	background: #D65756 url("/images/tlcorner.png") no-repeat -1px -1px;
+}
+
+#company_details #company_experience #titler {
+	background: #D65756 url("/images/trcorner.png") no-repeat 101% -1px;
+}
+
+#company_details #company_experience #datal {
+	background: #FFFFD6 url("/images/brcorner.png") no-repeat -1px -1px;
+}
+
+#company_details #company_experience #datar {
+	background: #FFFFD6 url("/images/blcorner.png") no-repeat 101% -1px;
 }
 
 #company_details #company_experience table td {
@@ -293,10 +327,10 @@ a {
 }
 
 #company_details #company_experience table tr:nth-child(even) {
-	background: #DFDFDF;		
+	background: #FFFFD6;		
 }
 #company_details #company_experience table tr:nth-child(odd) {
-	background: #FFF;
+	background: #FFFFD6;
 }
 
 #company_details .detail {
@@ -357,8 +391,7 @@ a {
 }
 
 #register_form .next {
-	position: relative;
-	left: 500px;
+	margin-left: 60px;
 }
 
 #register_form .cancel {
@@ -376,6 +409,16 @@ a {
 	margin-left: 50px;
 	margin-top: -30px;	
 	margin-bottom: 30px;
+}
+
+#register_form #casita1 {
+	background: url("/images/casa1.png") no-repeat;
+	height: 40px;
+}
+
+#register_form #casita2 {
+	background: url("/images/casa2.png") no-repeat;
+	height: 40px;
 }
 
 #casita {
@@ -453,11 +496,11 @@ a {
 
 #errorExplanation {
   width: 400px;
-  border: 2px solid #CF0000;
+  border: 2px solid #999999;
   padding: 0px;
   padding-bottom: 12px;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 #errorExplanation h2 {
@@ -482,34 +525,34 @@ a {
 
 #errorExplanation ul li {
   font-size: 12px;
-  list-style: disc;
+  list-style-image: url("/images/lilhouse.png");
 }
 
 
 /* Login Dropdown */
 #signin_menu {
-    -moz-border-radius-topleft:5px;
-    -moz-border-radius-bottomleft:5px;
-    -moz-border-radius-bottomright:5px;
-    -webkit-border-top-left-radius:5px;
-    -webkit-border-bottom-left-radius:5px;
-    -webkit-border-bottom-right-radius:5px;
-    display:none;
-    background-color:#FFFF99;
-    position:absolute;
-    width:233px;
-    height: 135px;
-    z-index:100;
-    border:1px transparent;
-    text-align:left;
-    padding:12px;
-    top: 22px; 
-    right: 0px; 
-    margin-top:5px;
-    margin-right: 0px;
-    *margin-right: -1px;
-    color:#666666;
-    font-size:11px;
+  -moz-border-radius-topleft:5px;
+  -moz-border-radius-bottomleft:5px;
+  -moz-border-radius-bottomright:5px;
+  -webkit-border-top-left-radius:5px;
+  -webkit-border-bottom-left-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  display:none;
+  background-color:#FFFF99;
+  position:absolute;
+  width:233px;
+  height: 135px;
+  z-index:100;
+  border:1px transparent;
+  text-align:left;
+  padding:12px;
+  top: 22px; 
+  right: 0px; 
+  margin-top:5px;
+  margin-right: 0px;
+  *margin-right: -1px;
+  color:#666666;
+	font-size:11px;
 }
 
 #signin_menu input[type=text], #signin_menu input[type=password] {

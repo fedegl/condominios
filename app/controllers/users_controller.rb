@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   # render new.rhtml
   def new
     @user = User.new
+    @company = Company.new
   end
   
   def show
@@ -26,10 +27,11 @@ class UsersController < ApplicationController
   def create
     logout_keeping_session!
     @user = User.new(params[:user])
-    success = @user && @user.save
-    if success && @user.errors.empty?
+    @company = Company.new(params[:company])
+    if @user.save
       flash[:notice] = "Los datos de usuario se guardaron correctamente."
-      redirect_to new_user_company_path(@user.id)
+      #redirect_to new_user_company_path(@user.id)
+      redirect_to companies_path
     else
       flash[:error]  = "Ocurrió un error con el registro de la cuenta, por favor intenta de nuevo"
       render :action => 'new'

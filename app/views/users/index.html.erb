@@ -4,7 +4,7 @@
 			<tr>
 			<td><%= user.name %></td>
 			<td><%= user.email %></td>
-			<td><%= user.companies.collect{|c| link_to c.name, company_path(c)}.join(", ") %></td>
+			<td><%= user.company.name %></td>
 			<td><%= link_to "Editar", edit_user_path(user) %>
 				  <%= link_to "Borrar", user_path(user), :confirm => '¿Estás seguro de querer eliminar este usuario?', :method => :delete %>
 			</tr>

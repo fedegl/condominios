@@ -5,13 +5,13 @@ class CompaniesController < ApplicationController
 
   def index  	  
   	if params[:location] && params[:location].size == 3
-			@companies = Company.find_by_country_short(params[:location])
+			@companies = Company.find_by_country_short(params[:location]).paginate :page => params[:page]
 			@companies.empty? ? flash[:error] = "No se encontraron compañías en ese país" : @companies
 	  elsif params[:location] && params[:location].size == 2
-			@companies = Company.find_by_state_short2(params[:location])
+			@companies = Company.find_by_state_short2(params[:location]).paginate :page => params[:page]
 			@companies.empty? ? flash[:error] = "No se encontraron compañías en ese estado" : @companies
 	  else
-	  	@companies = Company.find(:all)
+	  	@companies = Company.paginate :page => params[:page], :per_page => 10
 	  end
   end
   
@@ -30,7 +30,7 @@ class CompaniesController < ApplicationController
   
   def create
   	@user = User.find(params[:user_id])
-  	@company = @user.companies.build(params[:company])
+  	@company = Company.new(params[:company])
     if @company.save
       flash[:notice] = "Los datos de la compañía se guardaron correctamente"
       redirect_to @company

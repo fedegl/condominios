@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
   
-  has_many :companies, :dependent => :destroy
+  has_one :company, :dependent => :destroy
+  accepts_nested_attributes_for :company
 
 	validates_presence_of			:name, :message => "^Debes escribir un Nombre"
   validates_format_of       :name, :with => Authentication.name_regex,  :message => Authentication.bad_name_message, :allow_nil => true
@@ -21,8 +22,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :email, :name, :password, :password_confirmation
-
+  attr_accessible :email, :name, :password, :password_confirmation, :company_attributes
 
   # Activates the user in the database.
   def activate!

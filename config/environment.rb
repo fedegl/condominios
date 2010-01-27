@@ -37,10 +37,10 @@ Rails::Initializer.run do |config|
   config.action_mailer.smtp_settings = { 
     :address => "smtp.gmail.com", 
     :port => 25, 
-    :domain => "innku.com", 
+    :domain => "gmail.com", 
     :authentication => :login, 
-    :user_name => "rene", 
-    :password => "battlebrand" 
+    :user_name => "rncien", 
+    :password => "r100fuegos" 
   }
 
   # Activate observers that should always be running
