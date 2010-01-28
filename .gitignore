@@ -1,0 +1,8 @@
+# Logs
+
+log/*
+log/development.log
+*.log
+public/system/*
+tmp/*
+db/schema.rb

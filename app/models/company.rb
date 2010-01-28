@@ -33,4 +33,9 @@ class Company < ActiveRecord::Base
 	  write_attribute(:phone, clean_phone)
 	end
 	
+	def state_id(id)
+	  id = self.country_id == 15 ? id : nil
+	  write_attribute(:state_id, id)
+	end
+	
 end
