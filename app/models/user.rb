@@ -13,9 +13,9 @@ class User < ActiveRecord::Base
   validates_length_of       :name, :maximum => 100
 
   validates_presence_of     :email, :message => "^Debes escribir un Correo electrónico"
-  validates_length_of       :email, :within => 6..100 #r@a.wk
+  validates_length_of       :email, :within => 6..100, :allow_blank => true
   validates_uniqueness_of   :email, :message => "^Este correo electrónico ya está en uso"
-  validates_format_of       :email, :with => Authentication.email_regex, :message => Authentication.bad_email_message, :message => "^Debes escribir un Correo electrónico valido"
+  validates_format_of       :email, :with => Authentication.email_regex, :message => Authentication.bad_email_message, :message => "^Debes escribir un Correo electrónico valido", :allow_blank => true
 
   before_create :make_activation_code 
 

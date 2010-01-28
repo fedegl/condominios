@@ -2,82 +2,79 @@
 	<h1>Crea tu cuenta en Administraci&oacute;n de Condominios</h1>
 	<div id="casita1"></div><h2>Datos de usuario</h2>
 
-	<% @user.password = @user.password_confirmation = nil %>
+	<% form_for @user, :html => { :multipart => true } do |f| -%>
+	  <%= f.error_messages :header_message => "Intenta de nuevo" %>
+  	<p>
+  		<%= f.label :name, "Nombre Completo", :class => "label" %><br/>
+  		<%= f.text_field :name, :class => "text_field" %>
+  	</p>
 
-	<%= error_messages_for :user, :header_message => "Intenta de nuevo" %>
+  	<p>
+  		<%= f.label :email, "Correo electr&oacute;nico" , :class => "label"%><br/>
+  		<%= f.text_field :email, :class => "text_field" %>
+  	</p>
 
-	<% form_for :user, :url => users_path, :html => { :multipart => true } do |f| -%>
-	<p>
-		<%= f.label :name, "Nombre Completo", :class => "label" %><br/>
-		<%= f.text_field :name, :class => "text_field" %>
-	</p>
+  	<p>
+  		<%= f.label :password, "Contraseña" , :class => "label"%><br/>
+  		<%= f.password_field :password, :class => "text_field" %>
+  	</p>
 
-	<p>
-		<%= f.label :email, "Correo electr&oacute;nico" , :class => "label"%><br/>
-		<%= f.text_field :email, :class => "text_field" %>
-	</p>
-
-	<p>
-		<%= f.label :password, "Contraseña" , :class => "label"%><br/>
-		<%= f.password_field :password, :class => "text_field" %>
-	</p>
-
-	<p>
-		<%= f.label :password_confirmation, "Confirmar contraseña" , :class => "label"%><br/>
-		<%= f.password_field :password_confirmation, :class => "text_field" %>
-	</p>
+  	<p>
+  		<%= f.label :password_confirmation, "Confirmar contraseña" , :class => "label"%><br/>
+  		<%= f.password_field :password_confirmation, :class => "text_field" %>
+  	</p>
 	
-	<div id="casita2"></div><h2>Datos de la empresa</h2>
+  	<div id="casita2"></div><h2>Datos de la empresa</h2>
 
-	<% f.fields_for :company_attributes do |company_form| %>		
-		<p>
-  		<%= company_form.label :name, "Nombre", :class => "label"%><br />
-  		<%= company_form.text_field :name, :class => "text_field" %>
-		</p>
+  	<% f.fields_for :company do |company_form| %>		
+  		<p>
+    		<%= company_form.label :name, "Nombre", :class => "label"%><br />
+    		<%= company_form.text_field :name, :class => "text_field" %>
+  		</p>
 
-	  <p>
-  		<%= company_form.label :description, "Descripci&oacute;n", :class => "label" %><br />
-	    <%= company_form.text_area :description, :class => "text_area" %>
-	  </p>
+  	  <p>
+    		<%= company_form.label :description, "Descripci&oacute;n", :class => "label" %><br />
+  	    <%= company_form.text_area :description, :class => "text_area" %>
+  	  </p>
 
-	  <p>
-	  	<%= company_form.label :logo, "Logo de tu Compañía", :class => "label" %><br/>
-	  	<%= image_tag @company.logo.url(:small), :class => "logo" %><%= company_form.file_field :logo %>
-	  </p>
+  	  <p>
+  	  	<%= company_form.label :logo, "Logo de tu Compañía", :class => "label" %><br/>
+  	  	<%= company_form.file_field :logo %>
+  	  </p>
 
-		<p>
-	    <%= company_form.label :price, "Precio", :class => "label" %><br />
-	    <%= company_form.text_field :price, :class => "text_field" %>
-	  <p/>
+  		<p>
+  	    <%= company_form.label :price, "Precio", :class => "label" %><br />
+  	    <%= company_form.text_field :price, :class => "text_field" %>
+  	  <p/>
 
-	  <p>
-	    <%= company_form.label :phone, "Tel&eacute;fono", :class => "label" %><br />
-	    <%= company_form.text_field :phone, :class => "text_field" %>
-	  </p>
+  	  <p>
+  	    <%= company_form.label :phone, "Tel&eacute;fono", :class => "label" %><br />
+  	    <%= company_form.text_field :phone, :class => "text_field" %>
+  	  </p>
 
-	  <p>
-			<%= company_form.label :complex_type_ids, "Tipo de complejos que administra", :class => "label" %><br/>
-			<% for complex_type in ComplexType.find(:all) %>
-				<%= check_box_tag "user[company_attributes][complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
-				<%= complex_type.name %><br/>
-			<% end %>
-		</p>
+  	  <p>
+  			<%= company_form.label :complex_type_ids, "Tipo de complejos que administra", :class => "label" %><br/>
+  			<% for complex_type in ComplexType.all %>
+  				<%= check_box_tag "user[company_attributes][complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
+  				<%= complex_type.name %><br/>
+  			<% end %>
+  		</p>
 
-	  <p>
-  		<%= company_form.label :country_id, "País", :class => "label" %><br />
-	    <%= company_form.collection_select :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %>
-	  </p>
+  	  <p>
+    		<%= company_form.label :country_id, "País", :class => "label" %><br />
+  	    <%= company_form.collection_select :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %>
+  	  </p>
 
-	  <p id="company_state">
-	    <%= company_form.label :state_id, "Estado", :class => "label"  %><br />
-	    <%= company_form.collection_select :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %>
-	  </p>
+  	  <p id="company_state">
+  	    <%= company_form.label :state_id, "Estado", :class => "label"  %><br />
+  	    <%= company_form.collection_select :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %>
+  	  </p>
 
-	  <p>
-	    <%= company_form.label :city, "Ciudad", :class => "label" %><br />
-	    <%= company_form.text_field :city, :class=> "text_field" %>
-	  </p>
-	<% end %>
+  	  <p>
+  	    <%= company_form.label :city, "Ciudad", :class => "label" %><br />
+  	    <%= company_form.text_field :city, :class=> "text_field" %>
+  	  </p>
+  	<% end %>
 
 
 	<p><%= image_submit_tag "/images/siguiente.png", :class => "next" %></p>

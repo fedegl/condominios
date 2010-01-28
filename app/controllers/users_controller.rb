@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # render new.rhtml
   def new
     @user = User.new
-    @company = Company.new
+    @company = @user.build_company
   end
   
   def show

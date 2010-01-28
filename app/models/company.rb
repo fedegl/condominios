@@ -11,8 +11,8 @@ class Company < ActiveRecord::Base
                   	:url  => "/assets/companies/:id/:style/:basename.:extension",
                   	:path => ":rails_root/public/assets/companies/:id/:style/:basename.:extension"
 
-	validates_attachment_size :logo, :less_than => 1.megabytes, :message => "^La imagen que seleccionaste es demasiado grande. Debe ser menor a 1 MB."
-	validates_attachment_content_type :logo, :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']
+	#validates_attachment_size :logo, :less_than => 1.megabytes, :message => "^La imagen que seleccionaste es demasiado grande. Debe ser menor a 1 MB.", :allow_blank => true
+	validates_attachment_content_type :logo, :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'], :allow_blank => true
 	
 	validates_presence_of		:name, :message => "^Debes escribir el Nombre de tu compañía"
 	validates_presence_of		:description, :message => "^Debes escribir una Descripción para tu compañía"
@@ -21,6 +21,7 @@ class Company < ActiveRecord::Base
 	validates_presence_of		:phone, :message => "^Debes escribir un Número de teléfono"
 	validates_uniqueness_of :phone, :message => "^Ese número de teléfono ya existe"
 	validates_presence_of		:country_id, :message => "^Debes especificar un País"
+	validates_presence_of		:state_id, :message => "^Debes especificar un Estado", :if => :country_is_mexico?
 	validates_presence_of		:city, :message => "^Debes escribir una Ciudad"
 	
 	named_scope :find_by_country_short, lambda { |location| {:joins => :country, :conditions => { :countries => {:short => location} } } }
@@ -33,9 +34,13 @@ class Company < ActiveRecord::Base
 	  write_attribute(:phone, clean_phone)
 	end
 	
-	def state_id(id)
+	def state_id=(id)
 	  id = self.country_id == 15 ? id : nil
 	  write_attribute(:state_id, id)
+	end
+	
+	def country_is_mexico?
+	  self.country_id == 15
 	end
 	
 end
