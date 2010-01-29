@@ -223,12 +223,9 @@ a {
 	padding: 5px;
   font-weight: bold;
   font-size: 16px;
-  background: #DDDDDD;
-  width: 250px;
-  height: 18px;
-  margin-bottom: 5px;
-  -webkit-border-radius: 5px;    /* for Safari */
-	-moz-border-radius: 5px;       /* for Firefox */
+  background: url("/images/detailnamebg.png") no-repeat;
+  width: 252px;
+  height: 29px;
 }
 
 #company_complex ul li {
@@ -290,7 +287,7 @@ a {
 }
 
 #company_details #company_experience table {
-	width: 300px;
+	width: 350px;
 }
 
 #company_details #company_experience table th {
@@ -301,8 +298,8 @@ a {
 
 #company_details #company_experience #title {
 	background: #D65756;
-	padding: 5px;
 	text-align:center;
+	padding-bottom: 13px;
 	color: white;
 }
 
@@ -353,6 +350,14 @@ a {
 	margin-top: 50px;
 }
 
+#register_form table {
+	width: 700px;
+}
+
+#register_form table td {
+	width: 350px;
+}
+
 #register_form .label {
 	font-size: 18px;
 	padding-left: 60px;	
@@ -363,29 +368,25 @@ a {
 	height: 30px;
 	width: 400px;
 	margin-bottom: 5px ;
-	margin-top: 5px ;
-	margin-left: 80px;
-	padding-left: 0px;
+	margin-top: 5px;
 }
 
 #register_form .text_area {
 	height: 100px;
-	width: 300px;
+	width: 400px;
 	margin-bottom: 10px ;
 	margin-top: 5px ;
-	margin-left: 80px;
 }
 
 #register_form .checkbox {
 	margin-bottom: 10px ;
 	margin-top: 5px ;
-	margin-left: 80px;	
+	margin-left: 70px;
 }
 
 #register_form select {
 	margin-bottom: 10px ;
 	margin-top: 5px ;
-	margin-left: 80px;
 	background-color: #FFFFFF;
 	height: 30px;
 }
@@ -407,8 +408,8 @@ a {
 #register_form h2 {
 	font-size: 20px;
 	margin-left: 50px;
-	margin-top: -30px;	
-	margin-bottom: 30px;
+	padding-left: 45px;
+	padding-top: 10px;
 }
 
 #register_form #casita1 {

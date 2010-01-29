@@ -13,11 +13,10 @@
 	
 	<div class="left">
 		<div id="user_companies">		
-			<h2>Mis Compañ&iacute;as</h2>		
-			<% for company in current_user.companies do %>
-				<span id="name"><%= link_to company.name, company_path(company) %></span><span id="delete"><%= link_to "Eliminar", company_path(company), :confirm => '¿Estás seguro de querer eliminar esta compañia?', :method => :delete %></span><br/>
-				<span id="description"><%= company.description %></span><br/><br/>
-			<% end %>
+			<h2>Mi Compañ&iacute;a</h2>
+				<span id="name"><%= link_to current_user.company.name, company_path(current_user.company) %></span><span id="delete"><%= link_to "Eliminar", company_path(current_user.company), :confirm => '¿Estás seguro de querer eliminar esta compañia?', :method => :delete %></span><br/>
+				<span id="description"><%= current_user.company.description %></span><br/><br/>
+
 		</div>
 	</div>
 	

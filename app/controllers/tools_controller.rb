@@ -54,16 +54,5 @@ class ToolsController < ApplicationController
   def find_company
     @company = Company.find(params[:company_id])
   end
-  
-  protected
-  
-  def authorized?
-  	find_company
-		if current_user.id == @company.user_id
-			true
-		else
-			flash[:error] = "Ocurrió un error al intentar realizar esa acción"
-			redirect_to root_path
-		end		
-  end
+ 
 end

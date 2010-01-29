@@ -1,6 +1,96 @@
-<div id="register_form">	
-	<div id="casita"></div><h2>Registra tu compañía</h2>
+<div id="register_form">
+	<h1>Crea tu cuenta en Administraci&oacute;n de Condominios</h1>
+	<h2 id="casita1">Datos de la empresa</h2>
 
-	<%= render :partial => 'form' %>
+	<% form_for @company, :html => { :multipart => true } do |f| -%>
+	  <%= f.error_messages :header_message => "Intenta de nuevo" %>
+	  
+	  <table>
+  		<tr>
+    		<td><%= f.label :name, "Nombre", :class => "label"%></td>
+    		<td><%= f.text_field :name, :class => "text_field" %></td>
+  		</tr>
+
+  	  <tr>
+    		<td><%= f.label :description, "Descripci&oacute;n", :class => "label" %></td>
+  	    <td><%= f.text_area :description, :class => "text_area" %></td>
+  	  </tr>
+
+  	  <tr>
+  	  	<td><%= f.label :logo, "Logo de tu Compañía", :class => "label" %></td>
+  	  	<td><%= f.file_field :logo %></td>
+  	  </tr>
+
+  		<tr>
+  	    <td><%= f.label :price, "Precio", :class => "label" %></td>
+  	    <td><%= f.text_field :price, :class => "text_field" %></td>
+  	  </tr>
+
+  	  <tr>
+  	    <td><%= f.label :phone, "Tel&eacute;fono", :class => "label" %></td>
+  	    <td><%= f.text_field :phone, :class => "text_field" %></td>
+  	  </tr>
+  	</table>	
+  	 
+  			<%= f.label :complex_type_ids, "Tipo de complejos que administra", :class => "label" %>
+  			<div class="clear"></div>
+  			<% for complex_type in ComplexType.all %>
+  				<%= check_box_tag "company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
+  				<%= f.label :complex_type_ids, complex_type.name %>
+  			<% end %>
+
+		<table>
+  	  <tr>
+    		<td><%= f.label :country_id, "País", :class => "label" %></td>
+  	    <td><%= f.collection_select :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %></td>
+  	  </tr>
+
+  	  <tr id="company_state">
+  	    <td><%= f.label :state_id, "Estado", :class => "label"  %></td>
+  	    <td><%= f.collection_select :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %></td>
+  	  </tr>
+
+  	  <tr>
+  	    <td><%= f.label :city, "Ciudad", :class => "label" %></td>
+  	    <td><%= f.text_field :city, :class=> "text_field" %></td>
+  	  </tr>
+  	</table>	  
+	
+			<h2 id="casita2">Datos de usuario</h2>
+
+  	<% f.fields_for :users do |user_form| %>
+  		<table>
+				<tr>
+					<td><%= user_form.label :name, "Nombre Completo", :class => "label" %></td>
+					<td><%= user_form.text_field :name, :class => "text_field" %></td>
+				</tr>
+
+				<tr>
+					<td><%= user_form.label :email, "Correo electr&oacute;nico" , :class => "label"%></td>
+					<td><%= user_form.text_field :email, :class => "text_field" %></td>
+				</tr>
+
+				<tr>
+					<td><%= user_form.label :password, "Contraseña" , :class => "label"%></td>
+					<td><%= user_form.password_field :password, :class => "text_field" %></td>
+				</tr>
+
+				<tr>
+					<td><%= user_form.label :password_confirmation, "Confirmar contraseña" , :class => "label"%></td>
+					<td><%= user_form.password_field :password_confirmation, :class => "text_field" %></td>
+				</tr>
+	  	</table>  	
+  	<% end %>
+
+
+	<p><%= image_submit_tag "/images/siguiente.png", :class => "next" %></p>
+	
+	<% end -%>
+</div>
+
+
+
+
+
 
 </div>

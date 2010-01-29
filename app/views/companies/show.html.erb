@@ -2,7 +2,7 @@
 	<div id="company_name">
  		<img src="/images/lilhouse.png"/>
 		<h1 class="left"><%= @company.name %></h1>
-		<% if session[:user_id] == @company.user_id %>		
+		<% if session[:user_id] == @company.users.first.id %>
 			<%= link_to "Editar Compañía", edit_company_path(@company), :id => "edit" %>		
 		<% end %>
 		<div class="clear"></div>
@@ -26,7 +26,7 @@
 			<div id="company_contact" class="detail">
 				<div class="detail_name">Contacto</div>
 				<%= @company.phone %><br/>
-				<%= mail_to @company.user.email %>
+				<%= mail_to @company.users.first.email %>
 			</div>
 			
 			<div id="company_complex" class="detail">
@@ -49,7 +49,7 @@
 					<% end %>
 					</ul>
 				<% end %>
-				<% if session[:user_id] == @company.user_id %>
+				<% if session[:user_id] == @company.users.first.id %>
 					<%= link_to "Agregar nuevo servicio", new_company_tool_path(@company.id), :class => "options" %>			
 				<% end %>
 			</div>			
@@ -66,12 +66,12 @@
 			<div id="company_experience" class="detail">
 				<% if !@company.experiences.empty? %>
 					<table cellspacing="0">
-						<tr>							
-							<th id="titlel"></th>
+						<tr>
+							<th id="titlel"></th>	
 							<th id="titler"></th>
 						</tr>
-						<tr>							
-							<th id="title" colspan=2>Condominios que ha administrado</th>
+						<tr>
+							<th id="title" colspan=2>Condominos que ha administrado</th>
 						</tr>
 						<tr>
 							<th>Nombre</th>
@@ -81,7 +81,7 @@
 							<tr>	
 								<td id="experience"><%= experience.name %></td>								
 								<td id="start_year"><%= experience.start_year %> - <%= experience.end_year %></td>
-							<% if session[:user_id] == @company.user_id %>
+							<% if session[:user_id] == @company.users.first.id %>
 								<td><%= link_to "Editar", edit_company_experience_path(@company.id, experience), :class => "options" %></td>
 								<td><%= link_to "Borrar", company_experience_path(@company.id, experience), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete, :class => "options" %></td>								
 							<% end %>
@@ -93,7 +93,7 @@
 						</tr>
 					</table>
 				<% end %>
-				<% if session[:user_id] == @company.user_id %>
+				<% if session[:user_id] == @company.users.first.id %>
 					<%= link_to "Agregar nueva experiencia", new_company_experience_path(@company.id) %>
 				<% end %>
 			</div>			

@@ -31,9 +31,19 @@ module AuthenticatedSystem
     #    current_user.login != "bob"
     #  end
     #
-    def authorized?(action = action_name, resource = nil)
-      logged_in?
-    end
+		def authorized?(action = action_name, resource = nil)
+			logged_in?
+		end
+		  
+		def authorized?
+			@company = Company.find(params[:company_id])
+			if current_user.id == @company.users.first.id
+				true
+			else
+				flash[:error] = "Ocurrió un error al intentar realizar esa acción"
+				redirect_to root_path
+			end		
+		end
 
     # Filter method to enforce a login requirement.
     #

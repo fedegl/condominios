@@ -58,7 +58,7 @@
 		      <%- end -%>
 		      
 		      <% unless current_page?(:controller => 'sessions') or current_page?(:controller => 'companies', :action => 'search') %>
-		      	<%= link_to image_tag("/images/busca_admin.png"), search_path, :class => "search_admin" %>
+		      	<%= link_to "¿Buscas un administrador?", search_path, :class => "search_admin" %>
 		      <% end %>
 		      
 		      <%= yield %>

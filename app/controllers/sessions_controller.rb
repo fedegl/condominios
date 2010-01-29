@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
   include AuthenticatedSystem
 	
 	def index
-		
 	end
 	
   # render new.rhtml

@@ -4,17 +4,18 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :services
   map.resources :experiences
   map.resources :companies
+  map.resources :users
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
-  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.signup '/signup', :controller => 'companies', :action => 'new'
   map.search '/search', :controller => 'companies', :action => 'search'
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   
   map.resources :companies, :has_many => [:tools, :experiences]
-  map.resources :users, :has_many => :companies
+  map.resources :companies, :has_many => :users
 
   map.resource :session
   

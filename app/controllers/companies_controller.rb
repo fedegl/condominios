@@ -3,16 +3,13 @@ class CompaniesController < ApplicationController
 	before_filter :login_required, :only => [:edit, :update]
 	before_filter :authorized?, :only => [:edit, :update]
 
-  def index  	  
-  	if params[:location] && params[:location].size == 3
-			@companies = Company.find_by_country_short(params[:location]).paginate :page => params[:page]
-			@companies.empty? ? flash[:error] = "No se encontraron compañías en ese país" : @companies
-	  elsif params[:location] && params[:location].size == 2
-			@companies = Company.find_by_state_short2(params[:location]).paginate :page => params[:page]
-			@companies.empty? ? flash[:error] = "No se encontraron compañías en ese estado" : @companies
-	  else
-	  	@companies = Company.paginate :page => params[:page], :per_page => 10
-	  end
+  def index
+  	if !params[:location].blank?
+  	@companies = Company.country_short_or_state_short2_equals(params[:location]).paginate :page => params[:page], :per_page => 10
+  	else
+  		@companies = Company.all.paginate :page => params[:page], :per_page => 10
+  	end
+  	
   end
   
   def show
@@ -23,14 +20,14 @@ class CompaniesController < ApplicationController
     end
   end
   
-  def new
-    @user = User.find(params[:user_id])
+  def new   
     @company = Company.new
+    @user = @company.users.build
   end
   
-  def create
-  	@user = User.find(params[:user_id])
+  def create  	
   	@company = Company.new(params[:company])
+#  	@user = User.new(params[:user])
     if @company.save
       flash[:notice] = "Los datos de la compañía se guardaron correctamente"
       redirect_to @company
@@ -63,18 +60,6 @@ class CompaniesController < ApplicationController
   def search
   	@searchlogic = Company.searchlogic(params[:search])
   	@companies = @searchlogic.all
-  end
-  
-  protected
-  
-  def authorized?
-  	@company = Company.find(params[:id])
-		if current_user.id == @company.user_id
-			true
-		else
-			flash[:error] = "Ocurrió un error al intentar realizar esa acción"
-			redirect_to root_path
-		end		
   end
   
 end

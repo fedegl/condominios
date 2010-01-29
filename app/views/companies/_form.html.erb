@@ -1,31 +1,32 @@
-<% form_for([@user, @company], :html => { :multipart => true }) do |f| %>
+<% form_for(@company, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :name, "Nombre", :class => "label"%><br />
-    <%= f.text_field :name, :class => "text_field" %>
-  </p>
-  
-  <p>
-    <%= f.label :description, "Descripci&oacute;n", :class => "label" %><br />
-    <%= f.text_area :description, :class => "text_area" %>
-  </p>
-  
-  <p>
-  	<%= f.label :logo, "Logo de tu Compañía", :class => "label" %><br/>
-  	<%= image_tag @company.logo.url(:small), :class => "logo" %><%= f.file_field :logo %>
-  </p>
-  
-  <p>
-    <%= f.label :price, "Precio", :class => "label" %><br />
-    <%= f.text_field :price, :class => "text_field" %>
-  <p/>
-  <br/>
-  <br/>
-  <p>
-    <%= f.label :phone, "Tel&eacute;fono", :class => "label" %><br />
-    <%= f.text_field :phone, :class => "text_field" %>
-  </p>
-  
+  <table>
+		<tr>
+		  <td><%= f.label :name, "Nombre", :class => "label"%></td>
+		  <td><%= f.text_field :name, :class => "text_field" %></td>
+		</tr>
+		
+		<tr>
+		  <td><%= f.label :description, "Descripci&oacute;n", :class => "label" %></td>
+		  <td><%= f.text_area :description, :class => "text_area" %></td>
+		</tr>
+		
+		<tr>
+			<td><%= f.label :logo, "Logo de tu Compañía", :class => "label" %></td>
+			<td><%= image_tag @company.logo.url(:small), :class => "logo" %><%= f.file_field :logo %></td>
+		</tr>
+		
+		<tr>
+		  <td><%= f.label :price, "Precio", :class => "label" %></td>
+		  <td><%= f.text_field :price, :class => "text_field" %></td>
+		</tr>
+
+	  <tr>
+	    <td><%= f.label :phone, "Tel&eacute;fono", :class => "label" %></td>
+	    <td><%= f.text_field :phone, :class => "text_field" %></td>
+  	</tr>
+  </table>
+
   <p>
 		<%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %><br/>
 		<% for complex_type in ComplexType.find(:all) %>
@@ -33,21 +34,23 @@
 		<%= complex_type.name %><br/>
 		<% end %>
 	</p>
+
+  <table>
+  <tr>
+    <td><%= f.label :country_id, "País", :class => "label" %></td>
+    <td><%= collection_select :company, :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %></td>
+  </tr>
   
-  <p>
-    <%= f.label :country_id, "País", :class => "label" %><br />
-    <%= collection_select :company, :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %>
-  </p>
+  <tr id="company_state">
+    <td><%= f.label :state_id, "Estado", :class => "label"  %></td>
+    <td><%= collection_select :company, :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %></td>
+  </tr>
   
-  <p id="company_state">
-    <%= f.label :state_id, "Estado", :class => "label"  %><br />
-    <%= collection_select :company, :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %>
-  </p>
-  
-  <p>
-    <%= f.label :city, "Ciudad", :class => "label" %><br />
-    <%= f.text_field :city, :class=> "text_field" %>
-  </p>
+  <tr>
+    <td><%= f.label :city, "Ciudad", :class => "label" %></td>
+    <td><%= f.text_field :city, :class=> "text_field" %></td>
+  </tr>
+  </table>
   
   <p><%= image_submit_tag "/images/siguiente.png", :class => "next" %> <%= link_to "Cancelar", @company, :class => "cancel" %></p>  
   

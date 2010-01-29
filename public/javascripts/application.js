@@ -4,19 +4,19 @@ $(document).ready(function() {
 
 	$("#company_state").hide();
 
-	$("#user_company_attributes_country_id").change(function () {
-		$("#user_company_attributes_country_id option:selected").each(function () {
+	$("#company_country_id").change(function () {
+		$("#company_country_id option:selected").each(function () {
 			if($(this).text() == "México"){				
 				$("#company_state").show();
 			}
 			else{				
-				$("#user_company_attributes_state_id").val("");
+				$("#company_state_id").val("");
 				$("#company_state").hide();		
 			}
     });
   })
   
-  $("select#location").selectmenu({maxHeight: 350, width: 300, style:'dropdown'});
+  $("select.dropdownsearch").selectmenu({maxHeight: 350, width: 300, style:'dropdown'});
   
   $(".signin").click(function(e) {
   	e.preventDefault();
