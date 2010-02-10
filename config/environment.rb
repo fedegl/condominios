@@ -37,13 +37,12 @@ Rails::Initializer.run do |config|
   config.action_mailer.default_charset = "utf-8" 
   
   ActionMailer::Base.smtp_settings = {
-  :address        => "smtp.sendgrid.net",
-  :port           => "25",
-  :authentication => :plain,
-  :user_name      => ENV['SENDGRID_USERNAME'],
-  :password       => ENV['SENDGRID_PASSWORD'],
-  :domain         => ENV['SENDGRID_DOMAIN'],
-}
+		:address  => "smtp.gmail.net",
+		:port  => 25,
+		:user_name  => "rncien@gmail.com",
+		:password  => "r100fuegos",
+		:authentication  => :plain
+	}
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
