@@ -1,9 +1,8 @@
 <div id="register_form">
-	<h1>Crea tu cuenta en Administraci&oacute;n de Condominios</h1>
 	<h2 id="casita1">Datos de la empresa</h2>
 
 	<% form_for @company, :html => { :multipart => true } do |f| -%>
-	  <%= f.error_messages :header_message => "Intenta de nuevo" %>
+	  <%= f.error_messages :header_message => "Encontramos un pequeño error en tus datos", :message => "Verifica que todos los campos tengan tu información correcta" %>
 	  
 	  <table>
   		<tr>
@@ -32,12 +31,24 @@
   	  </tr>
   	</table>	
   	 
-  			<%= f.label :complex_type_ids, "Tipo de complejos que administra", :class => "label" %>
-  			<div class="clear"></div>
-  			<% for complex_type in ComplexType.all %>
-  				<%= check_box_tag "company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
-  				<%= f.label :complex_type_ids, complex_type.name %>
-  			<% end %>
+		<p>
+  		<%= f.label :complex_type_ids, "Tipo de complejos que administra", :class => "label" %>
+  		<div class="clear"></div>
+  		<% for complex_type in ComplexType.all %>
+  			<%= check_box_tag "company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
+  			<%= f.label :complex_type_ids, complex_type.name %>
+  		<% end %> 			
+  	</p>
+  			
+		<p>
+  		<%= f.label :tool_ids, "Servicios que ofrece", :class => "label" %><br/>  		
+  		<%= f.check_box :security, :class => "checkbox"  %>
+  		<%= f.label :security, "Seguridad" %>
+	  	<%= f.check_box :cleaning, :class => "checkbox"  %>
+	  	<%= f.label :cleaning, "Limpieza" %>
+	  	<%= f.check_box :gardening, :class => "checkbox"  %>
+	  	<%= f.label :gardening, "Jardinería" %>
+	  </p> 			
 
 		<table>
   	  <tr>

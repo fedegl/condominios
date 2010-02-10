@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  company_id: 1
+  complex_type_id: 1
+
+two:
+  company_id: 1
+  complex_type_id: 1

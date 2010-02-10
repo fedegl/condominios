@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   include AuthenticatedSystem
 	
 	def index
+		@company = Company.new
 	end
 	
   # render new.rhtml
@@ -21,7 +22,7 @@ class SessionsController < ApplicationController
       self.current_user = user
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/')
+      redirect_to company_path(current_user.company_id)
     else
       note_failed_signin
       @email = params[:email]

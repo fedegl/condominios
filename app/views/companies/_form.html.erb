@@ -26,6 +26,22 @@
 	    <td><%= f.text_field :phone, :class => "text_field" %></td>
   	</tr>
   </table>
+  
+  <p>
+  	<%= f.label :tool, "Servicios que ofrece", :class => "label" %><br/>  
+  	<%= f.check_box :security, :class => "checkbox"  %>
+  	<%= f.label :security, "Seguridad" %>
+  	<%= f.check_box :cleaning, :class => "checkbox"  %>
+  	<%= f.label :cleaning, "Limpieza" %>
+  	<%= f.check_box :gardening, :class => "checkbox"  %>
+  	<%= f.label :gardening, "Jardinería" %>  	
+  	<br/>
+  	<%= link_to_add_fields("Otro", f, :tools) %>
+  	<% for tool in @company.tools do %>
+  		<p><%= tool.name %> <%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete, :class => "options" %> 
+  		</p>
+  	<% end %>  	  	
+  </p>
 
   <p>
 		<%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %><br/>

@@ -1,6 +1,5 @@
 class Tool < ActiveRecord::Base
-	belongs_to :company
+  has_many :tool_offers
+	has_many :companies, :through => :tool_offers	
 	
-	validates_presence_of :name, :message => "^Debes escribir un Nombre"
-	validates_presence_of :description, :message => "^Debes escribir una Descripción"
 end

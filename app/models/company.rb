@@ -1,11 +1,14 @@
 class Company < ActiveRecord::Base
-	has_and_belongs_to_many :complex_types
+	has_many								:complex_offers
+	has_many								:tool_offers
+	has_many								:complex_types, :through => :complex_offers
 	has_many								:users
 	belongs_to							:country
 	belongs_to							:state
 	has_many								:experiences, :dependent => :destroy
-	has_many								:tools,       :dependent => :destroy
+	has_many								:tools, :through => :tool_offers, :dependent => :destroy
 	accepts_nested_attributes_for :users
+	accepts_nested_attributes_for :tools, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
 	
 	has_attached_file :logo, :styles => { :small => "150x100>" },
 										:default_url => "/images/missing.png",
@@ -25,10 +28,8 @@ class Company < ActiveRecord::Base
 	validates_presence_of		:state_id, :message => "^Debes especificar un Estado", :if => :country_is_mexico?
 	validates_presence_of		:city, :message => "^Debes escribir una Ciudad"
 	
-	named_scope :find_by_country_short, lambda { |location| {:joins => :country, :conditions => { :countries => {:short => location} } } }
-	named_scope :find_by_state_short2, lambda { |location| {:joins => :state, :conditions => { :states => {:short2 => location} } } }
-
-	attr_accessible :name, :price, :description, :complex_type_ids, :phone, :country_id, :state_id, :city, :logo, :users_attributes
+	named_scope :activated, :include => :users, :conditions => { 'users.activation_code' => nil }
+	attr_accessible :name, :price, :description, :complex_type_ids, :tool, :tools_attributes, :phone, :country_id, :state_id, :city, :logo, :security, :gardening, :cleaning, :users_attributes
 	
 	def phone=(string)
 	  clean_phone =  string

@@ -17,10 +17,7 @@ class UsersController < ApplicationController
   end
   
   def show
-  	respond_to do |type|
-      type.html
-      type.json {render :json => @experience}
-    end
+  	@user = User.find(params[:id])    
   end
  
   def create
@@ -33,6 +30,10 @@ class UsersController < ApplicationController
       flash[:error]  = "Ocurrió un error con el registro de la cuenta, por favor intenta de nuevo"
       render :action => 'new'
     end
+  end
+  
+  def edit
+  	@user = User.find(params[:id])
   end
 
 	def update

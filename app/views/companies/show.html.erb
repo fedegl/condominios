@@ -3,7 +3,7 @@
  		<img src="/images/lilhouse.png"/>
 		<h1 class="left"><%= @company.name %></h1>
 		<% if session[:user_id] == @company.users.first.id %>
-			<%= link_to "Editar Compañía", edit_company_path(@company), :id => "edit" %>		
+			<%= link_to "Editar", edit_company_path(@company), :id => "edit" %>		
 		<% end %>
 		<div class="clear"></div>
 		<div id="company_logo" class="right">
@@ -11,6 +11,9 @@
 		</div>
 		<div id="company_description" class="detail left">
 		<%= @company.description %>
+		</div>
+		<div id="go_back">
+			<%= link_to "Volver al listado", companies_path %>
 		</div>
 		<div class="clear"></div>
 	</div>	
@@ -30,30 +33,31 @@
 			</div>
 			
 			<div id="company_complex" class="detail">
-				<div class="detail_name">Tipo de condominios</div>
-				<% for complex in @company.complex_types do %>
-				<ul><li><%= complex.name %></li></ul>
-				<% end %>
-			</div>
-			
-			<div id="company_tools" class="detail">
-				<% if !@company.tools.empty? %>
-					<div class="detail_name">Servicios</div>
+				<% if !@company.complex_types.empty? %>
+					<div class="detail_name">Tipo de condominios</div>
 					<ul>
-						<% for tool in @company.tools do %>
-							<% if logged_in? %>					
-								<li><span class="rest_in_place" url="<%= company_tool_path(@company.id, tool) %>" object="tool" attribute="name"><%= tool.name %></span>. <span class="rest_in_place" url="<%= company_tool_path(@company.id, tool) %>" object="tool" attribute="description"><%= tool.description %></span><%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemeto?', :method => :delete, :class => "options" %></li>
-								<% else %>
-									<li><%= tool.name %>. <%= tool.description %></li>
-							<% end %>
+					<% for complex in @company.complex_types do %>
+						<li><%= complex.name %></li>					
 					<% end %>
 					</ul>
 				<% end %>
-				<% if session[:user_id] == @company.users.first.id %>
-					<%= link_to "Agregar nuevo servicio", new_company_tool_path(@company.id), :class => "options" %>			
-				<% end %>
-			</div>			
-	
+			</div>
+			
+			<% if @company.security || @company.cleaning || @company.gardening %> 
+				<div id="company_tools" class="detail">
+					<div class="detail_name">Servicios</div>
+						<ul>
+							<% if @company.security %><li>Seguridad</li><% end %>
+							<% if @company.cleaning %><li>Limpieza</li><% end %>
+							<% if @company.gardening %><li>Jardinería</li><% end %>						
+						<% for tool in @company.tools do %>
+							<li><%= tool.name %></li>
+						<% end %>
+						</ul>
+									
+				</div>			
+			<% end %>
+		
 			<div id="company_price" class="detail">
 				<div class="detail_name">Precio</div>
 				<%= @company.price %>
@@ -79,7 +83,7 @@
 						</tr>
 						<% for experience in @company.experiences do %>
 							<tr>	
-								<td id="experience"><%= experience.name %></td>								
+								<td id="experience"><span class="tiptip" title="<%= experience.description %>"><%= experience.name %></span></td>
 								<td id="start_year"><%= experience.start_year %> - <%= experience.end_year %></td>
 							<% if session[:user_id] == @company.users.first.id %>
 								<td><%= link_to "Editar", edit_company_experience_path(@company.id, experience), :class => "options" %></td>

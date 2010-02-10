@@ -31,13 +31,13 @@ module AuthenticatedSystem
     #    current_user.login != "bob"
     #  end
     #
-		def authorized?(action = action_name, resource = nil)
-			logged_in?
-		end
+		#def authorized?(action = action_name, resource = nil)
+		#	logged_in?
+		#end
 		  
 		def authorized?
 			@company = Company.find(params[:company_id])
-			if current_user.id == @company.users.first.id
+			if @company.users.find(current_user.id)
 				true
 			else
 				flash[:error] = "Ocurrió un error al intentar realizar esa acción"

@@ -4,9 +4,5 @@
     <%= f.label :name, "Nombre", :class => "label" %><br />
     <%= f.text_field :name, :class => "text_field" %>
   </p>
-  <p>
-    <%= f.label :description, "Descripción", :class => "label" %><br />
-    <%= f.text_area :description, :class => "text_area" %>
-  </p>
   <p><%= f.submit "Agregar" %> <%= link_to "Cancelar", @company %></p>
 <% end %>

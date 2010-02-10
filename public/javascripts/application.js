@@ -1,20 +1,45 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
+
+function add_fields(link, association, content) {		
+	var new_id = new Date().getTime();
+	var regexp = new RegExp("new_" + association, "g")
+  $(link).parent().after(content.replace(regexp, new_id));
+}
+
+function remove_fields(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields").hide();
+}
+
 $(document).ready(function() {
 
-	$("#company_state").hide();
+	if($("#company_country_id").val() != 15) //Id 15 = México
+	{
+		$("#company_state").hide();
+	}
+	else 
+	{
+		$("#company_state").show();
+	}	
 
 	$("#company_country_id").change(function () {
 		$("#company_country_id option:selected").each(function () {
-			if($(this).text() == "México"){				
+			if($(this).text() == "México")
+			{
 				$("#company_state").show();
 			}
-			else{				
+			else
+			{				
 				$("#company_state_id").val("");
 				$("#company_state").hide();		
 			}
     });
   })
+  
+  $("a#advanced_link").click(function() {
+  	$("#advanced_search").toggle('blind',{},'slow');
+  } );
   
   $("select.dropdownsearch").selectmenu({maxHeight: 350, width: 300, style:'dropdown'});
   
@@ -34,5 +59,9 @@ $(document).ready(function() {
       $("fieldset#signin_menu").hide();
     }
 	});
-  
+	
+	$(".tiptip").hover(function () {
+		$(".tiptip").tipTip({maxWidth: "auto", position:"top", edgeOffset:10});
+	});
+	
 });

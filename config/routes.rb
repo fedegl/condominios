@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'companies', :action => 'new'
   map.search '/search', :controller => 'companies', :action => 'search'
+  map.about '/about', :controller => 'pages', :action => 'about'
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   

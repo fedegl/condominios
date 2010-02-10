@@ -48,7 +48,7 @@ class ToolsController < ApplicationController
   	@tool = Tool.find(params[:id])
     @tool.destroy
     flash[:notice] = "La herramienta o servicio se eliminó correctamente."
-    redirect_to company_path(@company)
+    redirect_to :back
   end
   
   def find_company

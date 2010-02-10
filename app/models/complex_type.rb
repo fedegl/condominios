@@ -1,4 +1,6 @@
 class ComplexType < ActiveRecord::Base
-	has_and_belongs_to_many :companies
+	has_many :complex_offers
+	has_many :companies, :through => :complex_offers
+	
 	attr_accessible :name
 end

@@ -1,5 +1,5 @@
 <div id="user_details">
-	<div class="right">
+	<div class="left">
 		<p>
 			<span class="property">Nombre</span><br/>
 			<%= current_user.name %>
@@ -8,17 +8,11 @@
 		<p>
 			<span class="property">Correo electr&oacute;nico</span><br/>
 			<%= current_user.email %>
-		</p>		
-	</div>
-	
-	<div class="left">
-		<div id="user_companies">		
-			<h2>Mi Compañ&iacute;a</h2>
-				<span id="name"><%= link_to current_user.company.name, company_path(current_user.company) %></span><span id="delete"><%= link_to "Eliminar", company_path(current_user.company), :confirm => '¿Estás seguro de querer eliminar esta compañia?', :method => :delete %></span><br/>
-				<span id="description"><%= current_user.company.description %></span><br/><br/>
-
-		</div>
-	</div>
+		</p>
+		
+		<%= link_to "Editar Usuario", edit_user_path(@user) %>
+		
+	</div>	
 	
 	<div class="clear"></div>
 </div>

@@ -1,4 +1,4 @@
-<% form_for @searchlogic do |f| %>
+<% form_for @companies do |f| %>
 <div id="search_left" class="left">
 	<p>
 		<%= f.label :name_like, "Nombre" %><br/>
@@ -8,7 +8,7 @@
 	<p>
 		<%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %><br/>
 		<% for complex_type in ComplexType.find(:all) %>
-		<%= check_box_tag"company[complex_type_ids][]", complex_type.id, false, :class=>  "checkbox" %>
+		<%= check_box_tag"search[complex_types_id_equals_any][]", complex_type.id, false, :class=>  "checkbox" %>
 		<%= complex_type.name %><br/>
 		<% end %>
 	</p>
@@ -39,7 +39,7 @@
 <% end %>
 
 <% if params[:search] %>
-	<% for company in @searchlogic do %>
+	<% for company in @companies do %>
 	<div id="company_list">	
 		<div id="company_name">
 			<img style="float:left;" src="/images/lilhouse.png"/>
