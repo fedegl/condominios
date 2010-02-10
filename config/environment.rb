@@ -41,7 +41,7 @@ Rails::Initializer.run do |config|
 		:port  => 25,
 		:user_name  => "rncien@gmail.com",
 		:password  => "r100fuegos",
-		:authentication  => :plain
+		:authentication  => :login
 	}
 
   # Activate observers that should always be running
