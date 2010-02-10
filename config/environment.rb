@@ -32,19 +32,7 @@ Rails::Initializer.run do |config|
   
   #Action Mailer Configuration
   require 'action_mailer'
-  
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_charset = "utf-8" 
-  
-  ActionMailer::Base.smtp_settings = {
-  	:enable_starttls_auto => true,
-		:address  => "smtp.gmail.com",
-		:port  => 25,
-		:user_name  => "rncien@gmail.com",
-		:password  => "r100fuegos",
-		:authentication  => :login
-	}
-
+    
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   
