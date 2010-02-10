@@ -36,14 +36,14 @@ Rails::Initializer.run do |config|
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_charset = "utf-8" 
   
-  config.action_mailer.smtp_settings = { 
-    :address => "smtp.gmail.com", 
-    :port => 25, 
-    :domain => "gmail.com", 
-    :authentication => :login, 
-    :user_name => "rncien", 
-    :password => "r100fuegos" 
-  }
+  ActionMailer::Base.smtp_settings = {
+  :address        => "smtp.sendgrid.net",
+  :port           => "25",
+  :authentication => :plain,
+  :user_name      => ENV['SENDGRID_USERNAME'],
+  :password       => ENV['SENDGRID_PASSWORD'],
+  :domain         => ENV['SENDGRID_DOMAIN'],
+}
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
