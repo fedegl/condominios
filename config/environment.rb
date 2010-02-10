@@ -37,6 +37,7 @@ Rails::Initializer.run do |config|
   config.action_mailer.default_charset = "utf-8" 
   
   ActionMailer::Base.smtp_settings = {
+  	:enable_starttls_auto => true,
 		:address  => "smtp.gmail.com",
 		:port  => 25,
 		:user_name  => "rncien@gmail.com",
