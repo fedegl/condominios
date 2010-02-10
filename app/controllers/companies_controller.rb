@@ -4,10 +4,13 @@ class CompaniesController < ApplicationController
 	before_filter :authorized?, :only => [:edit, :update]
 
   def index
+  #REFACTOR! - Named Scope?
   	if params[:company] && !params[:location].blank?
   		@companies = Company.activated.country_short_or_state_short2_equals(params[:location]).search(params[:company]).paginate :page => params[:page], :per_page => 10
   	elsif !params[:company] && !params[:location].blank?
-  		@companies = Company.activated.country_short_or_state_short2_equals(params[:location]).paginate :page => params[:page], :per_page => 10  		
+  		@companies = Company.activated.country_short_or_state_short2_equals(params[:location]).paginate :page => params[:page], :per_page => 10
+  	elsif params[:company] && params[:location].blank?
+  		@companies = Company.activated.search(params[:company]).paginate :page => params[:page], :per_page => 10
   	else  		
   		@companies = Company.activated.paginate :page => params[:page], :per_page => 10
   	end

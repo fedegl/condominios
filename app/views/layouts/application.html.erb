@@ -20,7 +20,7 @@
       <div id="sub_container">
       	<div id="signin">					
 					<% if admin? %>
-						<p>Bienvenido <%= link_to current_user.name, user_path(current_user) %><%= link_to image_tag("/images/logoutbtn.png", :alt => "Salir"), logout_path %></p>
+						<p>Bienvenido <%= link_to current_user.name, user_path(current_user) %> | <%= link_to "Mi Compañía", company_path(current_user.company) %><%= link_to image_tag("/images/logoutbtn.png", :alt => "Salir"), logout_path %></p>
 						<% elsif logged_in? %>
 							<p>Bienvenido <%= link_to current_user.name, user_path(current_user) %> | <%= link_to "Mi Compañía", company_path(current_user.company) %><%= link_to image_tag("/images/logoutbtn.png", :alt => "Salir"), logout_path %></p>
 						<% else %>

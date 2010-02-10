@@ -8,11 +8,17 @@
 																:class => "dropdownsearch" %>
 			<a href="#" id="advanced_link">Ver más opciones</a>
 			<div id="advanced_search">
-				<p>Tipo de condominios:</p>
-				<% for complex_type in ComplexType.all %>
-					<%= check_box_tag "company[complex_types_id_equals_any][]", complex_type.id, @company.complex_types.include?(complex_type)%>
-					<%= f.label :complex_type_ids, complex_type.name %>
-				<% end %>
+			<p>Tipo de condominios:</p>
+				<table>					
+					<% for complex_type in ComplexType.all %>
+						<tr>
+							<td>
+								<%= check_box_tag "company[complex_types_id_equals_any][]", complex_type.id, @company.complex_types.include?(complex_type)%></td><td>
+								<%= f.label :complex_type_ids, complex_type.name %>
+							</td>
+						</tr>
+					<% end %>					
+				</table>
 			</div>		
 			<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
 		<% end %>

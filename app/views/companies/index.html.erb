@@ -19,10 +19,12 @@
 		<% end %>
 		<%= company.country.name %>
 	</div>
-	<div id="company_complex" class="info">
-		<span>Tipo de Condominio</span><br/>
-		<%= company.complex_types.collect{|c| c.name}.join(", ") %>
-	</div>
+	<% if !company.complex_types.empty? %>
+		<div id="company_complex" class="info">
+			<span>Tipo de Condominio</span><br/>
+			<%= company.complex_types.collect{|c| c.name}.join(", ") %>
+		</div>
+	<% end %>	
 	<div id="division"><img src="/images/division.png"/></div>
 	<div class="clear"></div>
 </div>

@@ -16,7 +16,7 @@ a img {
 }
 
 a {
-  color: #0000FF;
+  color: #4E7474;
 }
 
 .clear {
@@ -150,20 +150,23 @@ a {
 	z-index: 1;	
 }
 
-#advanced_search label {
-	font-size: 10pt;
-	padding-top: 2px;
-	margin: 0px;
-	margin-right: 30px;
-	max-width: 180px;
+#advanced_search table  {
+	margin-top: -15px;
+	margin-left: 50px;
+}
+
+#advanced_search table tr {
+	float:left;
+	max-height: 30px;
+	width: 140px;
 }
 
 #advanced_link {
 	position: absolute;	
 	margin-top: 65px;
-	margin-left: 60px;
+	margin-left: 55px;
 	color: black;
-	font-size: 10px;
+	font-size: 12px;
 }
 
 .searchbtn {
@@ -346,6 +349,10 @@ a {
 	margin-left: 550px;
 }
 
+#company_details #go_back a {
+	color: #8BB18B;
+}
+
 #company_details #company_tools ul {
 	margin: 0;
 }
@@ -363,8 +370,10 @@ a {
 	margin-top: 20px;
 }
 
+/* Experience Name */
 #company_details #company_experience #experience {
 	min-width: 150px;
+	text-decoration: underline;
 }
 
 #company_details #company_experience table {
@@ -453,7 +462,7 @@ a {
 }
 
 #register_form .text_area {
-	height: 100px;
+	height: 80px;
 	width: 400px;
 	margin-bottom: 10px ;
 	margin-top: 5px ;
@@ -500,6 +509,17 @@ a {
 #register_form #casita2 {
 	background: url("/images/casa2.png") no-repeat;
 	height: 40px;
+}
+
+#register_form #example {
+	font-style: italic;
+	font-size: 10px;
+	padding-bottom: 10px;
+}
+
+#register_form #complex_types table tr {
+	float:left;
+	max-width: 180px;
 }
 
 #register_form .other_tool_link {
