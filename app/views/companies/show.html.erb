@@ -2,7 +2,7 @@
 	<div id="company_name">
  		<img src="/images/lilhouse.png"/>
 		<h1 class="left"><%= @company.name %></h1>
-		<% if current_user.company.id == @company.id %>
+		<% if logged_in? && current_user.company.id == @company.id %>
 			<%= link_to "Editar", edit_company_path(@company), :id => "edit" %>		
 		<% end %>
 		<div class="clear"></div>
@@ -97,7 +97,7 @@
 						</tr>
 					</table>
 				<% end %>
-				<% if current_user.company.id == @company.id %>
+				<% if logged_in? && current_user.company.id == @company.id %>
 					<%= link_to "Agregar nueva experiencia", new_company_experience_path(@company.id) %>
 				<% end %>
 			</div>			
