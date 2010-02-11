@@ -3,69 +3,91 @@
 
 	<% form_for @company, :html => { :multipart => true } do |f| -%>
 	  <%= f.error_messages :header_message => "Encontramos un pequeño error en tus datos", :message => "Verifica que todos los campos tengan tu información correcta" %>
-	  
-	  <table>
-  		<tr>
-    		<td><%= f.label :name, "Nombre", :class => "label"%></td>
-    		<td><%= f.text_field :name, :class => "text_field" %></td>
-  		</tr>
-
-  	  <tr>
-    		<td><%= f.label :description, "Descripci&oacute;n", :class => "label" %></td>
-  	    <td><%= f.text_area :description, :class => "text_area" %></td>
-  	  </tr>
-
-  	  <tr>
-  	  	<td><%= f.label :logo, "Logo de tu Compañía", :class => "label" %></td>
-  	  	<td><%= f.file_field :logo %></td>
-  	  </tr>
-
-  		<tr>
-  	    <td><%= f.label :price, "Precio", :class => "label" %></td>
-  	    <td><%= f.text_field :price, :class => "text_field" %></td>
-  	  </tr>
-
-  	  <tr>
-  	    <td><%= f.label :phone, "Tel&eacute;fono", :class => "label" %></td>
-  	    <td><%= f.text_field :phone, :class => "text_field" %></td>
-  	  </tr>
-  	</table>	
-  	 
-		<p>
-  		<%= f.label :complex_type_ids, "Tipo de complejos que administra", :class => "label" %>
-  		<div class="clear"></div>
-  		<% for complex_type in ComplexType.all %>
-  			<%= check_box_tag "company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
-  			<%= f.label :complex_type_ids, complex_type.name %>
-  		<% end %> 			
-  	</p>
-  			
-		<p>
-  		<%= f.label :tool_ids, "Servicios que ofrece", :class => "label" %><br/>  		
-  		<%= f.check_box :security, :class => "checkbox"  %>
-  		<%= f.label :security, "Seguridad" %>
-	  	<%= f.check_box :cleaning, :class => "checkbox"  %>
-	  	<%= f.label :cleaning, "Limpieza" %>
-	  	<%= f.check_box :gardening, :class => "checkbox"  %>
-	  	<%= f.label :gardening, "Jardinería" %>
-	  </p> 			
 
 		<table>
-  	  <tr>
-    		<td><%= f.label :country_id, "País", :class => "label" %></td>
-  	    <td><%= f.collection_select :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %></td>
-  	  </tr>
+			<tr>
+	  		<td><%= f.label :name, "Nombre de la Empresa", :class => "label"%></td>
+	  		<td><%= f.text_field :name, :class => "text_field" %></td>
+			</tr>
 
-  	  <tr id="company_state">
-  	    <td><%= f.label :state_id, "Estado", :class => "label"  %></td>
-  	    <td><%= f.collection_select :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %></td>
-  	  </tr>
+		  <tr>
+	  		<td><%= f.label :description, "Descripci&oacute;n", :class => "label" %></td>
+		    <td><%= f.text_area :description, :class => "text_area" %></td>
+		  </tr>
 
-  	  <tr>
-  	    <td><%= f.label :city, "Ciudad", :class => "label" %></td>
-  	    <td><%= f.text_field :city, :class=> "text_field" %></td>
-  	  </tr>
-  	</table>	  
+		  <tr>
+		  	<td><%= f.label :logo, "Logo de la Empresa", :class => "label" %></td>
+		  	<td><%= f.file_field :logo %></td>
+		  </tr>
+
+			<tr>
+		    <td><%= f.label :price, "Precio", :class => "label" %></td>
+		    <td><%= f.text_field :price, :class => "text_field" %></td>
+		  </tr>
+		  
+		  <tr>
+				<td></td>
+				<td id="example">Ejemplo: $100 por propiedad, 10% del cobro total, etc</td>
+			</tr>
+
+		  <tr>
+		    <td><%= f.label :phone, "Tel&eacute;fono", :class => "label" %></td>
+		    <td><%= f.text_field :phone, :class => "text_field" %></td>
+		  </tr>
+		</table>	
+
+	<div id="complex_types">			 
+		<p><%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %></p>
+		<table>				
+			<% for complex_type in ComplexType.find(:all) %>
+			<tr>
+				<td>
+					<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
+				</td>
+				<td>
+					<%= complex_type.name %>
+				</td>
+			</tr>
+			<% end %>
+		</table>
+	</div>	
+
+	<p><%= f.label :tool, "Servicios que ofrece", :class => "label" %></p>
+		<table>
+			<tr><td></td></tr>
+			<tr>
+				<td>
+					<%= f.check_box :security, :class => "checkbox"  %>
+					<%= f.label :security, "Seguridad" %>
+				</td>
+				<td>
+					<%= f.check_box :cleaning, :class => "checkbox"  %>
+					<%= f.label :cleaning, "Limpieza" %>
+				</td>
+				<td>
+					<%= f.check_box :gardening, :class => "checkbox"  %>
+					<%= f.label :gardening, "Jardinería" %>
+				</td>
+			<tr>
+		</table>
+
+
+		<table>
+		  <tr>
+	  		<td><%= f.label :country_id, "País", :class => "label" %></td>
+		    <td><%= f.collection_select :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %></td>
+		  </tr>
+
+		  <tr id="company_state">
+		    <td><%= f.label :state_id, "Estado", :class => "label"  %></td>
+		    <td><%= f.collection_select :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %></td>
+		  </tr>
+
+		  <tr>
+		    <td><%= f.label :city, "Ciudad", :class => "label" %></td>
+		    <td><%= f.text_field :city, :class=> "text_field" %></td>
+		  </tr>
+		</table>
 	
 			<h2 id="casita2">Datos de usuario</h2>
 

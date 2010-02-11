@@ -64,4 +64,6 @@ $(document).ready(function() {
 		$(".tiptip").tipTip({maxWidth: "auto", position:"top", edgeOffset:10});
 	});
 	
+	$("#contact_form").validate();
+	
 });

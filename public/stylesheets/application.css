@@ -38,7 +38,7 @@ a {
   position: relative;
   width: 1024px;
   margin: 0 auto;
-  margin-bottom: -417px;
+  margin-bottom: -409px;
 	background-image: url("/images/nubes.png");
 	background-repeat: no-repeat;
 }
@@ -139,15 +139,11 @@ a {
 
 #advanced_search {
 	display: none;
-	position: absolute;
+	margin-top: 20px;
 	width: 500px;
 	height: 93px;
-	padding: 1px;
-	padding-left: 5px;
+	padding: 1px 0 0 10px;
 	background: url(/images/advanced_search.png) no-repeat;	
-	top: 135px;
-	left: -50px;
-	z-index: 1;	
 }
 
 #advanced_search table  {
@@ -213,31 +209,44 @@ a {
 
 #footer {
 	width: 1286px;
-	height: 417px;
+	height: 409px;
 	margin: 0 auto;
 	position: relative;
 }
 
 #footer #city {
 	background: url("/images/ciudad.png") no-repeat;
-	min-height: 372px;
+	min-height: 364px;
 }
 
 #footer #info {
 	background-color: #335533;
 	padding-left: 250px;
-	margin-top: -8px;
-	padding-top: 15px;
-	height: 30px;
+	padding-top: 2px;
+	height: 43px;
 }
 
-#footer a{
+#footer #info ul {
+	list-style-image: url(/images/punto.png);
+}
+
+#footer #info ul li {
+	float:left;
+	margin-right: 30px;
+}
+
+#footer #info ul li:first-child {
+	list-style-type: none;
+	list-style-image:none;
+}
+
+#footer a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
 
 .clearfooter {
-   height: 417px;
+   height: 409px;
    clear: both;
 }
 
@@ -437,11 +446,11 @@ a {
 }
 
 #register_form {
-	margin-top: 50px;
+	margin-top: 40px;
 }
 
 #register_form table {
-	width: 700px;
+	width: 650px;
 }
 
 #register_form table td {
@@ -449,13 +458,13 @@ a {
 }
 
 #register_form .label {
-	font-size: 18px;
-	padding-left: 60px;	
+	font-size: 14px;
+	padding-left: 30px;	
 }
 
 #register_form .text_field {
-	font-size: 24px;
-	height: 30px;
+	font-size: 18px;
+	height: 26px;
 	width: 400px;
 	margin-bottom: 5px ;
 	margin-top: 5px;
@@ -482,7 +491,7 @@ a {
 }
 
 #register_form .next {
-	margin-left: 60px;
+	margin-left: 30px;
 }
 
 #register_form .cancel {
@@ -496,9 +505,11 @@ a {
 
 #register_form h2 {
 	font-size: 20px;
-	margin-left: 50px;
+	margin-left: 20px;
 	padding-left: 45px;
 	padding-top: 10px;
+	background: url("/images/lilhouse.png") no-repeat;
+	min-height: 40px;
 }
 
 #register_form #casita1 {
@@ -543,6 +554,52 @@ a {
 	background: url("/images/lilhouse.png") no-repeat;
 	height: 40px;
 }
+
+/* Contact Form */
+#contact_form h2 {
+	background: url(/images/lilhouse.png) no-repeat;
+	min-height: 40px;
+	padding-left: 45px;
+	padding-top: 6px;
+}
+
+#contact_form #division {
+	border-top: 1px solid #CCCCCC;
+	margin-top: -15px;
+}
+
+#contact_form .label {
+	font-size: 16px;
+}
+
+#contact_form .title {
+	font-weight: bold;
+}
+
+#contact_form .subtitle {
+	font-style: italic;
+	margin-top: -12px;
+}
+
+#contact_form .text_field {
+	font-size: 18px;
+	height: 26px;
+	width: 400px;
+	margin-bottom: 5px ;
+	margin-top: 5px;
+}
+
+#contact_form .text_area {
+	height: 120px;
+	width: 400px;
+	margin-top: 5px ;
+}
+
+#contact_form .asterisk {
+	font-size: 20px;
+	color: red;	
+}
+
 
 /* Search Company */
 .search_admin {
@@ -655,7 +712,7 @@ a {
   -moz-border-radius-topleft:5px;
   -moz-border-radius-bottomleft:5px;
   -moz-border-radius-bottomright:5px;
-  -webkit-border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
   -webkit-border-bottom-left-radius:5px;
   -webkit-border-bottom-right-radius:5px;
   display:none;
@@ -667,7 +724,7 @@ a {
   border:1px transparent;
   text-align:left;
   padding:12px;
-  top: 22px; 
+  top: 25px; 
   right: 0px; 
   margin-top:5px;
   margin-right: 0px;

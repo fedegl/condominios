@@ -2,7 +2,7 @@
 	<div id="company_name">
  		<img src="/images/lilhouse.png"/>
 		<h1 class="left"><%= @company.name %></h1>
-		<% if session[:user_id] == @company.users.first.id %>
+		<% if current_user.company.id == @company.id %>
 			<%= link_to "Editar", edit_company_path(@company), :id => "edit" %>		
 		<% end %>
 		<div class="clear"></div>
@@ -10,10 +10,10 @@
 			<%= image_tag @company.logo.url(:small) %>
 		</div>
 		<div id="company_description" class="detail left">
-		<%= @company.description %>
+			<%= @company.description %>		
 		</div>
 		<div id="go_back">
-			<%= link_to "Volver al listado", :back %>
+			<%= link_to "Volver al listado", companies_path %>
 		</div>
 		<div class="clear"></div>
 	</div>	
@@ -85,7 +85,7 @@
 							<tr>	
 								<td id="experience"><span class="tiptip" title="<%= experience.description %>"><%= experience.name %></span></td>
 								<td id="start_year"><%= experience.start_year %> - <%= experience.end_year %></td>
-							<% if session[:user_id] == @company.users.first.id %>
+							<% if current_user.company.id == @company.id %>
 								<td><%= link_to "Editar", edit_company_experience_path(@company.id, experience), :class => "options" %></td>
 								<td><%= link_to "Borrar", company_experience_path(@company.id, experience), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete, :class => "options" %></td>								
 							<% end %>
@@ -97,7 +97,7 @@
 						</tr>
 					</table>
 				<% end %>
-				<% if session[:user_id] == @company.users.first.id %>
+				<% if current_user.company.id == @company.id %>
 					<%= link_to "Agregar nueva experiencia", new_company_experience_path(@company.id) %>
 				<% end %>
 			</div>			

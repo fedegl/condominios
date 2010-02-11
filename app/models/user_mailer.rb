@@ -6,9 +6,13 @@ class UserMailer < ActionMailer::Base
   end
   
   def activation(user)
-    setup_email(user)
+    setup_contact_email(user)
     @subject    += 'Tu cuenta ha sido activada!'
     @body[:url]  = "http://#{domain}/"
+  end
+  
+  def contact(email_params)
+  	setup_contact_email(email_params)
   end
   
   protected  
@@ -29,5 +33,15 @@ class UserMailer < ActionMailer::Base
       @subject     = "AdministraciondeCondominios.com - "
       @sent_on     = Time.now
       @body[:user] = user
+    end
+    
+    def setup_contact_email(email_params)
+      @recipients  = "rene@innku.com"
+      @from        = "contact-us@condominios.com"
+      @subject     = "AdministraciondeCondominios.com - Contáctanos"
+      @sent_on     = Time.now
+      @body[:message] = "#{email_params[:message]}"
+      @body[:name] = "#{email_params[:name]}"
+      @body[:email] = "#{email_params[:email]}"
     end
 end

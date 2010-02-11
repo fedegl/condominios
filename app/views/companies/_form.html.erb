@@ -2,7 +2,7 @@
   <%= f.error_messages %>
   <table>
 		<tr>
-		  <td><%= f.label :name, "Nombre", :class => "label"%></td>
+		  <td><%= f.label :name, "Nombre de la Empresa", :class => "label"%></td>
 		  <td><%= f.text_field :name, :class => "text_field" %></td>
 		</tr>
 		
@@ -12,7 +12,7 @@
 		</tr>
 		
 		<tr>
-			<td><%= f.label :logo, "Logo de tu Compañía", :class => "label" %></td>
+			<td><%= f.label :logo, "Logo de la Empresa", :class => "label" %></td>
 			<td><%= image_tag @company.logo.url(:small), :class => "logo" %><%= f.file_field :logo %></td>
 		</tr>
 		
@@ -30,10 +30,26 @@
 	    <td><%= f.label :phone, "Tel&eacute;fono", :class => "label" %></td>
 	    <td><%= f.text_field :phone, :class => "text_field" %></td>
   	</tr>
-  </table>  
+  </table>    	  	
   
-  	<%= f.label :tool, "Servicios que ofrece", :class => "label" %>
-  	<table>
+	<div id="complex_types">
+		<p><%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %></p>
+		<table>
+			<% for complex_type in ComplexType.find(:all) %>
+			<tr>
+				<td>
+					<%= check_box_tag "company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
+				</td>
+				<td>
+					<%= complex_type.name %>
+				</td>
+			</tr>
+			<% end %>
+		</table>	
+	</div>
+	
+		<p><%= f.label :tool, "Servicios que ofrece", :class => "label" %></p>
+		<table>  		
   		<tr>
 				<td>
 					<%= f.check_box :security, :class => "checkbox"  %>
@@ -51,30 +67,13 @@
 		</table>
   	
   	<p>
-  		<%= link_to_add_fields("Otro", f, :tools) %>
+  		<%= link_to_add_fields("Agregar otro servicio", f, :tools) %>
   	</p>
   		<% for tool in @company.tools do %>
   		<p>
   			<%= tool.name %> <%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete, :class => "options" %>
   		</p>
   		<% end %>  	
-  <p>
-		<%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %>
-	</p>
-	<div id="complex_types">
-		<table>
-			<% for complex_type in ComplexType.find(:all) %>
-			<tr>
-				<td>
-					<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
-				</td>
-				<td>
-					<%= complex_type.name %>
-				</td>
-			</tr>
-			<% end %>
-		</table>	
-	</div>
 
   <table>
 		<tr>

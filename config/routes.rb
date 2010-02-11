@@ -12,6 +12,16 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'companies', :action => 'new'
   map.search '/search', :controller => 'companies', :action => 'search'
   map.about '/about', :controller => 'pages', :action => 'about'
+	
+	map.with_options :controller => 'contact' do |c|
+		c.contact '/contact-us',
+		  :action => 'index',
+		  :conditions => { :method => :get }
+
+		c.contact '/contact-us',
+		  :action => 'create',
+		  :conditions => { :method => :post }
+	end
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   

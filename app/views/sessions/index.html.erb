@@ -7,8 +7,9 @@
 																["Internacional", Country.all.map {|c| [c.name, c.short]}]], nil, "Todos"),
 																:class => "dropdownsearch" %>
 			<a href="#" id="advanced_link">Ver más opciones</a>
+			<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
 			<div id="advanced_search">
-			<p>Tipo de condominios:</p>
+				<p>Tipo de condominios:</p>
 				<table>					
 					<% for complex_type in ComplexType.all %>
 						<tr>
@@ -19,7 +20,6 @@
 						</tr>
 					<% end %>					
 				</table>
-			</div>		
-			<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
+			</div>					
 		<% end %>
 </div>
