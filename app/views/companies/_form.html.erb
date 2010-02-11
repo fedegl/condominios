@@ -31,24 +31,21 @@
 	    <td><%= f.text_field :phone, :class => "text_field" %></td>
   	</tr>
   </table>    	  	
-  
+  <div id="division"></div>
 	<div id="complex_types">
-		<p><%= f.label :complex_type, "Tipo de complejos que administra", :class => "label" %></p>
+		<p class="title">Tipo de complejos que administra</p>
 		<table>
 			<% for complex_type in ComplexType.find(:all) %>
 			<tr>
 				<td>
-					<%= check_box_tag "company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %>
-				</td>
-				<td>
-					<%= complex_type.name %>
+					<%= check_box_tag "company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %><%= complex_type.name %>
 				</td>
 			</tr>
 			<% end %>
 		</table>	
 	</div>
-	
-		<p><%= f.label :tool, "Servicios que ofrece", :class => "label" %></p>
+	<div id="division"></div>
+		<p class="title">Servicios que ofrece</p>
 		<table>  		
   		<tr>
 				<td>
@@ -69,12 +66,11 @@
   	<p>
   		<%= link_to_add_fields("Agregar otro servicio", f, :tools) %>
   	</p>
+ 		<ul>
   		<% for tool in @company.tools do %>
-  		<p>
-  			<%= tool.name %> <%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete, :class => "options" %>
-  		</p>
-  		<% end %>  	
-
+  			<li><%= tool.name %> <%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete %></li>  		
+  		<% end %>
+  	</ul>
   <table>
 		<tr>
 		  <td><%= f.label :country_id, "País", :class => "label" %></td>
@@ -90,8 +86,9 @@
 		  <td><%= f.label :city, "Ciudad", :class => "label" %></td>
 		  <td><%= f.text_field :city, :class=> "text_field" %></td>
 		</tr>
-  </table>
+  </table>  
   
-  <p><%= image_submit_tag "/images/siguiente.png", :class => "next" %> <%= link_to "Cancelar", @company, :class => "cancel" %></p>  
+  <p><%= image_submit_tag "/images/editar.png", :class => "next" %> <%= link_to "Cancelar", @company, :class => "cancel" %></p>  
   
 <% end %>
+

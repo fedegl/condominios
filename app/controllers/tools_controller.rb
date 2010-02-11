@@ -9,11 +9,7 @@ class ToolsController < ApplicationController
   end
   
   def show
-    @tool = @company.tools.find(params[:id])
-    respond_to do |type|
-      type.html
-      type.json {render :json => @tool}
-    end
+    @tool = @company.tools.find(params[:id])   
   end  
   
   def new
@@ -23,7 +19,7 @@ class ToolsController < ApplicationController
   def create
    	@tool = @company.tools.build(params[:tool])
     if @tool.save
-      flash[:notice] = "La herramienta o servicio se ha agregado correctamente"
+      flash[:notice] = "El servicio se ha agregado correctamente"
       redirect_to @company
     else
       render :action => 'new'
@@ -47,7 +43,7 @@ class ToolsController < ApplicationController
   def destroy
   	@tool = Tool.find(params[:id])
     @tool.destroy
-    flash[:notice] = "La herramienta o servicio se eliminó correctamente."
+    flash[:notice] = "El servicio se eliminó correctamente."
     redirect_to :back
   end
   

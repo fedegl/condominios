@@ -25,63 +25,6 @@
   		<td><%= f.password_field :password_confirmation, :class => "text_field" %></td>
   	</tr>
   	</table>
-	
-			<h2 id="casita2">Datos de la empresa</h2>
-
-  	<% f.fields_for :company do |company_form| %>
-  	<table>
-  		<tr>
-    		<td><%= company_form.label :name, "Nombre", :class => "label"%></td>
-    		<td><%= company_form.text_field :name, :class => "text_field" %></td>
-  		</tr>
-
-  	  <tr>
-    		<td><%= company_form.label :description, "Descripci&oacute;n", :class => "label" %></td>
-  	    <td><%= company_form.text_area :description, :class => "text_area" %></td>
-  	  </tr>
-
-  	  <tr>
-  	  	<td><%= company_form.label :logo, "Logo de tu Compañía", :class => "label" %></td>
-  	  	<td><%= company_form.file_field :logo %></td>
-  	  </tr>
-
-  		<tr>
-  	    <td><%= company_form.label :price, "Precio", :class => "label" %></td>
-  	    <td><%= company_form.text_field :price, :class => "text_field" %></td>
-  	  </tr>
-
-  	  <tr>
-  	    <td><%= company_form.label :phone, "Tel&eacute;fono", :class => "label" %></td>
-  	    <td><%= company_form.text_field :phone, :class => "text_field" %></td>
-  	  </tr>
-  	</table>	
-  	 
-  			<%= company_form.label :complex_type_ids, "Tipo de complejos que administra", :class => "label" %>
-  			<div class="clear"></div>
-  			<% for complex_type in ComplexType.all %>
-  				<%= check_box_tag "user[company_attributes][complex_type_ids][]", complex_type.id, @user.company.complex_types.include?(complex_type), :class => "checkbox" %>
-  				<%= company_form.label :complex_type_ids, complex_type.name %>
-  			<% end %>
-
-		<table>
-  	  <tr>
-    		<td><%= company_form.label :country_id, "País", :class => "label" %></td>
-  	    <td><%= company_form.collection_select :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %></td>
-  	  </tr>
-
-  	  <tr id="company_state">
-  	    <td><%= company_form.label :state_id, "Estado", :class => "label"  %></td>
-  	    <td><%= company_form.collection_select :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %></td>
-  	  </tr>
-
-  	  <tr>
-  	    <td><%= company_form.label :city, "Ciudad", :class => "label" %></td>
-  	    <td><%= company_form.text_field :city, :class=> "text_field" %></td>
-  	  </tr>
-  	</table>
-  	
-  	<% end %>
-
 
 	<p><%= image_submit_tag "/images/siguiente.png", :class => "next" %></p>
 	

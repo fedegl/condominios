@@ -358,17 +358,14 @@ a {
 	margin-left: 550px;
 }
 
-#company_details #go_back a {
-	color: #8BB18B;
-}
-
 #company_details #company_tools ul {
 	margin: 0;
 }
 
 #company_details_left {
 	width: 280px;
-	margin-top: 20px;
+	margin-top: 0px;
+	padding-top: 20px;
 	border-right: 1px solid #CCCCCC;
 }
 
@@ -450,7 +447,7 @@ a {
 }
 
 #register_form table {
-	width: 650px;
+	width: 700px;
 }
 
 #register_form table td {
@@ -490,6 +487,17 @@ a {
 	height: 30px;
 }
 
+#register_form ul li {
+	margin-left: 50px;
+	margin-bottom: 5px;
+}
+
+#register_form .title {
+	color: #333333;
+	font-weight: bold;
+	margin-left: 30px;
+}
+
 #register_form .next {
 	margin-left: 30px;
 }
@@ -503,9 +511,15 @@ a {
 	padding-left: 80px;
 }
 
+#register_form #division {
+	border-top: 1px solid #CCCCCC;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
 #register_form h2 {
 	font-size: 20px;
-	margin-left: 20px;
+	margin-left: 10px;
 	padding-left: 45px;
 	padding-top: 10px;
 	background: url("/images/lilhouse.png") no-repeat;
@@ -515,6 +529,7 @@ a {
 #register_form #casita1 {
 	background: url("/images/casa1.png") no-repeat;
 	height: 40px;
+	border-bottom: 1px solid #CCCCCC;
 }
 
 #register_form #casita2 {
@@ -530,7 +545,7 @@ a {
 
 #register_form #complex_types table tr {
 	float:left;
-	max-width: 180px;
+	max-width: 230px;
 }
 
 #register_form .other_tool_link {
@@ -541,7 +556,8 @@ a {
 	font-size: 20px;
 	height: 20px;
 	width: 150px;
-	margin-bottom: 0px ;
+	margin-left: 10px;
+	margin-bottom: 0px;
 	margin-top: 0px;
 }
 

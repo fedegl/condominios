@@ -23,7 +23,11 @@
 		
 			<div id="company_location" class="detail">
 				<div class="detail_name">Ubicaci&oacute;n</div>
-				<%= @company.city %>, <%= @company.country.name %>
+				<%= @company.city %>,
+				<% if @company.state %>
+					<%= @company.state.name %>,
+				<% end %>				
+				 <%= @company.country.name %>
 			</div>
 			
 			<div id="company_contact" class="detail">
