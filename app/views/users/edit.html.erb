@@ -21,3 +21,32 @@
 	
 <% end %>
 
+<div id="new_password">
+	
+
+<a href="#">Nuevo password</a>
+</div>
+
+<div id="new_password_form">
+	<% form_for(:user, :url => user_password_path(@user), :html => { :method => :put }) do |f| %>
+
+		<p>
+		 	<%= label_tag :old_password, "Contraseña actual" %><br/>
+			<%= password_field_tag :old_password %>
+		</p>
+
+		<p>
+			<%= f.label :password, "Nueva contraseña" %><br/>
+			<%= f.password_field :password %>
+		</p>
+	
+		<p>
+			<%= f.label :password_confirmation, "Confirmar nueva contraseña" %><br/>
+			<%= f.password_field :password_confirmation %>
+		</p>
+	
+		<p>
+			<%= f.submit "Actualizar" %><%= link_to "Cancelar", root_path %>
+		</p>	
+	<% end %>
+</div>	

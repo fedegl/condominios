@@ -15,13 +15,19 @@ class UserMailer < ActionMailer::Base
   	setup_contact_email(email_params)
   end
   
+  def new_password(user, new_password)
+		setup_email(user)
+		@subject    += 'Tu nueva contraseña'
+		@body[:new_password] = new_password
+	end
+  
   protected  
   
     def domain
       if ENV['RAILS_ENV'] == "production"
-        "administraciondecondominios.com"
+        "condominios.heroku.com"
       elsif ENV['RAILS_ENV'] == "staging"
-        "administraciondecondominios.heroku.com"
+        "condominios.heroku.com"
       else
         "administraciondecondominios.local"
       end

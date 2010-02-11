@@ -36,7 +36,7 @@ module AuthenticatedSystem
 		#end
 		  
 		def authorized?
-			@company = Company.find(params[:company_id])
+			@company = Company.find(params[:company_id]) 
 			if @company.users.find(current_user.id)
 				true
 			else
@@ -59,8 +59,11 @@ module AuthenticatedSystem
     #
     #   skip_before_filter :login_required
     #
+		#def login_required
+     # authorized? || access_denied
+    #end
     def login_required
-      authorized? || access_denied
+    	logged_in? || access_denied
     end
 
     # Redirect as appropriate when an access request fails.

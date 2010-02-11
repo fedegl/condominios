@@ -64,6 +64,18 @@ $(document).ready(function() {
 		$(".tiptip").tipTip({maxWidth: "auto", position:"top", edgeOffset:10});
 	});
 	
-	$("#contact_form").validate();
+	$("#new_password_form").dialog({autoOpen:false});
+	$("#reset_password_form").dialog({autoOpen:false});
+	
+	
+	$("#new_password a").click(function() {
+		$("#new_password_form").dialog('open');
+	});
+	
+	$("a#reset_password").click(function() {
+		$("#reset_password_form").dialog('open');
+	});
+
+
 	
 });
