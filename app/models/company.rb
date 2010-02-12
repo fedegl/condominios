@@ -12,7 +12,7 @@ class Company < ActiveRecord::Base
 	production = ENV['RAILS_ENV'] == 'production'
 	has_attached_file :logo, :styles => { :small => "150x100>" },
 										:storage => (production ? :s3 : :filesystem),
-										:bucket => 'condominios'										
+										:bucket => 'condominios',
 										:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
 										:default_url => "/images/missing.png",
                   	:url  => "/system/companies/:id/:style/:basename.:extension",
