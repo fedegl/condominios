@@ -1,52 +1,51 @@
+<h2>Información de tu usuario</h2>
+<div class="division"></div>
 <% form_for @user do |f| %>
+<div id="register_form">
+	<table>
+		<tr>
+			<td><%= f.label :name, "Nombre Completo", :class => "label" %></td>
+			<td><%= f.text_field :name, :class => "text_field" %></td>
+		</tr>
 	
+		<tr>
+			<td><%= f.label :email, "Correo electrónico", :class => "label" %></td>
+			<td><%= f.text_field :email, :class => "text_field" %></td>
+		</tr>
+	</table>
+</div>	
 	<p>
-		<%= f.label :name, "Nombre Completo" %>
-		<%= f.text_field :name %>
-	</p>
-	
-	<p>
-		<%= f.label :email, "Correo electrónico" %>
-		<%= f.text_field :email %>
-	</p>
-	
-	<p>
-		<%= f.label :password, "Contraseña" %>
-		<%= f.password_field :password %>
-	</p>
-	
-	<p>
-		<%= f.submit "Actualizar" %>
+		<%= f.submit "Actualizar" %> <%= link_to "Cancelar", @user %>
 	</p>
 	
 <% end %>
 
 <div id="new_password">
-	
-
-<a href="#">Nuevo password</a>
+	<p>Si deseas cambiar tu contraseña haz click <a href="#">aquí</a></p>
 </div>
 
 <div id="new_password_form" title="Nueva contraseña">
+	<p>Para cambiar tu contraseña sólo ingresa los siguientes datos</p>
+
 	<% form_for(:user, :url => user_password_path(@user), :html => { :method => :put }) do |f| %>
 
 		<p>
 		 	<%= label_tag :old_password, "Contraseña actual" %><br/>
-			<%= password_field_tag :old_password %>
+			<%= password_field_tag :old_password, :class => "text_field" %>
 		</p>
 
 		<p>
 			<%= f.label :password, "Nueva contraseña" %><br/>
-			<%= f.password_field :password %>
+			<%= f.password_field :password, :class => "text_field" %>
 		</p>
 	
 		<p>
 			<%= f.label :password_confirmation, "Confirmar nueva contraseña" %><br/>
-			<%= f.password_field :password_confirmation %>
+			<%= f.password_field :password_confirmation, :class => "text_field" %>
 		</p>
 	
 		<p>
-			<%= f.submit "Actualizar" %><%= link_to "Cancelar", root_path %>
+			<%= f.submit "Actualizar" %> <%= link_to "Cancelar", :class => 'cancel' %>
 		</p>	
 	<% end %>
 </div>	

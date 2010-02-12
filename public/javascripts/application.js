@@ -64,16 +64,24 @@ $(document).ready(function() {
 		$(".tiptip").tipTip({maxWidth: "auto", position:"top", edgeOffset:10});
 	});
 	
-	$("#new_password_form").dialog({autoOpen:false, modal:true, overlay: {backgroundColor: '#000000', opacity: 0.6} });
-	$("#reset_password_form").dialog({autoOpen:false, modal:true, overlay: {backgroundColor: '#0000FF'}});
+	$("#new_password_form").dialog({autoOpen:false, modal:true, dialogClass: 'password_form', minWidth: 400, minHeight: 300 });
+	$("#reset_password_form").dialog({autoOpen:false, modal:true, dialogClass: 'password_form', minWidth: 400, minHeight: 300});
 	
 	
 	$("#new_password a").click(function() {
 		$("#new_password_form").dialog('open');
 	});
 	
+	$("#new_password.cancel").click(function() {
+		$("#new_password_form").dialog('close');
+	});
+	
 	$("a#reset_password").click(function() {
 		$("#reset_password_form").dialog('open');
+	});
+	
+	$("#reset_password.cancel").click(function() {
+		$("#reset_password_form").dialog('close');
 	});
 	
 	$(".contact_submit").formValidator( {

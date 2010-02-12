@@ -1,20 +1,18 @@
-<div id="user_details">
 <h2>Información de tu usuario</h2>
-
+<div class="division"></div>
+<div id="user_details">
 	<div class="left">
 		<p>
-			<span class="property">Nombre</span><br/>
+			<div class="detail_name">Nombre</div>
 			<%= current_user.name %>
 		</p>
 	
 		<p>
-			<span class="property">Correo electr&oacute;nico</span><br/>
+			<div class="detail_name">Correo electr&oacute;nico</div>
 			<%= current_user.email %>
 		</p>
 		
-		<%= link_to "Editar Usuario", edit_user_path(@user) %>
-		
-	</div>	
-	
+	</div>		
 	<div class="clear"></div>
+	<%= link_to "Editar Usuario", edit_user_path(@user) %>
 </div>

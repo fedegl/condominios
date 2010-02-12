@@ -14,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'companies', :action => 'new'
   map.search '/search', :controller => 'companies', :action => 'search'
   map.about '/about', :controller => 'pages', :action => 'about'
+  map.success '/success', :controller => 'pages', :action => 'success'
 	
 	map.with_options :controller => 'contact' do |c|
 		c.contact '/contact-us',

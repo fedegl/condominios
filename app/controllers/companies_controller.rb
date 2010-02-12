@@ -29,8 +29,8 @@ class CompaniesController < ApplicationController
   def create  	
   	@company = Company.new(params[:company])
     if @company.save
-      flash[:notice] = "Los datos de la compañía se guardaron correctamente"
-      redirect_to @company
+      flash[:notice] = "Tus datos se guardaron correctamente"
+      redirect_to success_path
     else
       render :action => 'new'
     end

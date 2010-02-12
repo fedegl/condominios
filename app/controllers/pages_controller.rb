@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def about
   end
   
-  def success  	
+  def success
   end
 
 end

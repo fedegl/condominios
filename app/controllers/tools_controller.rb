@@ -33,7 +33,7 @@ class ToolsController < ApplicationController
   def update
   	@tool = @company.tools.find(params[:id])
     if @tool.update_attributes(params[:tool])
-      flash[:notice] = "El elemento se actualizó correctamente."
+      flash[:notice] = "El servicio se actualizó correctamente."
       redirect_to root_path
     else
       render :action => 'edit'

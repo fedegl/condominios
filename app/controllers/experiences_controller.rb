@@ -10,10 +10,6 @@ class ExperiencesController < ApplicationController
   
   def show
     @experience = @company.experiences.find(params[:id])
-    respond_to do |type|
-      type.html
-      type.json {render :json => @experience}
-    end
   end
   
   def new
@@ -37,7 +33,7 @@ class ExperiencesController < ApplicationController
   def update
     @experience = @company.experiences.find(params[:id])
     if @experience.update_attributes(params[:experience])
-      flash[:notice] = "El elemento se actualizó correctamente."
+      flash[:notice] = "La experiencia se actualizó correctamente."
       redirect_to root_path
     else
       render :action => 'edit'
@@ -47,7 +43,7 @@ class ExperiencesController < ApplicationController
   def destroy
     @experience = Experience.find(params[:id])
     @experience.destroy
-    flash[:notice] = "El elemento se eliminó correctamente."
+    flash[:notice] = "La experiencia se eliminó correctamente."
     redirect_to @company
   end
   

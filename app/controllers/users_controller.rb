@@ -60,12 +60,12 @@ class UsersController < ApplicationController
     when (!params[:activation_code].blank?) && user && !user.active?
       user.activate!
       flash[:notice] = "Tu cuenta ha sido activada, ingresa tus datos para continuar."
-      redirect_to '/login'
+      redirect_to root_path
     when params[:activation_code].blank?
-      flash[:error] = "The activation code was missing.  Please follow the URL from your email."
+      flash[:error] = "No se encontró ningún código de activación, por favor usa el enlace que se envió a tu correo electrónico"
       redirect_back_or_default('/')
     else 
-      flash[:error]  = "We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in."
+      flash[:error]  = "No encontramos ningún usuario con ese código de activación, quizá ya activaste tu cuenta, intenta iniciar sesión."
       redirect_back_or_default('/')
     end
   end

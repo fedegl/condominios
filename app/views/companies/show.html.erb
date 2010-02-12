@@ -87,7 +87,7 @@
 							<tr>	
 								<td id="experience"><span class="tiptip" title="<%= experience.description %>"><%= experience.name %></span></td>
 								<td id="start_year"><%= experience.start_year %> - <%= experience.end_year %></td>
-							<% if current_user.company.id == @company.id %>
+							<% if logged_in? && current_user.company.id == @company.id %>
 								<td><%= link_to "Editar", edit_company_experience_path(@company.id, experience), :class => "options" %></td>
 								<td><%= link_to "Borrar", company_experience_path(@company.id, experience), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete, :class => "options" %></td>								
 							<% end %>
