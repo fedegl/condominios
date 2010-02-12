@@ -25,7 +25,7 @@ class PasswordsController < ApplicationController
           redirect_to root_path
         }
       else
-        flash[:notice] =  "No pudimos encontrar ninguna cuenta relacionada a ese correo electrónico"
+        flash[:error] =  "No pudimos encontrar ninguna cuenta relacionada a ese correo electrónico"
         format.html { render :action => "new" }
       end
     end
@@ -41,15 +41,15 @@ class PasswordsController < ApplicationController
   # Changing password
   def update
     @user = current_user
-
     old_password = params[:old_password]
-
     @user.attributes = params[:user]
 
     respond_to do |format|
       if @user.authenticated?(old_password) && @user.save
-        format.html { redirect_to user_path(@user) }
+      	flash[:notice] = "La contraseña se actualizó correctamente"
+        format.html { redirect_to user_path(@user) }        
       else
+      	flash[:error] = "Ocurrió un error al tratar de actualizar la contraseña"
         format.html { render :action => 'edit' }
       end
     end

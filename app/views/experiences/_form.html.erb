@@ -10,13 +10,13 @@
 		  <td><%= f.text_area :description, :class => "text_area" %></td>
 		</tr>
 		<tr>
-		  <td><%= f.label :start_year, "Año de inicio", :class => "label" %></td>
-		  <td><%= f.text_field :start_year, :class => "text_field" %></td>
-		</tr>
+		  <td><%= f.label :start_year, "Año de inicio", :class => "label" %> - <%= f.label :start_year, "Año de finalización" %></td>
+		  <td><%= f.text_field :start_year, :class => "start_text_field" %> - <%= f.text_field :end_year, :class => "end_text_field" %></td>
+		</tr>		
 		<tr>
-		  <td><%= f.label :end_year, "Año de finalizaci&oacute;n", :class => "label" %></td>
-		  <td><%= f.text_field :end_year, :class => "text_field" %></td>
+			<td>
+				<%= image_submit_tag "/images/agregar.png", :class => "button" %> <%= link_to "Cancelar", @company, :class => "cancel" %>
+			</td>
 		</tr>
-		<tr><td><%= image_submit_tag "/images/agregar.png", :class => "add_experience" %> <%= link_to "Cancelar", @company, :class => "cancel" %></td></tr>
 	</table>
 <% end %>

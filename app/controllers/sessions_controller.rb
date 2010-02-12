@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
       note_failed_signin
       @email = params[:email]
       @remember_me = params[:remember_me]
-      render :action => 'new'
+      redirect_to root_path
     end
   end
 

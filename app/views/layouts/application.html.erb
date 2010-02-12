@@ -52,12 +52,12 @@
 		  		<p>Si olvidaste tu contraseña no te preocupes. Escribe tu correo electrónico y te enviaremos una nueva</p>
 		  	
 					<% form_for(:password, :url => passwords_path) do |f| %>
-	
+						<br/>
 						<p>
 							<%= label_tag :email, "Correo electrónico" %><br/>
 							<%= text_field_tag :email %>
 						</p>
-			
+						
 						<p>
 							<%= submit_tag "Enviar" %> <%= link_to "Cancelar", :class => "cancel" %>
 						</p>	
@@ -88,7 +88,7 @@
     		<div id="city"></div>
     		<div id="info">
     			<ul>
-    			<li><a href="about">¿Quiénes somos?</a></li><li><a href="/contact-us">Contáctanos</a></li><li><a href="#">Privacidad</a></li>
+    			<li><a href="about">¿Quiénes somos?</a></li><li><a href="/contact-us">Contáctanos</a></li>
 	    		<li><a href="http://www.innku.com">Innku</a></li>
 	    		</ul>
     		</div>

@@ -41,6 +41,11 @@ h2 {
 	margin-bottom: 0px;
 }
 
+.button {
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
 #main_container {
 	min-height: 100%;
   position: relative;
@@ -201,14 +206,14 @@ h2 {
 }
 
 #about #about_what {
-	width: 240px;
+	width: 270px;
 	border-right: 1px solid #CCCCCC;
 	padding-top: 20px;
 }
 
 #about #about_how {
 	width: 400px;
-	padding-top: 20px;	
+	padding-top: 20px;
 }
 
 #about #about_suggest {
@@ -492,6 +497,14 @@ h2 {
 	margin-top: 5px;
 }
 
+#register_form .start_text_field, .end_text_field {
+	font-size: 18px;
+	height: 22px;
+	width: 100px;
+	margin-bottom: 5px ;
+	margin-top: 5px;
+}
+
 #register_form .text_area {
 	height: 80px;
 	width: 400px;
@@ -520,10 +533,6 @@ h2 {
 #register_form .title {
 	color: #333333;
 	font-weight: bold;
-	margin-left: 30px;
-}
-
-#register_form .next {
 	margin-left: 30px;
 }
 
@@ -616,7 +625,7 @@ h2 {
 /* Contact Form */
 #contact_form #division {
 	border-top: 1px solid #CCCCCC;
-	margin-top: -15px;
+	margin-top: 5px;
 }
 
 #contact_form .label {
@@ -630,6 +639,10 @@ h2 {
 #contact_form .subtitle {
 	font-style: italic;
 	margin-top: -12px;
+}
+
+#contact_form .button {
+	margin-left: 0;
 }
 
 #contact_form .text_field {
@@ -649,6 +662,10 @@ h2 {
 #contact_form .asterisk {
 	font-size: 20px;
 	color: red;	
+}
+
+#contact_form #new_password {
+	margin-left: 30px;
 }
 
 
@@ -737,7 +754,8 @@ h2 {
 #errorExplanation h2 {
   text-align: left;
   font-weight: bold;
-  padding: 5px 5px 5px 45px;
+  padding: 5px 5px 0px 45px;
+  min-height: 25px;
   font-size: 15px;
   margin: 0;
   background: url("/images/logoutbtn.png") no-repeat 15px 3px;

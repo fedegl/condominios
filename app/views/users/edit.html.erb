@@ -13,16 +13,15 @@
 			<td><%= f.text_field :email, :class => "text_field" %></td>
 		</tr>
 	</table>
-</div>	
-	<p>
-		<%= f.submit "Actualizar" %> <%= link_to "Cancelar", @user %>
-	</p>
-	
-<% end %>
+	<div id="new_password" class="button">
+		<p>Si deseas cambiar tu contraseña haz click <a href="#">aquí</a></p>
+	</div>
 
-<div id="new_password">
-	<p>Si deseas cambiar tu contraseña haz click <a href="#">aquí</a></p>
-</div>
+	<p>
+		<%= image_submit_tag "/images/editar_small.png", :class => "button" %> <%= link_to "Cancelar", @user, :class => "cancel" %>
+	</p>
+</div>	
+<% end %>
 
 <div id="new_password_form" title="Nueva contraseña">
 	<p>Para cambiar tu contraseña sólo ingresa los siguientes datos</p>

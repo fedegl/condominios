@@ -13,8 +13,12 @@ class CompaniesController < ApplicationController
   		@companies = Company.activated.search(params[:company]).paginate :page => params[:page], :per_page => 10
   	else  		
   		@companies = Company.activated.paginate :page => params[:page], :per_page => 10
+  	end  	
+  	  
+  	if @companies.empty?
+  		flash[:error] = "Por el momento no contamos con ninguna compañía registrada con esas caracteristicas. Si conoces alguna inv&iacute;tala a registrarse con nosotros"
+  		redirect_to root_path
   	end
-  	
   end
   
   def show
