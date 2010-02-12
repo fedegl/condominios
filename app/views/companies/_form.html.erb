@@ -62,15 +62,22 @@
 				</td>
 			<tr>
 		</table>
-  	
-  	<p>
-  		<%= link_to_add_fields("Agregar otro servicio", f, :tools) %>
-  	</p>
+		
+		<table id="new_tools">
  		<ul>
   		<% for tool in @company.tools do %>
-  			<li><%= tool.name %> <%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete %></li>  		
+  			<tr><td><li><%= tool.name %></td><td><%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete %></li></tr>
   		<% end %>
   	</ul>
+  	</table>
+  	
+  	<div id="add_new_tool">			
+			<p class="title">
+				<%= link_to_add_fields("Agregar otro servicio", f, :tools) %>
+			</p>
+		</div>
+	<div id="division"></div>
+	<p class="title">Ubicación</p>
   <table>
 		<tr>
 		  <td><%= f.label :country_id, "País", :class => "label" %></td>

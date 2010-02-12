@@ -4,25 +4,27 @@
 	<p class="title">Envía tus dudas, sugerencias o comentarios y nosotros nos pondremos en contacto contigo</p>
 	<p class="subtitle">Los campos marcados con <span class="asterisk">*</span> son obligatorios</p>
 
-<% form_for :contact, :url => contact_path do |f| %>
+<% form_for :contact, :url => contact_path, :html => {:id => 'contact_form' } do |f| %>
+	<div id="errorDiv2" class="error-div"></div>
 	<p>
 		<span class="asterisk">*</span><%= f.label :name, "Nombre", :class => "label"%><br/>
-		<%= f.text_field :name, :class => "required text_field" %>
+		<%= f.text_field :name, :class => "required text_field req-string" %>
 	</p>
 	
 	<p>
-		<span class="asterisk">*</span><%= f.label :name, "Correo electrónico", :class => "label"%><br/>
-		<%= f.text_field :email, :class => "required text_field" %>
+		<span class="asterisk">*</span><%= f.label :email, "Correo electrónico", :class => "label"%><br/>
+		<%= f.text_field :email, :class => "required text_field req-email" %>
 	</p>
 	
 	<p>
 		<span class="asterisk">*</span><%= f.label :message, "Mensaje", :class => "label"%><br/>
-		<%= f.text_area :message, :class => "required text_area" %>
+		<%= f.text_area :message, :class => "required text_area req-string" %>
 	</p>
-	
+
 	<p>
-		<%= image_submit_tag "/images/enviar.png" %>
+		<%= image_submit_tag "/images/enviar.png", :class => "contact_submit" %>		
 	</p>
+		
 </div>
 <% end %>
 

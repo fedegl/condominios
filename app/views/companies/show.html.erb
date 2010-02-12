@@ -1,6 +1,5 @@
 <div id="company_details">
 	<div id="company_name">
- 		<img src="/images/lilhouse.png"/>
 		<h1 class="left"><%= @company.name %></h1>
 		<% if logged_in? && current_user.company.id == @company.id %>
 			<%= link_to "Editar", edit_company_path(@company), :id => "edit" %>		
@@ -19,8 +18,7 @@
 	</div>	
 	
 	<div class="left">
-		<div id="company_details_left">
-		
+		<div id="company_details_left">		
 			<div id="company_location" class="detail">
 				<div class="detail_name">Ubicaci&oacute;n</div>
 				<%= @company.city %>,

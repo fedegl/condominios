@@ -32,6 +32,7 @@ Rails::Initializer.run do |config|
   
   #Action Mailer Configuration
   require 'action_mailer'
+  require 'aws/s3'
     
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer

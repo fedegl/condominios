@@ -11,6 +11,7 @@
     <%= javascript_include_tag 'application' %>
 		<%= javascript_include_tag 'jquery.tipTip.minified' %>
     <%= javascript_include_tag 'jquery-ui-1.7.2.custom.min' %>
+    <%= javascript_include_tag 'jquery.ufvalidator-1.0.4' %>
     <%= javascript_include_tag 'ui.selectmenu' %>
     <%= yield(:head) %>
    
@@ -47,7 +48,9 @@
 					<% end -%>
 		  	</fieldset>
 		  	
-		  	<div id="reset_password_form">
+		  	<div id="reset_password_form" title="¿Olvidaste tu contraseña?">
+		  		<p>Si olvidaste tu contraseña no te preocupes. Escribe tu correo electrónico y te enviaremos una nueva</p>
+		  	
 					<% form_for(:password, :url => passwords_path) do |f| %>
 	
 						<p>
@@ -56,7 +59,7 @@
 						</p>
 			
 						<p>
-							<%= submit_tag "Enviar contraseña" %>
+							<%= submit_tag "Enviar" %>
 						</p>	
 					<% end %>
 				</div>

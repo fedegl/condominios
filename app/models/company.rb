@@ -11,6 +11,8 @@ class Company < ActiveRecord::Base
 	accepts_nested_attributes_for :tools, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
 	
 	has_attached_file :logo, :styles => { :small => "150x100>" },
+										:storage => :s3,
+										:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
 										:default_url => "/images/missing.png",
                   	:url  => "/system/companies/:id/:style/:basename.:extension",
                   	:path => ":rails_root/public/system/companies/:id/:style/:basename.:extension"

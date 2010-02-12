@@ -5,9 +5,9 @@
 			<%= select_tag :location, grouped_options_for_select([
 																["México", State.all.map {|s| [s.name, s.short2]}], 
 																["Internacional", Country.all.map {|c| [c.name, c.short]}]], nil, "Todos"),
-																:class => "dropdownsearch" %>
-			<a href="#" id="advanced_link">Ver más opciones</a>
+																:class => "dropdownsearch" %>			
 			<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
+			<div id="advanced_link"><a href="#">Ver más opciones</a></div>
 			<div id="advanced_search">
 				<p>Tipo de condominios:</p>
 				<table>					

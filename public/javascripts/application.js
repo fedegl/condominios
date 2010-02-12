@@ -37,7 +37,7 @@ $(document).ready(function() {
     });
   })
   
-  $("a#advanced_link").click(function() {
+  $("#advanced_link a").click(function() {
   	$("#advanced_search").toggle('blind',{},'slow');
   } );
   
@@ -64,8 +64,8 @@ $(document).ready(function() {
 		$(".tiptip").tipTip({maxWidth: "auto", position:"top", edgeOffset:10});
 	});
 	
-	$("#new_password_form").dialog({autoOpen:false});
-	$("#reset_password_form").dialog({autoOpen:false});
+	$("#new_password_form").dialog({autoOpen:false, modal:true, overlay: {backgroundColor: '#000000', opacity: 0.6} });
+	$("#reset_password_form").dialog({autoOpen:false, modal:true, overlay: {backgroundColor: '#0000FF'}});
 	
 	
 	$("#new_password a").click(function() {
@@ -74,6 +74,12 @@ $(document).ready(function() {
 	
 	$("a#reset_password").click(function() {
 		$("#reset_password_form").dialog('open');
+	});
+	
+	$(".contact_submit").formValidator( {
+		errorDiv: '#errorDiv2',
+		customErrMsg: 'Todos los campos son requeridos',
+		scope: "#contact_form"
 	});
 
 

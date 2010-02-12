@@ -141,9 +141,10 @@ a {
 	display: none;
 	margin-top: 20px;
 	width: 500px;
-	height: 93px;
+	height: 103px;
 	padding: 1px 0 0 10px;
-	background: url(/images/advanced_search.png) no-repeat;	
+	background: #FFFFE3;
+	border: 2px solid #CCCCCC;
 }
 
 #advanced_search table  {
@@ -158,11 +159,13 @@ a {
 }
 
 #advanced_link {
-	position: absolute;	
-	margin-top: 65px;
-	margin-left: 55px;
-	color: black;
+	margin-top: 10px;
+	margin-left: 360px;
 	font-size: 12px;
+}
+
+#advanced_link a {
+	color:black;
 }
 
 .searchbtn {
@@ -318,14 +321,18 @@ a {
 }
 
 #company_details #company_name {
+	float:left;
 	border-bottom: 1px solid #CCCCCC;
 	height: 100%;
-	margin-top: 20px;
+	margin-top: 20px;	
 }
 
 #company_details #company_name h1 {
 	color: #333333;
-	padding-top: 8px
+	background: url("/images/lilhouse.png") no-repeat;
+	padding-left: 45px;
+	padding-top: 2px;
+	height: 40px;
 }
 
 #company_details #company_name #edit {
@@ -504,7 +511,8 @@ a {
 
 #register_form .cancel {
 	position: relative;
-	bottom: 20px;
+	bottom: 10px;
+	left: 10px;
 }
 
 #register_form .logo {
@@ -529,7 +537,6 @@ a {
 #register_form #casita1 {
 	background: url("/images/casa1.png") no-repeat;
 	height: 40px;
-	border-bottom: 1px solid #CCCCCC;
 }
 
 #register_form #casita2 {
@@ -548,8 +555,20 @@ a {
 	max-width: 230px;
 }
 
-#register_form .other_tool_link {
-	padding-left: 60px;
+#register_form #add_new_tool {
+	border: 1px solid #FFFF99;
+	background-color: #FFFFD6;
+	padding: 0px;
+}
+
+#register_form #new_tools {
+	margin-left: 75px;
+	margin-bottom: 10px;
+	width: 450px;
+}
+
+#register_form #add_new_tool .title a {
+	color: #333333;
 }
 
 #register_form #other_tool .text_field {
@@ -633,6 +652,13 @@ a {
 }
 
 /* Show User */
+
+#user_details h2 {
+	height: 40px;
+	background: url(/images/lilhouse.png) no-repeat;
+	padding-left: 45px;
+	padding-top: 8px;
+}
 
 #user_details .property {
 	color: #666666;
@@ -782,4 +808,21 @@ a {
 
 #signin_menu #loginbtn a {
 	color: #333333;
+}
+
+.error-input, .error-both .input, .error-same .input { 
+	background-color:#FFEFEF;
+	border-color:#BB6666; 
+	color:#660000; 
+}
+
+.error-div { 
+	margin:7px 10px 0 0;
+	padding: 5px;
+	color:#935; 
+	font-size:12pt;
+	background-color: #FFEFEF;
+	border: 2px solid #935;
+	max-width: 400px;
+	display: none;
 }
