@@ -26,7 +26,7 @@ class PasswordsController < ApplicationController
         }
       else
         flash[:error] =  "No pudimos encontrar ninguna cuenta relacionada a ese correo electrónico"
-        format.html { render :action => "new" }
+        format.html { redirect_to root_path }
       end
     end
   end
