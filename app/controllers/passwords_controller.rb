@@ -50,7 +50,7 @@ class PasswordsController < ApplicationController
         format.html { redirect_to user_path(@user) }        
       else
       	flash[:error] = "Ocurrió un error al tratar de actualizar la contraseña"
-        format.html { render :action => 'edit' }
+        format.html { redirect_to user_path(@user) }
       end
     end
   end
