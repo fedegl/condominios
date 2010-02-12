@@ -9,9 +9,10 @@ class Company < ActiveRecord::Base
 	has_many								:tools, :through => :tool_offers, :dependent => :destroy
 	accepts_nested_attributes_for :users
 	accepts_nested_attributes_for :tools, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
-	
+	production = ENV['RAILS_ENV'] == 'production'
 	has_attached_file :logo, :styles => { :small => "150x100>" },
-										:storage => :s3,
+										:storage => (production ? :s3 : :filesystem),
+										:bucket => 'condominios'										
 										:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
 										:default_url => "/images/missing.png",
                   	:url  => "/system/companies/:id/:style/:basename.:extension",
