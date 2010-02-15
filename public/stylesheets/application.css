@@ -33,17 +33,36 @@ a {
 	float:right;
 }
 
+.options {
+	position: relative;
+	bottom: -4px;
+}
+
+.logomarca {
+	position: relative;
+	left: 69px;
+	margin-top: -21px;
+}
+
+.button {
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
+.division {
+	border-top: 1px solid #CCCCCC;
+}
+
+.searchbtn {
+	margin-top: -5px;
+}
+
 h2 {
 	background: url("/images/lilhouse.png") no-repeat;
 	min-height: 40px;
 	padding-left: 45px;
 	padding-top: 8px;
 	margin-bottom: 0px;
-}
-
-.button {
-	margin-left: 30px;
-	margin-top: 5px;
 }
 
 #main_container {
@@ -76,10 +95,6 @@ h2 {
 	border-top-color: #E6E6E6;
 	border-style: solid;
 	border-width: 5px 5px 5px 5px;
-} 
-
-.division {
-	border-top: 1px solid #CCCCCC;
 }
 
 #sub_content #title {
@@ -94,17 +109,6 @@ h2 {
 	font-size: 20px;
 	color: #333333;
 	background: none;
-}
-
-#signin {
-	text-align: right;
-	margin-bottom: 10px;
-	margin-right: 20px;
-}
-
-#signin img {
-	margin-left: 5px;
-	margin-bottom: -5px;
 }
 
 #header {
@@ -134,100 +138,23 @@ h2 {
 	right: 0;
 }
 
+#signin {
+	text-align: right;
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+
+#signin img {
+	margin-left: 5px;
+	margin-bottom: -5px;
+}
+
 #signup {
 	padding-right: 5px;
 }
 
 #login {
 	padding-right: 30px;
-}
-
-.options {
-	position: relative;
-	bottom: -4px;
-}
-
-.logomarca {
-	position: relative;
-	left: 69px;
-	margin-top: -21px;
-}
-
-#search {
-	position: relative;
-	left: 150px;
-}
-
-#advanced_search {
-	display: none;
-	margin-top: 20px;
-	width: 500px;
-	height: 103px;
-	padding: 1px 0 0 10px;
-	background: #FFFFE3;
-	border: 2px solid #CCCCCC;
-}
-
-#advanced_search table  {
-	margin-top: -15px;
-	margin-left: 50px;
-}
-
-#advanced_search table tr {
-	float:left;
-	max-height: 30px;
-	width: 140px;
-}
-
-#advanced_link {
-	margin-top: 10px;
-	margin-left: 360px;
-	font-size: 12px;
-}
-
-#advanced_link a {
-	color:black;
-}
-
-.searchbtn {
-	margin-top: -5px;
-}
-
-#about span {
-	background: #006633;
-	color: #FFFFFF;
-	font-weight: bold;
-	padding: 5px;
-	margin-bottom: 20px;
-}
-
-#about #about_top {
-	border-bottom: 1px solid #CCCCCC;
-}
-
-#about #about_what {
-	width: 270px;
-	border-right: 1px solid #CCCCCC;
-	padding-top: 20px;
-}
-
-#about #about_how {
-	width: 400px;
-	padding-top: 20px;
-}
-
-#about #about_suggest {
-	border-top: 1px solid #CCCCCC;
-	padding-top: 20px;
-}
-
-#about #about_suggest a {
-	margin-top: 20px;
-}
-
-#about ul li {
-	list-style-image: url(/images/ok.png);
-	
 }
 
 #footer {
@@ -271,6 +198,80 @@ h2 {
 .clearfooter {
    height: 409px;
    clear: both;
+}
+
+/* HomePage */
+#search {
+	position: relative;
+	left: 150px;
+}
+
+#advanced_search {
+	display: none;
+	margin-top: 20px;
+	width: 500px;
+	height: 103px;
+	padding: 1px 0 0 10px;
+	background: #FFFFE3;
+	border: 2px solid #CCCCCC;
+}
+
+#advanced_search table  {
+	margin-top: -15px;
+	margin-left: 50px;
+}
+
+#advanced_search table tr {
+	float:left;
+	max-height: 30px;
+	width: 140px;
+}
+
+#advanced_link {
+	margin-top: 10px;
+	margin-left: 360px;
+	font-size: 12px;
+}
+
+#advanced_link a {
+	color:black;
+}
+
+/* About Us */
+#about span {
+	background: #006633;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 5px;
+	margin-bottom: 20px;
+}
+
+#about #about_top {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+#about #about_what {
+	width: 270px;
+	border-right: 1px solid #CCCCCC;
+	padding-top: 20px;
+}
+
+#about #about_how {
+	width: 400px;
+	padding-top: 20px;
+}
+
+#about #about_suggest {
+	border-top: 1px solid #CCCCCC;
+	padding-top: 20px;
+}
+
+#about #about_suggest a {
+	margin-top: 20px;
+}
+
+#about ul li {
+	list-style-image: url(/images/ok.png);	
 }
 
 /* Index Company. */
@@ -342,14 +343,13 @@ h2 {
 	margin: 0;
 }
 
-#company_details #company_name {
-	float:left;
+#company_details #company_details_top {
 	border-bottom: 1px solid #CCCCCC;
 	height: 100%;
-	margin-top: 20px;	
+	margin-top: 20px;
 }
 
-#company_details #company_name h1 {
+#company_details #company_details_top h1 {
 	color: #333333;
 	background: url("/images/lilhouse.png") no-repeat;
 	padding-left: 45px;
@@ -357,7 +357,7 @@ h2 {
 	height: 40px;
 }
 
-#company_details #company_name #edit {
+#company_details #company_details_top #edit {
 	background: url("/images/edit.png") no-repeat;
 	position: relative;
 	padding: 2px 2px 2px 25px;
@@ -366,25 +366,13 @@ h2 {
 	height: 21px;
 }
 
-#company_details #company_description {
+#company_details #company_details_top #company_description {
 	margin-top: -10px;
 	max-width: 450px;
 }
 
-#company_details #company_name img {
-	float:left;
-	padding-top: 25px
-}
-
-#company_details #company_logo {
-	margin-top: -130px;
-}
-
-#company_details #go_back {
-	position:relative;
-	background: url("/images/back.png") no-repeat;
-	padding: 2px 2px 2px 25px;
-	margin-left: 550px;
+#company_details #company_details_top #company_logo {
+	margin-top: -100px;
 }
 
 #company_details #company_tools ul {

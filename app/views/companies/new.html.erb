@@ -41,7 +41,7 @@
 				<% for complex_type in ComplexType.find(:all) %>
 				<tr>
 					<td>
-						<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), :class => "checkbox" %><%= complex_type.name %>
+						<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), {:class => "checkbox", :id => "company_complex_type_id_" + complex_type.id.to_s} %><%= f.label "complex_type_id_" + complex_type.id.to_s, complex_type.name %>
 					</td>
 				</tr>
 				<% end %>

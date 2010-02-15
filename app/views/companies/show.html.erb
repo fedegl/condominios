@@ -1,5 +1,5 @@
 <div id="company_details">
-	<div id="company_name">
+	<div id="company_details_top">
 		<h1 class="left"><%= @company.name %></h1>
 		<% if logged_in? && current_user.company.id == @company.id %>
 			<%= link_to "Editar", edit_company_path(@company), :id => "edit" %>		
@@ -10,62 +10,59 @@
 		</div>
 		<div id="company_description" class="detail left">
 			<%= @company.description %>		
-		</div>
-		<div id="go_back">
-			<%= link_to "Volver al listado", companies_path %>
-		</div>
+		</div>		
 		<div class="clear"></div>
 	</div>	
 	
-	<div class="left">
-		<div id="company_details_left">		
-			<div id="company_location" class="detail">
-				<div class="detail_name">Ubicaci&oacute;n</div>
-				<%= @company.city %>,
-				<% if @company.state %>
-					<%= @company.state.name %>,
-				<% end %>				
-				 <%= @company.country.name %>
-			</div>
-			
-			<div id="company_contact" class="detail">
-				<div class="detail_name">Contacto</div>
-				<%= @company.phone %><br/>
-				<%= mail_to @company.users.first.email %>
-			</div>
-			
-			<div id="company_complex" class="detail">
-				<% if !@company.complex_types.empty? %>
-					<div class="detail_name">Tipo de condominios</div>
+	<div class="clear"></div>
+	<div id="company_details_left" class="left">		
+		<div id="company_location" class="detail">
+			<div class="detail_name">Ubicaci&oacute;n</div>
+			<%= @company.city %>,
+			<% if @company.state %>
+				<%= @company.state.name %>,
+			<% end %>				
+			 <%= @company.country.name %>
+		</div>
+		
+		<div id="company_contact" class="detail">
+			<div class="detail_name">Contacto</div>
+			<%= @company.phone %><br/>
+			<%= mail_to @company.users.first.email %>
+		</div>
+		
+		<div id="company_complex" class="detail">
+			<% if !@company.complex_types.empty? %>
+				<div class="detail_name">Tipo de condominios</div>
+				<ul>
+				<% for complex in @company.complex_types do %>
+					<li><%= complex.name %></li>					
+				<% end %>
+				</ul>
+			<% end %>
+		</div>
+		
+		<% if @company.security || @company.cleaning || @company.gardening %> 
+			<div id="company_tools" class="detail">
+				<div class="detail_name">Servicios</div>
 					<ul>
-					<% for complex in @company.complex_types do %>
-						<li><%= complex.name %></li>					
+						<% if @company.security %><li>Seguridad</li><% end %>
+						<% if @company.cleaning %><li>Limpieza</li><% end %>
+						<% if @company.gardening %><li>Jardinería</li><% end %>						
+					<% for tool in @company.tools do %>
+						<li><%= tool.name %></li>
 					<% end %>
 					</ul>
-				<% end %>
-			</div>
-			
-			<% if @company.security || @company.cleaning || @company.gardening %> 
-				<div id="company_tools" class="detail">
-					<div class="detail_name">Servicios</div>
-						<ul>
-							<% if @company.security %><li>Seguridad</li><% end %>
-							<% if @company.cleaning %><li>Limpieza</li><% end %>
-							<% if @company.gardening %><li>Jardinería</li><% end %>						
-						<% for tool in @company.tools do %>
-							<li><%= tool.name %></li>
-						<% end %>
-						</ul>
-									
-				</div>			
-			<% end %>
-		
-			<div id="company_price" class="detail">
-				<div class="detail_name">Precio</div>
-				<%= @company.price %>
-			</div>
+								
+			</div>			
+		<% end %>
+	
+		<div id="company_price" class="detail">
+			<div class="detail_name">Precio</div>
+			<%= @company.price %>
 		</div>
-	</div>	
+	</div>
+
 	
 	<div class="right">
 		<div id="company_details_right">		

@@ -5,7 +5,7 @@
 			<%= select_tag :location, grouped_options_for_select([
 																["México", State.all.map {|s| [s.name, s.short2]}], 
 																["Internacional", Country.all.map {|c| [c.name, c.short]}]], nil, "Todos"),
-																:class => "dropdownsearch" %>			
+																:class => "dropdownsearch" %>																
 			<%= image_submit_tag "/images/buscarbtn.png", :class => "searchbtn"%>
 			<div id="advanced_link"><a href="#">Ver más opciones</a></div>
 			<div id="advanced_search">
@@ -14,8 +14,8 @@
 					<% for complex_type in ComplexType.all %>
 						<tr>
 							<td>
-								<%= check_box_tag "company[complex_types_id_equals_any][]", complex_type.id, @company.complex_types.include?(complex_type)%></td><td>
-								<%= f.label :complex_type_ids, complex_type.name %>
+								<%= check_box_tag "company[complex_types_id_equals_any][]", complex_type.id, @company.complex_types.include?(complex_type), { :id => "company_complex_type_id_"+ complex_type.id.to_s} %></td><td>
+								<%= f.label "complex_type_id_"+complex_type.id.to_s, complex_type.name %>
 							</td>
 						</tr>
 					<% end %>					
