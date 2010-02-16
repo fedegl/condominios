@@ -64,6 +64,10 @@
 						<%= f.label :gardening, "Jardinería" %></td>
 					</tr>
 					<tr>
+						<td><%= f.check_box :providers, :class => "checkbox" %>
+						<%= f.label :providers, "Administración de proovedores" %></td>
+					</tr>
+					<tr>
 						<td><%= f.check_box :finance, :class => "checkbox" %>
 						<%= f.label :finance, "Contabilidad y Finanzas" %></td>
 					</tr>
@@ -84,8 +88,7 @@
 						<%= f.label :personnel, "Administración de personal" %></td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" class="checkbox" id="softwaretool"/>
-						<label for="softwaretool">Software</label></td>
+						<td><input type="checkbox" class="checkbox" id="softwaretool"/><label for="softwaretool">Software</label></td>
 					</tr>
 				</table>
 				
