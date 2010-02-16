@@ -60,6 +60,11 @@ $(document).ready(function() {
     }
 	});
 	
+  $("#softwaretool").click(function() {
+  	$("#add_software_tool").toggle('blind',{},'fast');
+  } );	
+	
+	
 	$(".tiptip").hover(function () {
 		$(".tiptip").tipTip({maxWidth: "auto", position:"top", edgeOffset:10});
 	});

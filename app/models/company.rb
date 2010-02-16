@@ -9,6 +9,7 @@ class Company < ActiveRecord::Base
 	has_many								:tools, :through => :tool_offers, :dependent => :destroy
 	accepts_nested_attributes_for :users
 	accepts_nested_attributes_for :tools, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
+
 	production = ENV['RAILS_ENV'] == 'production'
 
 	has_attached_file :logo, :styles => { :small => "150x100>" },
@@ -33,10 +34,11 @@ class Company < ActiveRecord::Base
 	validates_presence_of		:city, :message => "^Debes escribir una Ciudad"
 	
 	named_scope :activated, :include => :users, :conditions => { 'users.activation_code' => nil }
-	attr_accessible :name, :price, :description, :complex_type_ids, :tool, :tools_attributes, :phone, :country_id, :state_id, :city, :logo, :security, :gardening, :cleaning, :users_attributes
+	attr_accessible :name, :price, :description, :complex_type_ids, :tools_attributes, :users_attributes, :phone, :country_id, :state_id, :city, :logo, 
+								:security, :gardening, :cleaning, :money_collect, :personnel, :procedures, :providers, :finance, :maintenance
 	
 	def phone=(string)
-	  clean_phone =  string
+	  clean_phone = string
 	  write_attribute(:phone, clean_phone)
 	end
 	

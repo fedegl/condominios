@@ -48,24 +48,63 @@
 			</table>
 		</div>	
 		<div id="division"></div>
-		<p class="title">Servicios que ofrece</p>
-			<table>
-				<tr><td></td></tr>
-				<tr>
-					<td>
-						<%= f.check_box :security, :class => "checkbox"  %>
-						<%= f.label :security, "Seguridad" %>
-					</td>
-					<td>
-						<%= f.check_box :cleaning, :class => "checkbox"  %>
-						<%= f.label :cleaning, "Limpieza" %>
-					</td>
-					<td>
-						<%= f.check_box :gardening, :class => "checkbox"  %>
-						<%= f.label :gardening, "Jardinería" %>
-					</td>
-				<tr>
-			</table>
+		<div id="tools">		
+			<p class="title">Servicios que ofrece</p>
+				<table>					
+					<tr>
+						<td><%= f.check_box :security, :class => "checkbox"  %>
+							<%= f.label :security, "Seguridad" %></td>
+					</tr>
+					<tr>
+						<td><%= f.check_box :cleaning, :class => "checkbox"  %>
+						<%= f.label :cleaning, "Limpieza" %></td>
+					</tr>
+					<tr>
+						<td><%= f.check_box :gardening, :class => "checkbox"  %>
+						<%= f.label :gardening, "Jardinería" %></td>
+					</tr>
+					<tr>
+						<td><%= f.check_box :providers, :class => "checkbox" %>
+						<%= f.label :providers, "Administración de proovedores" %></td>
+					</tr>
+					<tr>
+						<td><%= f.check_box :finance, :class => "checkbox" %>
+						<%= f.label :finance, "Contabilidad y Finanzas" %></td>
+					</tr>
+					<tr>
+						<td><%= f.check_box :money_collect, :class => "checkbox" %>
+						<%= f.label :money_collect, "Cobranza" %></td>
+					</tr>
+					<tr>
+						<td><%= f.check_box :maintenance, :class => "checkbox" %>
+						<%= f.label :maintenance, "Mantenimiento" %></td>
+					</tr>
+					<tr>
+						<td><%= f.check_box :procedures, :class => "checkbox" %>
+						<%= f.label :procedures, "Trámites" %></td>
+					</tr>
+					<tr>
+						<td><%= f.check_box :personnel, :class => "checkbox" %>
+						<%= f.label :personnel, "Administración de personal" %></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" class="checkbox" id="softwaretool"/>
+						<label for="softwaretool">Software</label></td>
+					</tr>
+				</table>
+				
+				<div id="add_software_tool">
+					<p class="title">
+						<%= link_to_add_fields("Agregar Software", f, :tools) %>
+					</p>
+				</div>
+				
+				<div id="add_new_tool">
+					<p class="title">
+						<%= link_to_add_fields("Agregar otro servicio", f, :tools) %>						
+					</p>
+				</div>
+			</div>
 			<div id="division"></div>
 			<p class="title">Ubicación</p>
 			<table>

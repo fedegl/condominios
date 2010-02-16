@@ -13,8 +13,16 @@ module ApplicationHelper
     link_to_function(name, h("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
   end
   
+  def checkbox_to_add_fields(f, association)
+    new_object = f.object.class.reflect_on_association(association).klass.new
+    fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
+      render(association.to_s.singularize + "_fields", :f => builder)
+    end
+    escape_javascript(h("add_fields(this, \"#{association}\", \"#{h(fields)}\")"))
+  end
+  
   def link_to_remove_fields(name, f)
-    f.hidden_field(:_delete) + link_to_function(name, "remove_fields(this)")
+    f.hidden_field(:_destroy) + link_to_function(image_tag("/images/cancel.png"), "remove_fields(this)")
   end
 
 end

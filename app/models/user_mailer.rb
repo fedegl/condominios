@@ -6,7 +6,7 @@ class UserMailer < ActionMailer::Base
   end
   
   def activation(user)
-    setup_contact_email(user)
+    setup_email(user)
     @subject    += '¡Tu cuenta ha sido activada!'
     @body[:url]  = "http://#{domain}/"
     @body[:email] = user.email

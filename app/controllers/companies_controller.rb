@@ -63,7 +63,7 @@ class CompaniesController < ApplicationController
   
   def search
   	@companies = Company.searchlogic(params[:search])  	
-  end
+  end 
   
   protected
   
@@ -75,6 +75,6 @@ class CompaniesController < ApplicationController
 			flash[:error] = "Ocurrió un error al intentar realizar esa acción"
 			redirect_to root_path
 		end		
-	end
+	end	
   
 end

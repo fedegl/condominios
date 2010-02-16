@@ -472,6 +472,11 @@ h2 {
 	width: 350px;
 }
 
+#register_form #tools table tr {
+	float:left;
+	max-width: 340px;
+}
+
 #register_form .label {
 	font-size: 14px;
 	padding-left: 30px;	
@@ -582,7 +587,6 @@ h2 {
 }
 
 #register_form #new_tools {
-	margin-left: 75px;
 	margin-bottom: 10px;
 	width: 450px;
 }
@@ -591,9 +595,22 @@ h2 {
 	color: #333333;
 }
 
+#register_form #add_software_tool {
+	display: none;
+	margin-left: 0px;
+}
+
+#register_form #add_software_tool .title a {
+	color: #333333;
+}
+
+#register_form #other_tool {
+	margin-top: -10px;
+}
+
 #register_form #other_tool .text_field {
-	font-size: 20px;
-	height: 20px;
+	font-size: 13px;
+	height: 16px;
 	width: 150px;
 	margin-left: 10px;
 	margin-bottom: 0px;
@@ -601,9 +618,14 @@ h2 {
 }
 
 #register_form #other_tool .label {
-	font-size: 14px;
-	padding-left: 60px;	
+	font-size: 13px;
+	padding-left: 35px;	
 }
+
+#register_form #other_tool img {
+	margin-bottom: -5px;	
+}
+
 
 #casita {
 	background: url("/images/lilhouse.png") no-repeat;

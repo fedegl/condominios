@@ -42,18 +42,23 @@
 			<% end %>
 		</div>
 		
-		<% if @company.security || @company.cleaning || @company.gardening %> 
+		<% if has_tools? %>
 			<div id="company_tools" class="detail">
 				<div class="detail_name">Servicios</div>
 					<ul>
 						<% if @company.security %><li>Seguridad</li><% end %>
-						<% if @company.cleaning %><li>Limpieza</li><% end %>
-						<% if @company.gardening %><li>Jardinería</li><% end %>						
+						<% if @company.cleaning %><li>Limpieza</li><% end %>						
+						<% if @company.personnel %><li>Administración de Personal</li><% end %>						
+						<% if @company.providers %><li>Administración de Proovedores</li><% end %>
+						<% if @company.finance %><li>Contabilidad y Finanzas</li><% end %>
+						<% if @company.money_collect %><li>Cobranza</li><% end %>
+						<% if @company.procedures %><li>Trámites</li><% end %>
+						<% if @company.maintenance %><li>Mantenimiento</li><% end %>
+						<% if @company.gardening %><li>Jardinería</li><% end %>
 					<% for tool in @company.tools do %>
 						<li><%= tool.name %></li>
 					<% end %>
-					</ul>
-								
+					</ul>								
 			</div>			
 		<% end %>
 	
