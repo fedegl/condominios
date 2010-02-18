@@ -11,10 +11,12 @@ class User < ActiveRecord::Base
   validates_format_of       :name, :with => Authentication.name_regex,  :message => Authentication.bad_name_message, :allow_nil => true
   validates_length_of       :name, :maximum => 100
 
+	validates_presence_of			:password, :message => "^Debes escribir una Contraseña"
+	
   validates_presence_of     :email, :message => "^Debes escribir un Correo electrónico"
   validates_length_of       :email, :within => 6..100, :allow_blank => true
   validates_uniqueness_of   :email, :message => "^Este correo electrónico ya está en uso"
-  validates_format_of       :email, :with => Authentication.email_regex, :message => Authentication.bad_email_message, :message => "^Debes escribir un Correo electrónico valido", :allow_blank => true
+  validates_format_of       :email, :with => Authentication.email_regex, :message => Authentication.bad_email_message, :message => "^Debes escribir un Correo electrónico valido", :allow_blank => true  
 
   before_create :make_activation_code 
 

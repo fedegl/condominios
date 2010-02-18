@@ -31,9 +31,10 @@ class Company < ActiveRecord::Base
 	validates_uniqueness_of :phone, :message => "^Ese número de teléfono ya existe"
 	validates_presence_of		:country_id, :message => "^Debes especificar un País"
 	validates_presence_of		:state_id, :message => "^Debes especificar un Estado", :if => :country_is_mexico?
-	validates_presence_of		:city, :message => "^Debes escribir una Ciudad"
+	validates_presence_of		:city, :message => "^Debes escribir una Ciudad"	
 	
 	named_scope :activated, :include => :users, :conditions => { 'users.activation_code' => nil }
+	named_scope :search_location, lambda { |location| {:include => [:country, :state], :conditions =>  ['countries.short = ? OR states.short2 = ?', location, location] }}
 	attr_accessible :name, :price, :description, :complex_type_ids, :tools_attributes, :users_attributes, :phone, :country_id, :state_id, :city, :logo, 
 								:security, :gardening, :cleaning, :money_collect, :personnel, :procedures, :providers, :finance, :maintenance
 	
