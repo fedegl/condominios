@@ -58,19 +58,23 @@
 					<tr>
 						<td><%= f.check_box :cleaning, :class => "checkbox"  %>
 						<%= f.label :cleaning, "Limpieza" %></td>
-					</tr>
-					<tr>
-						<td><%= f.check_box :gardening, :class => "checkbox"  %>
-						<%= f.label :gardening, "Jardinería" %></td>
-					</tr>
+					</tr>					
 					<tr>
 						<td><%= f.check_box :providers, :class => "checkbox" %>
 						<%= f.label :providers, "Administración de proovedores" %></td>
 					</tr>
 					<tr>
+						<td><%= f.check_box :personnel, :class => "checkbox" %>
+						<%= f.label :personnel, "Administración de personal" %></td>
+					</tr>
+					<tr>
 						<td><%= f.check_box :finance, :class => "checkbox" %>
 						<%= f.label :finance, "Contabilidad y Finanzas" %></td>
 					</tr>
+					<tr>
+						<td><%= f.check_box :procedures, :class => "checkbox" %>
+						<%= f.label :procedures, "Trámites" %></td>
+					</tr>					
 					<tr>
 						<td><%= f.check_box :money_collect, :class => "checkbox" %>
 						<%= f.label :money_collect, "Cobranza" %></td>
@@ -80,17 +84,13 @@
 						<%= f.label :maintenance, "Mantenimiento" %></td>
 					</tr>
 					<tr>
-						<td><%= f.check_box :procedures, :class => "checkbox" %>
-						<%= f.label :procedures, "Trámites" %></td>
-					</tr>
-					<tr>
-						<td><%= f.check_box :personnel, :class => "checkbox" %>
-						<%= f.label :personnel, "Administración de personal" %></td>
-					</tr>
+						<td><%= f.check_box :gardening, :class => "checkbox"  %>
+						<%= f.label :gardening, "Jardinería" %></td>
+					</tr>					
 					<tr>
 						<td><input type="checkbox" class="checkbox" id="softwaretool"/><label for="softwaretool">Software</label></td>
 					</tr>
-				</table>
+				</table>				
 				
 				<div id="add_software_tool">
 					<p class="title">

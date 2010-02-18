@@ -94,7 +94,5 @@ $(document).ready(function() {
 		customErrMsg: 'Todos los campos son requeridos',
 		scope: "#contact_form"
 	});
-
-
 	
 });
