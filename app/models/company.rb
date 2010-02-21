@@ -1,14 +1,17 @@
 class Company < ActiveRecord::Base
 	has_many								:complex_offers
 	has_many								:tool_offers
+	has_many								:software_offers
 	has_many								:complex_types, :through => :complex_offers
 	has_many								:users
 	belongs_to							:country
 	belongs_to							:state
 	has_many								:experiences, :dependent => :destroy
 	has_many								:tools, :through => :tool_offers, :dependent => :destroy
+	has_many								:softwares, :through => :software_offers
 	accepts_nested_attributes_for :users
 	accepts_nested_attributes_for :tools, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
+	accepts_nested_attributes_for :softwares, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
 
 	production = ENV['RAILS_ENV'] == 'production'
 
@@ -35,7 +38,7 @@ class Company < ActiveRecord::Base
 	
 	named_scope :activated, :include => :users, :conditions => { 'users.activation_code' => nil }
 	named_scope :search_location, lambda { |location| {:include => [:country, :state], :conditions =>  ['countries.short = ? OR states.short2 = ?', location, location] }}
-	attr_accessible :name, :price, :description, :complex_type_ids, :tools_attributes, :users_attributes, :phone, :country_id, :state_id, :city, :logo, 
+	attr_accessible :name, :price, :description, :complex_type_ids, :tools_attributes, :softwares_attributes, :users_attributes, :phone, :country_id, :state_id, :city, :logo, 
 								:security, :gardening, :cleaning, :money_collect, :personnel, :procedures, :providers, :finance, :maintenance
 	
 	def phone=(string)

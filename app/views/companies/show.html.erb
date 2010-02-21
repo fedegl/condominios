@@ -61,13 +61,23 @@
 					</ul>								
 			</div>			
 		<% end %>
+		
+		<% if has_tools? %>
+			<div id="company_tools" class="detail">
+				<div class="detail_name">Software</div>
+					<ul>
+					<% for software in @company.softwares do %>
+						<li><%= software.name %></li>
+					<% end %>
+					</ul>								
+			</div>			
+		<% end %>
 	
 		<div id="company_price" class="detail">
 			<div class="detail_name">Precio</div>
 			<%= @company.price %>
 		</div>
 	</div>
-
 	
 	<div class="right">
 		<div id="company_details_right">		
@@ -76,10 +86,10 @@
 					<table cellspacing="0">
 						<tr>
 							<th id="titlel"></th>	
-							<th id="titler"></th>
+							<th id="titler"></th>							
 						</tr>
 						<tr>
-							<th id="title" colspan=2>Condominos que ha administrado</th>
+							<th id="title" colspan=2>Condominos que ha administrado</th>							
 						</tr>
 						<tr>
 							<th>Nombre</th>
@@ -88,11 +98,12 @@
 						<% for experience in @company.experiences do %>
 							<tr>	
 								<td id="experience"><span class="tiptip" title="<%= experience.description %>"><%= experience.name %></span></td>
-								<td id="start_year"><%= experience.start_year %> - <%= experience.end_year %></td>
-							<% if logged_in? && current_user.company.id == @company.id %>
-								<td><%= link_to "Editar", edit_company_experience_path(@company.id, experience), :class => "options" %></td>
-								<td><%= link_to "Borrar", company_experience_path(@company.id, experience), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete, :class => "options" %></td>								
-							<% end %>
+								<td id="start_year"><%= experience.start_year %> - <%= experience.end_year %>
+									<% if logged_in? && current_user.company.id == @company.id %>
+										<%= link_to "Editar", edit_company_experience_path(@company.id, experience), :class => "options" %>
+										<%= link_to "Borrar", company_experience_path(@company.id, experience), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete, :class => "options" %>
+								</td>
+									<% end %>
 							</tr>
 						<% end %>
 						<tr>							

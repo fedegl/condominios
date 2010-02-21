@@ -28,7 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   
-  map.resources :companies, :has_many => [:tools, :experiences]
+  map.resources :companies, :has_many => [:tools, :experiences, :softwares]
   map.resources :companies, :has_many => :users
 
   map.resource :session
