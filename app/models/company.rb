@@ -1,14 +1,14 @@
 class Company < ActiveRecord::Base
-	has_many								:complex_offers
-	has_many								:tool_offers
-	has_many								:software_offers
+	has_many								:complex_offers,    :dependent => :destroy
+	has_many								:tool_offers,       :dependent => :destroy
+	has_many								:software_offers,   :dependent => :destroy
 	has_many								:complex_types, :through => :complex_offers
-	has_many								:users
+	has_many								:users,             :dependent => :destroy
 	belongs_to							:country
 	belongs_to							:state
-	has_many								:experiences, :dependent => :destroy
-	has_many								:tools, :through => :tool_offers, :dependent => :destroy
-	has_many								:softwares, :through => :software_offers
+	has_many								:experiences,       :dependent => :destroy
+	has_many								:tools,       :through => :tool_offers,       :dependent => :destroy
+	has_many								:softwares,   :through => :software_offers,   :dependent => :destroy
 	accepts_nested_attributes_for :users
 	accepts_nested_attributes_for :tools, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
 	accepts_nested_attributes_for :softwares, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
@@ -31,7 +31,6 @@ class Company < ActiveRecord::Base
 	validates_presence_of		:price, :message => "^Debes escribir un Precio"
 	validates_presence_of		:complex_type_ids, :message => "^Debes seleccionar el Tipo de complejo que administras"
 	validates_presence_of		:phone, :message => "^Debes escribir un Número de teléfono"
-	validates_uniqueness_of :phone, :message => "^Ese número de teléfono ya existe"
 	validates_presence_of		:country_id, :message => "^Debes especificar un País"
 	validates_presence_of		:state_id, :message => "^Debes especificar un Estado", :if => :country_is_mexico?
 	validates_presence_of		:city, :message => "^Debes escribir una Ciudad"	

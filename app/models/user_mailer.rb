@@ -26,7 +26,7 @@ class UserMailer < ActionMailer::Base
   
     def domain
       if ENV['RAILS_ENV'] == "production"
-        "condominios.heroku.com"
+        "administraciondecondominios.org"
       elsif ENV['RAILS_ENV'] == "staging"
         "condominios.heroku.com"
       else
