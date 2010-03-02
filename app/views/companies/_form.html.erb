@@ -1,132 +1,130 @@
 <% form_for(@company, :html => { :multipart => true }) do |f| %>
-  <%= f.error_messages %>
-  <table>
-		<tr>
-		  <td><%= f.label :name, "Nombre de la Empresa", :class => "label"%></td>
-		  <td><%= f.text_field :name, :class => "text_field" %></td>
-		</tr>
-		
-		<tr>
-		  <td><%= f.label :description, "Descripci&oacute;n", :class => "label" %></td>
-		  <td><%= f.text_area :description, :class => "text_area" %></td>
-		</tr>
-		
-		<tr>
-			<td><%= f.label :logo, "Logo de la Empresa", :class => "label" %></td>
-			<td><%= image_tag @company.logo.url(:small), :class => "logo" %><%= f.file_field :logo %></td>
-		</tr>
-		
-		<tr>
-		  <td><%= f.label :price, "Precio", :class => "label" %></td>
-		  <td><%= f.text_field :price, :class => "text_field" %></td>		  
-		</tr>
+  <%= f.error_messages :header_message => "Encontramos un pequeño error en tus datos", :message => "Verifica que todos los campos tengan tu información correcta" %>
+  <div class="section">
+    <div class="sub_section">
+      <table>
+    		<tr>
+    		  <td><%= f.label :name, "Nombre de la Empresa", :class => "label"%></td>
+    		  <td><%= f.text_field :name, :class => "text_field" %></td>
+    		</tr>
 
-		<tr>
-			<td></td>
-			<td id="example">Ejemplo: $100 por propiedad, 10% del cobro total, etc</td>
-		</tr>
-		
-	  <tr>
-	    <td><%= f.label :phone, "Tel&eacute;fono", :class => "label" %></td>
-	    <td><%= f.text_field :phone, :class => "text_field" %></td>
-  	</tr>
-  </table>    	  	
-  <div id="division"></div>
-	<div id="complex_types">
-		<p class="title">Tipo de complejos que administra</p>
-		<table>				
-			<% for complex_type in ComplexType.find(:all) %>
-				<tr>
-					<td>
-						<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), {:class => "checkbox", :id => "company_complex_type_id_" + complex_type.id.to_s} %><%= f.label "complex_type_id_" + complex_type.id.to_s, complex_type.name %>
-					</td>
-				</tr>
-				<% end %>
-		</table>
-	</div>
-	<div id="division"></div>
-				<div id="tools">		
-			<p class="title">Servicios que ofrece</p>
-				<table>					
-					<tr>
-						<td><%= f.check_box :security, :class => "checkbox"  %>
-							<%= f.label :security, "Seguridad" %></td>
-					</tr>
-					<tr>
-						<td><%= f.check_box :cleaning, :class => "checkbox"  %>
-						<%= f.label :cleaning, "Limpieza" %></td>
-					</tr>					
-					<tr>
-						<td><%= f.check_box :providers, :class => "checkbox" %>
-						<%= f.label :providers, "Administración de proovedores" %></td>
-					</tr>
-					<tr>
-						<td><%= f.check_box :personnel, :class => "checkbox" %>
-						<%= f.label :personnel, "Administración de personal" %></td>
-					</tr>
-					<tr>
-						<td><%= f.check_box :finance, :class => "checkbox" %>
-						<%= f.label :finance, "Contabilidad y Finanzas" %></td>
-					</tr>
-					<tr>
-						<td><%= f.check_box :procedures, :class => "checkbox" %>
-						<%= f.label :procedures, "Trámites" %></td>
-					</tr>					
-					<tr>
-						<td><%= f.check_box :money_collect, :class => "checkbox" %>
-						<%= f.label :money_collect, "Cobranza" %></td>
-					</tr>
-					<tr>
-						<td><%= f.check_box :maintenance, :class => "checkbox" %>
-						<%= f.label :maintenance, "Mantenimiento" %></td>
-					</tr>
-					<tr>
-						<td><%= f.check_box :gardening, :class => "checkbox"  %>
-						<%= f.label :gardening, "Jardinería" %></td>
-					</tr>					
-					<tr>
-						<td><input type="checkbox" class="checkbox" id="softwaretool"/><label for="softwaretool">Software</label></td>
-					</tr>
-				</table>				
-			</div>
-			
-		<div id="add_software_tool">
-			<p class="title">
-				<%= link_to_add_fields("Agregar Software", f, :softwares) %>
-			</p>
-		</div>
+    		<tr>
+    		  <td><%= f.label :description, "Descripci&oacute;n", :class => "label" %></td>
+    		  <td><%= f.text_area :description, :class => "text_area" %></td>
+    		</tr>
 
-		<ul id="new_tools">
-			<table id="new_tools">
-				<% for tool in @company.tools do %>
-					<tr><td><li><%= tool.name %></li></td><td><%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete %></td></tr>
-				<% end %>
+    		<tr>
+    			<td><%= f.label :logo, "Logo de la Empresa", :class => "label" %></td>
+    			<td><%= image_tag @company.logo.url(:small), :class => "logo" %><%= f.file_field :logo %></td>
+    		</tr>
+
+    		<tr>
+    		  <td><%= f.label :price, "Precio", :class => "label" %></td>
+    		  <td><%= f.text_field :price, :class => "text_field" %></td>		  
+    		</tr>
+
+    		<tr>
+    			<td></td>
+    			<td class="example">Ejemplo: $100 por propiedad, 10% del cobro total, etc</td>
+    		</tr>
+
+    	  <tr>
+    	    <td><%= f.label :phone, "Tel&eacute;fono", :class => "label" %></td>
+    	    <td><%= f.text_field :phone, :class => "text_field" %></td>
+      	</tr>
+      </table>
+    </div>
+    
+    <div id="complex_types" class="sub_section">
+  		<h3>Tipo de complejos que administra</h3>
+  		<table>				
+  			<% for complex_type in ComplexType.find(:all) %>
+  				<tr>
+  					<td>
+  						<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), {:class => "checkbox", :id => "company_complex_type_id_" + complex_type.id.to_s} %><%= f.label "complex_type_id_" + complex_type.id.to_s, complex_type.name %>
+  					</td>
+  				</tr>
+  				<% end %>
   		</table>
-  	</ul>  	
+  	</div>
   	
-  	<div id="add_new_tool">
-			<p class="title">
-				<%= link_to_add_fields("Agregar otro servicio", f, :tools) %>
-			</p>
-		</div>
-	<div id="division"></div>
-	<p class="title">Ubicación</p>
-  <table>
-		<tr>
-		  <td><%= f.label :country_id, "País", :class => "label" %></td>
-		  <td><%= collection_select :company, :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %></td>
-		</tr>
+  	<div id="tools" class="sub_section">		
+  		<h3>Servicios que ofrece</h3>
+			<table>					
+				<tr>
+					<td><%= f.check_box :security, :class => "checkbox"  %>
+						<%= f.label :security, "Seguridad" %></td>
+				</tr>
+				<tr>
+					<td><%= f.check_box :cleaning, :class => "checkbox"  %>
+					<%= f.label :cleaning, "Limpieza" %></td>
+				</tr>					
+				<tr>
+					<td><%= f.check_box :providers, :class => "checkbox" %>
+					<%= f.label :providers, "Administración de proovedores" %></td>
+				</tr>
+				<tr>
+					<td><%= f.check_box :personnel, :class => "checkbox" %>
+					<%= f.label :personnel, "Administración de personal" %></td>
+				</tr>
+				<tr>
+					<td><%= f.check_box :finance, :class => "checkbox" %>
+					<%= f.label :finance, "Contabilidad y Finanzas" %></td>
+				</tr>
+				<tr>
+					<td><%= f.check_box :procedures, :class => "checkbox" %>
+					<%= f.label :procedures, "Trámites" %></td>
+				</tr>				
+				<tr>
+					<td><%= f.check_box :money_collect, :class => "checkbox" %>
+					<%= f.label :money_collect, "Cobranza" %></td>
+				</tr>
+				<tr>
+					<td><%= f.check_box :maintenance, :class => "checkbox" %>
+					<%= f.label :maintenance, "Mantenimiento" %></td>
+				</tr>
+				<tr>
+					<td><%= f.check_box :gardening, :class => "checkbox"  %>
+					<%= f.label :gardening, "Jardinería" %></td>
+				</tr>					
+			</table>				
+
+  		<ul id="new_tools">
+				<% for tool in @company.tools do %>
+					<li><%= tool.name %> <%= link_to "Borrar", company_tool_path(@company.id, tool), :confirm => '¿Estás seguro de querer eliminar este elemento?', :method => :delete %></li>
+				<% end %>
+    	</ul>
+    	
+    	<div class="add_link">
+        <%= link_to_add_fields("Agregar otro servicio", f, :tools, :class => "add_field_link") %>
+      </div>
+
+  		<table id="other_tools" class="extra_services">
+
+      </table>
+  	</div>
+
   
-		<tr id="company_state">
-		  <td><%= f.label :state_id, "Estado", :class => "label"  %></td>
-		  <td><%= collection_select :company, :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %></td>
-		</tr>
-		
-		<tr>
-		  <td><%= f.label :city, "Ciudad", :class => "label" %></td>
-		  <td><%= f.text_field :city, :class=> "text_field" %></td>
-		</tr>
-  </table>  
+    <div class="sub_section">
+      <h3>Ubicación</h3>
+      <table>
+    		<tr>
+    		  <td><%= f.label :country_id, "País", :class => "label" %></td>
+    		  <td><%= collection_select :company, :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %></td>
+    		</tr>
+
+    		<tr id="company_state">
+    		  <td><%= f.label :state_id, "Estado", :class => "label"  %></td>
+    		  <td><%= collection_select :company, :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %></td>
+    		</tr>
+
+    		<tr>
+    		  <td><%= f.label :city, "Ciudad", :class => "label" %></td>
+    		  <td><%= f.text_field :city, :class=> "text_field" %></td>
+    		</tr>
+      </table>
+    </div>
+  </div>
   
   <p><%= image_submit_tag "/images/save.png", :class => "button" %> <%= link_to "Cancelar", @company, :class => "cancel" %></p>  
   

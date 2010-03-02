@@ -8,7 +8,9 @@ body {
   background-repeat: repeat-x;
   font-family: Arial, Helvetica, Verdana;
   font-size: 14px;
-  height: 100%
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 a img {
@@ -17,6 +19,21 @@ a img {
 
 a {
   color: #4E7474;
+}
+
+a:focus {
+	outline: 0;
+}
+
+a.add {
+	color: #000;
+	background: url("/images/plus.png") no-repeat 0 6px;
+	padding: 8px 6px 8px 30px;
+}
+
+a.add:hover {
+	color: #000;
+	background: #F9F995 url("/images/plus.png") no-repeat 0 6px;
 }
 
 .clear {
@@ -67,11 +84,11 @@ h2 {
 
 #main_container {
 	min-height: 100%;
-  position: relative;
-  width: 1024px;
-  margin: 0 auto;
-  margin-bottom: -409px;
-	background-image: url("/images/nubes.png");
+  	position: relative;
+  	width: 1000px;
+  	margin: 0 auto;
+  	margin-bottom: -409px;
+	background-image: url("/images/nubesfondo.png");
 	background-repeat: no-repeat;
 }
 
@@ -82,7 +99,7 @@ h2 {
 }
 
 #sub_content {
-	width: 86.3%;
+	width: 699px;
 	min-height: 100%;
 	margin: 0 auto;
 	padding: 30px 40px 30px 40px;
@@ -97,17 +114,18 @@ h2 {
 	border-width: 5px 5px 5px 5px;
 }
 
-#sub_content #title {
+#sub_content h1#title {
 	font-size: 22px;
 	color: #333333;
 	background: none;
-	position:relative; 
-	left: 100px;
+	position: relative;
+	left: 65px;
 }
 
 #sub_content #search h2 {
 	font-size: 20px;
 	color: #333333;
+	padding: 0;
 	background: none;
 }
 
@@ -158,26 +176,28 @@ h2 {
 }
 
 #footer {
-	width: 1286px;
+	width: 100%;
 	height: 409px;
 	margin: 0 auto;
 	position: relative;
 }
 
 #footer #city {
-	background: url("/images/ciudad.png") no-repeat;
+	background: url("/images/ciudad.png") no-repeat center;
 	min-height: 364px;
+	margin: 0 auto;
 }
 
 #footer #info {
 	background-color: #335533;
-	padding-left: 250px;
-	padding-top: 2px;
-	height: 43px;
+	padding: 14px 0 0 0;
+	height: 30px;
 }
 
 #footer #info ul {
 	list-style-image: url(/images/punto.png);
+	margin: 0 auto;
+	width: 811px;
 }
 
 #footer #info ul li {
@@ -203,34 +223,44 @@ h2 {
 /* HomePage */
 #search {
 	position: relative;
-	left: 150px;
+	left: 100px;
+	width: 503px;
 }
 
 #advanced_search {
 	display: none;
 	margin-top: 20px;
-	width: 500px;
-	height: 103px;
-	padding: 1px 0 0 10px;
+	width: 498px;
+	padding: 0;
 	background: #FFFFE3;
 	border: 2px solid #CCCCCC;
 }
 
+#advanced_search > div {
+	padding: 10px;
+}
+
+#advanced_search > div p {
+	margin: 0 0 4px 0;
+	font-weight: bold;
+}
+
+
 #advanced_search table  {
-	margin-top: -15px;
-	margin-left: 50px;
+
 }
 
 #advanced_search table tr {
 	float:left;
-	max-height: 30px;
-	width: 140px;
+	width: 210px;
+	font-size: 13px;
 }
 
+
 #advanced_link {
-	margin-top: 10px;
-	margin-left: 360px;
 	font-size: 12px;
+	text-align: right;
+	padding: 6px 6px 0 0;
 }
 
 #advanced_link a {
@@ -401,6 +431,7 @@ h2 {
 
 #company_details #company_experience table {
 	width: 350px;
+	margin: 0 0 15px 0;
 }
 
 #company_details #company_experience table th {
@@ -455,6 +486,23 @@ h2 {
 }
 
 /* Edit & Register Compay */
+
+#register_form div.sub_section {
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 20px;
+	padding: 0 0 20px 30px;
+}
+
+#register_form div.last {
+	border: none;
+}
+
+#register_form .sub_section h3 {
+	font-size: 14px;
+	color: #333333;
+	font-weight: bold;
+}
+
 #register_form h1 {
 	font-size: 22px;
 	color: #333333;
@@ -465,11 +513,11 @@ h2 {
 }
 
 #register_form table {
-	width: 700px;
+	width: 670px;
 }
 
 #register_form table td {
-	width: 350px;
+	width: 300px;
 }
 
 #register_form #tools table tr {
@@ -479,7 +527,6 @@ h2 {
 
 #register_form .label {
 	font-size: 14px;
-	padding-left: 30px;	
 }
 
 #register_form .text_field {
@@ -508,7 +555,7 @@ h2 {
 #register_form .checkbox {
 	margin-bottom: 10px ;
 	margin-top: 5px ;
-	margin-left: 70px;
+	margin-left: 10px;
 }
 
 #register_form select {
@@ -564,15 +611,19 @@ h2 {
 	height: 40px;
 }
 
-#register_form #example {
+#register_form .example {
 	font-style: italic;
 	font-size: 10px;
 	padding-bottom: 10px;
 }
 
+#register_form p.example {
+	margin: -10px 0 0 0;
+}
+
 #register_form #complex_types table tr {
 	float:left;
-	max-width: 230px;
+	max-width: 300px;
 }
 
 #register_form .add_experience {
@@ -580,15 +631,53 @@ h2 {
 	margin-top: 10px;
 }
 
-#register_form #add_new_tool {
-	border: 1px solid #FFFF99;
-	background-color: #FFFFD6;
-	padding: 0px;
+#register_form .add_link {
+	padding: 0 0 0 14px;
+	height: 20px;
+	margin: 10px 0;
 }
 
-#register_form #new_tools {
-	margin-bottom: 10px;
+#register_form a.add_field_link {
+	color: #000;
+	background: url("/images/plus.png") no-repeat 0 6px;
+	padding: 8px 6px 8px 30px;
+}
+
+#register_form a.add_field_link:hover {
+	background: #F9F995 url("/images/plus.png") no-repeat 0 6px;
+}
+
+#register_form table.extra_services {
+	padding: 0 0 0 14px;
+	margin-top: 10px;
+	width: 300px;
+}
+
+#register_form table#software {
+	padding: 0;
+	width: 400px;
+}
+
+#register_form table#software td {
+	padding: 8px 0 0 0;
+}
+
+#register_form table#other_tools tr {
+	float: none;
+}
+
+#register_form ul#new_tools {
+	margin: 0 0 20px 0;
 	width: 450px;
+}
+
+#register_form ul#new_tools li {
+	font-style: italic;
+	margin: 0;
+}
+
+#register_form ul#new_tools li a {
+	margin-left: 10px;
 }
 
 #register_form #add_new_tool .title a {
@@ -604,22 +693,14 @@ h2 {
 	color: #333333;
 }
 
-#register_form #other_tool {
-	margin-top: -10px;
-}
 
-#register_form #other_tool .text_field {
+#register_form .extra_services .text_field {
 	font-size: 13px;
 	height: 16px;
 	width: 150px;
 	margin-left: 10px;
 	margin-bottom: 0px;
 	margin-top: 0px;
-}
-
-#register_form #other_tool .label {
-	font-size: 13px;
-	padding-left: 35px;	
 }
 
 #register_form #other_tool img {

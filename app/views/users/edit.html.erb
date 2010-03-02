@@ -1,26 +1,26 @@
 <h2>Información de tu usuario</h2>
 <div class="division"></div>
 <% form_for @user do |f| %>
-<div id="register_form">
-	<table>
-		<tr>
-			<td><%= f.label :name, "Nombre Completo", :class => "label" %></td>
-			<td><%= f.text_field :name, :class => "text_field" %></td>
-		</tr>
+  <div id="register_form">
+  	<table>
+  		<tr>
+  			<td><%= f.label :name, "Nombre Completo", :class => "label" %></td>
+  			<td><%= f.text_field :name, :class => "text_field" %></td>
+  		</tr>
 	
-		<tr>
-			<td><%= f.label :email, "Correo electrónico", :class => "label" %></td>
-			<td><%= f.text_field :email, :class => "text_field" %></td>
-		</tr>
-	</table>
-	<div id="new_password" class="button">
-		<p>Si deseas cambiar tu contraseña haz click <a href="#">aquí</a></p>
-	</div>
+  		<tr>
+  			<td><%= f.label :email, "Correo electrónico", :class => "label" %></td>
+  			<td><%= f.text_field :email, :class => "text_field" %></td>
+  		</tr>
+  	</table>
+  	<div id="new_password">
+  		<p>Si deseas cambiar tu contraseña haz click <a href="#">aquí</a></p>
+  	</div>
 
-	<p>
-		<%= image_submit_tag "/images/editar_small.png", :class => "button" %> <%= link_to "Cancelar", @user, :class => "cancel" %>
-	</p>
-</div>	
+  	<p>
+  		<%= image_submit_tag "/images/editar_small.png" %> <%= link_to "Cancelar", @user, :class => "cancel" %>
+  	</p>
+  </div>	
 <% end %>
 
 <div id="new_password_form" title="Nueva contraseña">

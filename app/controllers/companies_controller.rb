@@ -28,6 +28,7 @@ class CompaniesController < ApplicationController
   def new   
     @company = Company.new
     @user = @company.users.build
+    3.times { @company.softwares.build }
   end
   
   def create  	
@@ -36,6 +37,7 @@ class CompaniesController < ApplicationController
       flash[:notice] = "Tus datos se guardaron correctamente"
       redirect_to success_path
     else
+      3.times { @company.softwares.build }
       render :action => 'new'
     end
   end

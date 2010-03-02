@@ -3,53 +3,56 @@
 	
 	<% form_for @company, :html => { :multipart => true } do |f| -%>
 	  <%= f.error_messages :header_message => "Encontramos un pequeño error en tus datos", :message => "Verifica que todos los campos tengan tu información correcta" %>
-			<table>
-				<tr>
-					<td><%= f.label :name, "Nombre de la Empresa", :class => "label"%></td>
-					<td><%= f.text_field :name, :class => "text_field" %></td>
-				</tr>
+    <div class="section">
+      <div class="sub_section">
+        <table>
+  				<tr>
+  					<td><%= f.label :name, "Nombre de la Empresa", :class => "label"%></td>
+  					<td><%= f.text_field :name, :class => "text_field" %></td>
+  				</tr>
 
-				<tr>
-					<td><%= f.label :description, "Descripci&oacute;n", :class => "label" %></td>
-				  <td><%= f.text_area :description, :class => "text_area" %></td>
-				</tr>
+  				<tr>
+  					<td><%= f.label :description, "Descripci&oacute;n", :class => "label" %></td>
+  				  <td><%= f.text_area :description, :class => "text_area" %></td>
+  				</tr>
 
-				<tr>
-					<td><%= f.label :logo, "Logo de la Empresa", :class => "label" %></td>
-					<td><%= f.file_field :logo %></td>
-				</tr>
+  				<tr>
+  					<td><%= f.label :logo, "Logo de la Empresa", :class => "label" %></td>
+  					<td><%= f.file_field :logo %></td>
+  				</tr>
 
-				<tr>
-				  <td><%= f.label :price, "Precio", :class => "label" %></td>
-				  <td><%= f.text_field :price, :class => "text_field" %></td>
-				</tr>
-				
-				<tr>
-					<td></td>
-					<td id="example">Ejemplo: $100 por propiedad, 10% del cobro total, etc</td>
-				</tr>
+  				<tr>
+  				  <td><%= f.label :price, "Precio", :class => "label" %></td>
+  				  <td><%= f.text_field :price, :class => "text_field" %></td>
+  				</tr>
 
-				<tr>
-				  <td><%= f.label :phone, "Tel&eacute;fono", :class => "label" %></td>
-				  <td><%= f.text_field :phone, :class => "text_field" %></td>
-				</tr>
-			</table>	
-		<div id="division"></div>
-		<div id="complex_types">			 
-			<p class="title">Tipo de complejos que administra</p>
-			<table>				
-				<% for complex_type in ComplexType.find(:all) %>
-				<tr>
-					<td>
-						<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), {:class => "checkbox", :id => "company_complex_type_id_" + complex_type.id.to_s} %><%= f.label "complex_type_id_" + complex_type.id.to_s, complex_type.name %>
-					</td>
-				</tr>
-				<% end %>
-			</table>
-		</div>	
-		<div id="division"></div>
-		<div id="tools">		
-			<p class="title">Servicios que ofrece</p>
+  				<tr>
+  					<td></td>
+  					<td class="example">Ejemplo: $100 por propiedad, 10% del cobro total, etc</td>
+  				</tr>
+
+  				<tr>
+  				  <td><%= f.label :phone, "Tel&eacute;fono", :class => "label" %></td>
+  				  <td><%= f.text_field :phone, :class => "text_field" %></td>
+  				</tr>
+  			</table>
+      </div>
+      
+      <div id="complex_types" class="sub_section">			 
+  			<h3>Tipo de complejos que administra</h3>
+  			<table>
+  				<% for complex_type in ComplexType.find(:all) %>
+  				<tr>
+  					<td>
+  						<%= check_box_tag"company[complex_type_ids][]", complex_type.id, @company.complex_types.include?(complex_type), {:class => "checkbox", :id => "company_complex_type_id_" + complex_type.id.to_s} %><%= f.label "complex_type_id_" + complex_type.id.to_s, complex_type.name %>
+  					</td>
+  				</tr>
+  				<% end %>
+  			</table>
+  		</div>
+  		
+  		<div id="tools" class="sub_section">
+  		  <h3>Servicios que ofrece</h3>
 				<table>					
 					<tr>
 						<td><%= f.check_box :security, :class => "checkbox"  %>
@@ -87,70 +90,87 @@
 						<td><%= f.check_box :gardening, :class => "checkbox"  %>
 						<%= f.label :gardening, "Jardinería" %></td>
 					</tr>					
-					<tr>
-						<td><input type="checkbox" class="checkbox" id="softwaretool"/><label for="softwaretool">Software</label></td>
-					</tr>
-				</table>				
+				</table>
+        
+        <div class="add_link">
+          <%= link_to_add_fields("Agregar otro servicio", f, :tools, :class => "add_field_link") %>
+        </div>
 				
-				<div id="add_software_tool">
-					<p class="title">
-						<%= link_to_add_fields("Agregar Software", f, :softwares) %>
-					</p>
-				</div>
-				
-				<div id="add_new_tool">
-					<p class="title">
-						<%= link_to_add_fields("Agregar otro servicio", f, :tools) %>						
-					</p>
-				</div>
-			</div>
-			<div id="division"></div>
-			<p class="title">Ubicación</p>
-			<table>
-				<tr>
-					<td><%= f.label :country_id, "País", :class => "label" %></td>
-				  <td><%= f.collection_select :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %></td>
-				</tr>
+				<table id="other_tools" class="extra_services">
+	       
+	      </table>
 
-				<tr id="company_state">
-				  <td><%= f.label :state_id, "Estado", :class => "label"  %></td>
-				  <td><%= f.collection_select :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %></td>
-				</tr>
+  		</div>
+  		
+  		<div class="sub_section">
+	      <h3>Herramientas de software que utilizas</h3>
+	      <p class="example">Ejemplo: Contpaq, Excel, Habitaris, etc.</p>
+	      
+        <table id="software" class="extra_services">
+          <% index = 1 %>
+          <% f.fields_for :softwares do |s| %>
+  	        <tr>
+  	          <td><%= s.label :name, "Software #{index}" %></td>
+  	          <td><%= s.text_field :name %></td>
+  	          <td></td>
+  	        </tr>
+  	        <% index += 1 %>
+	        <% end %>
+	      </table>
+	    </div>
+  		
+  		<div class="sub_section">
+	     	<h3>Ubicación</h3>
+  			<table>
+  				<tr>
+  					<td><%= f.label :country_id, "País", :class => "label" %></td>
+  				  <td><%= f.collection_select :country_id, Country.all, :id, :name, :include_blank => "País", :class => "combo_box" %></td>
+  				</tr>
 
-				<tr>
-				  <td><%= f.label :city, "Ciudad", :class => "label" %></td>
-				  <td><%= f.text_field :city, :class=> "text_field" %></td>
-				</tr>
-			</table>
-		<div id="division"></div>
-			<h2 id="casita2">Datos de usuario</h2>
+  				<tr id="company_state">
+  				  <td><%= f.label :state_id, "Estado", :class => "label"  %></td>
+  				  <td><%= f.collection_select :state_id, State.all, :id, :name, :include_blank => "Estado", :class => "combo_box" %></td>
+  				</tr>
 
-  	<% f.fields_for :users do |user_form| %>
-  		<table>
-				<tr>
-					<td><%= user_form.label :name, "Nombre Completo", :class => "label" %></td>
-					<td><%= user_form.text_field :name, :class => "text_field" %></td>
-				</tr>
+  				<tr>
+  				  <td><%= f.label :city, "Ciudad", :class => "label" %></td>
+  				  <td><%= f.text_field :city, :class=> "text_field" %></td>
+  				</tr>
+  			</table>
+	    </div>
+    </div>
+	    
+    <div class="section">
+      <h2 id="casita2">Datos de usuario</h2>
+      <div class="sub_section last">
 
-				<tr>
-					<td><%= user_form.label :email, "Correo electr&oacute;nico" , :class => "label"%></td>
-					<td><%= user_form.text_field :email, :class => "text_field" %></td>
-				</tr>
+      	<% f.fields_for :users do |user_form| %>
+      		<table>
+    				<tr>
+    					<td><%= user_form.label :name, "Nombre Completo", :class => "label" %></td>
+    					<td><%= user_form.text_field :name, :class => "text_field" %></td>
+    				</tr>
 
-				<tr>
-					<td><%= user_form.label :password, "Contraseña" , :class => "label"%></td>
-					<td><%= user_form.password_field :password, :class => "text_field" %></td>
-				</tr>
+    				<tr>
+    					<td><%= user_form.label :email, "Correo electr&oacute;nico" , :class => "label"%></td>
+    					<td><%= user_form.text_field :email, :class => "text_field" %></td>
+    				</tr>
 
-				<tr>
-					<td><%= user_form.label :password_confirmation, "Confirmar contraseña" , :class => "label"%></td>
-					<td><%= user_form.password_field :password_confirmation, :class => "text_field" %></td>
-				</tr>
-	  	</table>  	
-  	<% end %>
+    				<tr>
+    					<td><%= user_form.label :password, "Contraseña" , :class => "label"%></td>
+    					<td><%= user_form.password_field :password, :class => "text_field" %></td>
+    				</tr>
 
+    				<tr>
+    					<td><%= user_form.label :password_confirmation, "Confirmar contraseña" , :class => "label"%></td>
+    					<td><%= user_form.password_field :password_confirmation, :class => "text_field" %></td>
+    				</tr>
+    	  	</table>
+      	<% end %>
+    	</div>
+    </div>
 
-	<p><%= image_submit_tag "/images/siguiente.png", :class => "button" %></p>
+	  <p><%= image_submit_tag "/images/siguiente.png", :class => "button" %></p>
 	
 	<% end -%>
 </div>
